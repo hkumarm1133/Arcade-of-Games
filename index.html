@@ -1,0 +1,4447 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>🎮 ARCADE GAMES COLLECTION</h1>
+            <p class="subtitle">Choose your favorite classic game to play</p>
+        </header>
+        <main>
+            <div class="games-grid">
+                <!-- Minesweeper Card -->
+                <div class="game-card" data-game="minesweeper">
+                    <div class="game-icon">💣</div>
+                    <h3>MINESWEEPER</h3>
+                    <p class="game-description">Classic mine detection puzzle with strategic thinking</p>
+                    <div class="game-features">
+                        <span class="feature">🧠 Strategic</span>
+                        <span class="feature">⏱️ Timed</span>
+                        <span class="feature">🎯 Precision</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Tic-Tac-Toe Card -->
+                <div class="game-card" data-game="tictactoe">
+                    <div class="game-icon">⭕</div>
+                    <h3>TIC-TAC-TOE</h3>
+                    <p class="game-description">Classic strategy game for two players</p>
+                    <div class="game-features">
+                        <span class="feature">👥 2 Players</span>
+                        <span class="feature">🎯 Strategy</span>
+                        <span class="feature">⚡ Quick</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Memory Game Card -->
+                <div class="game-card" data-game="memory">
+                    <div class="game-icon">🧠</div>
+                    <h3>MEMORY GAME</h3>
+                    <p class="game-description">Test your memory with beautiful cards and multiple difficulty levels</p>
+                    <div class="game-features">
+                        <span class="feature">🎴 Card Flip</span>
+                        <span class="feature">⏱️ Timer Challenge</span>
+                        <span class="feature">🏆 Score System</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Snake Game Card -->
+                <div class="game-card" data-game="snake">
+                    <div class="game-icon">🐍</div>
+                    <h3>SNAKE GAME</h3>
+                    <p class="game-description">Classic snake game with modern design and mobile controls</p>
+                    <div class="game-features">
+                        <span class="feature">🕹️ Touch Controls</span>
+                        <span class="feature">📈 High Score</span>
+                        <span class="feature">⚡ Speed Levels</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Tetris Card -->
+                <div class="game-card" data-game="tetris">
+                    <div class="game-icon">
+                        <div class="tetris-grid">
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell red"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell blue"></div>
+                            <div class="grid-cell blue"></div>
+                            <div class="grid-cell empty"></div>
+                            <div class="grid-cell yellow"></div>
+                            <div class="grid-cell yellow"></div>
+                            <div class="grid-cell green"></div>
+                            <div class="grid-cell green"></div>
+                            <div class="grid-cell red"></div>
+                            <div class="grid-cell red"></div>
+                            <div class="grid-cell purple"></div>
+                            <div class="grid-cell purple"></div>
+                            <div class="grid-cell yellow"></div>
+                            <div class="grid-cell yellow"></div>
+                        </div>
+                    </div>
+                    <h3>TETRIS</h3>
+                    <p class="game-description">Classic falling blocks puzzle with modern design</p>
+                    <div class="game-features">
+                        <span class="feature">🔄 Piece Rotation</span>
+                        <span class="feature">📊 Line Clearing</span>
+                        <span class="feature">🎮 Touch Controls</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Sudoku Card -->
+                <div class="game-card" data-game="sudoku">
+                    <div class="game-icon">🔢</div>
+                    <h3>SUDOKU</h3>
+                    <p class="game-description">Classic number puzzle with multiple difficulty levels</p>
+                    <div class="game-features">
+                        <span class="feature">🧠 Logic</span>
+                        <span class="feature">📊 Levels</span>
+                        <span class="feature">🎯 Precision</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Pinball Card -->
+                <div class="game-card" data-game="pinball">
+                    <div class="game-icon">🪩</div>
+                    <h3>PINBALL</h3>
+                    <p class="game-description">Classic arcade pinball with physics and multiple targets</p>
+                    <div class="game-features">
+                        <span class="feature">🎮 Physics</span>
+                        <span class="feature">🎯 Targets</span>
+                        <span class="feature">🔴 Multiball</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Math Tables Card -->
+                <div class="game-card" data-game="mathtables">
+                    <div class="game-icon">✖️</div>
+                    <h3>MATH TABLES</h3>
+                    <p class="game-description">Learn multiplication tables with fun animations and 3D effects</p>
+                    <div class="game-features">
+                        <span class="feature">📚 Learning</span>
+                        <span class="feature">🎨 3D Effects</span>
+                        <span class="feature">⭐ Rewards</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Pac-Man Card -->
+                <div class="game-card" data-game="pacman">
+                    <div class="game-icon">
+                        <div class="pacman-face">
+                            <div class="pacman-eye left-eye"></div>
+                            <div class="pacman-eye right-eye"></div>
+                        </div>
+                    </div>
+                    <h3>PAC-MAN</h3>
+                    <p class="game-description">Navigate the twisty blue maze, eat sparkling dots, and outsmart the colorful ghosts!</p>
+                    <div class="game-features">
+                        <span class="feature">🟡 Yellow Chomper</span>
+                        <span class="feature">👻 Colorful Ghosts</span>
+                        <span class="feature">✨ Sparkling Dots</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </div>
+
+                <!-- Challenge Zone Card -->
+                <div class="game-card challenge-card">
+                    <div class="game-icon">⭐⭐</div>
+                    <h3>CHALLENGE ZONE</h3>
+                    <p class="game-description">Advanced games for teens & adults - Sudoku, puzzles, and financial education</p>
+                    <div class="game-features">
+                        <span class="feature">🧩 Sudoku Master</span>
+                        <span class="feature">💡 Reaction Trainer</span>
+                        <span class="feature">🧠 Quiz Master</span>
+                    </div>
+                    <button class="play-btn challenge-btn">Enter Challenge Zone</button>
+                </div>
+            </div>
+
+            <!-- Individual Game Containers (Hidden by default) -->
+            <div class="game-overlay" id="game-overlay">
+                <div class="game-header">
+                    <button class="back-btn" id="back-btn">← Back to Games</button>
+                    <h2 id="current-game-title">Game</h2>
+                </div>
+                <!-- Minesweeper Game UI -->
+                <div id="minesweeper-game" class="game-container">
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="label">Mines:</span>
+                            <span id="mine-count" class="value">10</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Time:</span>
+                            <span id="timer" class="value">000</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="reset-btn" class="btn">🙂 New Game</button>
+                        <select id="difficulty" class="difficulty-select">
+                            <option value="beginner">Beginner (9x9, 10 mines)</option>
+                            <option value="intermediate">Intermediate (16x16, 40 mines)</option>
+                            <option value="expert">Expert (30x16, 99 mines)</option>
+                        </select>
+                    </div>
+                    <div id="game-board" class="game-board"></div>
+                    <div id="game-status" class="game-status hidden">
+                        <div class="status-message">
+                            <h2 id="status-text"></h2>
+                            <button id="play-again-btn" class="btn">Play Again</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder for other games -->
+                <div id="tictactoe-game" class="game-container" style="display:none">
+                    <div id="ttt-status" class="ttt-status"></div>
+                    <div id="ttt-board" class="ttt-board"></div>
+                    <button id="ttt-reset" class="btn">Restart</button>
+                </div>
+                <div id="memory-game" class="game-container" style="display:none">
+                    <div id="memory-board" class="memory-board"></div>
+                    <button id="memory-reset" class="btn">Restart</button>
+                </div>
+                <div id="snake-game" class="game-container" style="display:none">
+                    <canvas id="snake-canvas" width="320" height="320" style="background:#222;display:block;margin:0 auto;border-radius:10px;"></canvas>
+                    <div id="snake-score" class="snake-score">Score: 0</div>
+                    <button id="snake-reset" class="btn">Restart</button>
+                    <div class="snake-instructions">Use arrow keys to play!</div>
+                </div>
+                <div id="tetris-game" class="game-container" style="display:none">
+                    <div class="tetris-ui">
+                        <div class="tetris-side-panel">
+                            <div class="tetris-info">
+                                <div class="tetris-score">
+                                    <div class="label">Score:</div>
+                                    <div id="tetris-score-value" class="value">0</div>
+                                </div>
+                                <div class="tetris-level">
+                                    <div class="label">Level:</div>
+                                    <div id="tetris-level-value" class="value">1</div>
+                                </div>
+                                <div class="tetris-lines">
+                                    <div class="label">Lines:</div>
+                                    <div id="tetris-lines-value" class="value">0</div>
+                                </div>
+                            </div>
+                            <div class="tetris-next">
+                                <h3>Next:</h3>
+                                <canvas id="tetris-next-canvas" width="80" height="80"></canvas>
+                            </div>
+                        </div>
+                        <canvas id="tetris-canvas" width="300" height="600"></canvas>
+                    </div>
+                    <button id="tetris-reset" class="btn">New Game</button>
+                    <div class="tetris-instructions">
+                        Arrow keys: Move/Rotate • Space: Drop • P: Pause
+                    </div>
+                </div>
+
+                <!-- Sudoku Game -->
+                <div id="sudoku-game" class="game-container" style="display:none">
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="label">Difficulty:</span>
+                            <span id="sudoku-difficulty" class="value">Easy</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Time:</span>
+                            <span id="sudoku-timer" class="value">00:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Mistakes:</span>
+                            <span id="sudoku-mistakes" class="value">0/3</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="sudoku-new" class="btn">New Game</button>
+                        <select id="sudoku-difficulty-select" class="difficulty-select">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <button id="sudoku-hint" class="btn">Hint</button>
+                        <button id="sudoku-check" class="btn">Check</button>
+                    </div>
+                    <div id="sudoku-board" class="sudoku-board"></div>
+                    <div class="sudoku-numbers">
+                        <button class="number-btn" data-number="1">1</button>
+                        <button class="number-btn" data-number="2">2</button>
+                        <button class="number-btn" data-number="3">3</button>
+                        <button class="number-btn" data-number="4">4</button>
+                        <button class="number-btn" data-number="5">5</button>
+                        <button class="number-btn" data-number="6">6</button>
+                        <button class="number-btn" data-number="7">7</button>
+                        <button class="number-btn" data-number="8">8</button>
+                        <button class="number-btn" data-number="9">9</button>
+                        <button class="number-btn" data-number="0">✏️</button>
+                    </div>
+                </div>
+
+                <!-- Pinball Game -->
+                <div id="pinball-game" class="game-container" style="display:none">
+                    <div class="pinball-score-display">
+                        <div class="pinball-info-item">
+                            <span class="label">Score</span>
+                            <span id="pinball-score" class="value">0</span>
+                        </div>
+                        <div class="pinball-info-item">
+                            <span class="label">Ball</span>
+                            <span id="pinball-ball" class="value">1/3</span>
+                        </div>
+                        <div class="pinball-info-item">
+                            <span class="label">Multiplier</span>
+                            <span id="pinball-multiplier" class="value">x1</span>
+                        </div>
+                        <div class="pinball-info-item">
+                            <span class="label">Mission</span>
+                            <span id="pinball-mission" class="value">Space Launch</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="pinball-launch" class="btn">🚀 Launch Ball</button>
+                        <button id="pinball-reset" class="btn">🎮 New Game</button>
+                        <button id="pinball-tilt" class="btn">⚡ Nudge</button>
+                    </div>
+                    <div class="pinball-container">
+                        <canvas id="pinball-canvas" width="450" height="650"></canvas>
+                        <div class="pinball-controls">
+                            <button class="flipper-btn left-flipper" id="left-flipper">◀</button>
+                            <button class="flipper-btn right-flipper" id="right-flipper">▶</button>
+                        </div>
+                    </div>
+                    <div class="pinball-instructions">
+                        🎯 Arrow Keys or Flipper Buttons • Space to Launch • Complete missions for bonus points!
+                    </div>
+                </div>
+
+                <!-- Math Tables Game -->
+                <div id="mathtables-game" class="game-container" style="display:none">
+                    <div class="mathtables-score-display">
+                        <div class="mathtables-info-item">
+                            <span class="label">Score</span>
+                            <span id="mathtables-score" class="value">0</span>
+                        </div>
+                        <div class="mathtables-info-item">
+                            <span class="label">Level</span>
+                            <span id="mathtables-level" class="value">1</span>
+                        </div>
+                        <div class="mathtables-info-item">
+                            <span class="label">Streak</span>
+                            <span id="mathtables-streak" class="value">0</span>
+                        </div>
+                        <div class="mathtables-info-item">
+                            <span class="label">Table</span>
+                            <span id="mathtables-current-table" class="value">2x</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="mathtables-new" class="btn">🎮 New Game</button>
+                        <select id="mathtables-table-select" class="difficulty-select">
+                            <option value="random">Random Tables</option>
+                            <option value="2">2 Times Table</option>
+                            <option value="3">3 Times Table</option>
+                            <option value="4">4 Times Table</option>
+                            <option value="5">5 Times Table</option>
+                            <option value="6">6 Times Table</option>
+                            <option value="7">7 Times Table</option>
+                            <option value="8">8 Times Table</option>
+                            <option value="9">9 Times Table</option>
+                            <option value="10">10 Times Table</option>
+                        </select>
+                        <button id="mathtables-hint" class="btn">💡 Hint</button>
+                    </div>
+                    <div class="mathtables-question-area">
+                        <div id="mathtables-question" class="mathtables-question">
+                            <span id="mathtables-num1" class="mathtables-number">2</span>
+                            <span class="mathtables-operator">×</span>
+                            <span id="mathtables-num2" class="mathtables-number">3</span>
+                            <span class="mathtables-equals">=</span>
+                            <span id="mathtables-answer" class="mathtables-answer">?</span>
+                        </div>
+                        <div id="mathtables-feedback" class="mathtables-feedback"></div>
+                    </div>
+                    <div class="mathtables-canvas-container">
+                        <canvas id="mathtables-canvas" width="500" height="300"></canvas>
+                    </div>
+                    <div class="mathtables-options">
+                        <button class="mathtables-option-btn" id="option-1">6</button>
+                        <button class="mathtables-option-btn" id="option-2">8</button>
+                        <button class="mathtables-option-btn" id="option-3">10</button>
+                        <button class="mathtables-option-btn" id="option-4">12</button>
+                    </div>
+                    <div class="mathtables-instructions">
+                        🎯 Choose the correct answer to score points! • Get streaks for bonus multipliers! • Watch the 3D animations!
+                    </div>
+                </div>
+
+                <!-- Pac-Man Game -->
+                <div id="pacman-game" class="game-container" style="display:none">
+                    <div class="pacman-score-display">
+                        <div class="pacman-info-item">
+                            <span class="label">Score</span>
+                            <span id="pacman-score" class="value">0</span>
+                        </div>
+                        <div class="pacman-info-item">
+                            <span class="label">Lives</span>
+                            <span id="pacman-lives" class="value">3</span>
+                        </div>
+                        <div class="pacman-info-item">
+                            <span class="label">Level</span>
+                            <span id="pacman-level" class="value">1</span>
+                        </div>
+                        <div class="pacman-info-item">
+                            <span class="label">Dots</span>
+                            <span id="pacman-dots" class="value">0/240</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="pacman-start" class="btn">🎮 Start Game</button>
+                        <button id="pacman-pause" class="btn">⏸️ Pause</button>
+                        <button id="pacman-reset" class="btn">🔄 New Game</button>
+                    </div>
+                    <div class="pacman-container">
+                        <canvas id="pacman-canvas" width="700" height="600"></canvas>
+                    </div>
+                    <div class="pacman-instructions">
+                        � Arrow Keys to Move • Eat all sparkling dots to win • Avoid the colorful ghosts or lose a life!
+                    </div>
+                </div>
+
+                <!-- Challenge Zone -->
+                <div id="challenge-zone" class="game-container" style="display:none">
+                    <p class="zone-subtitle">Advanced Games for Teens & Adults</p>
+                    
+                    <div class="challenge-games-grid">
+                        <!-- Sudoku Master -->
+                        <div class="challenge-game-card" data-challenge="sudoku-master">
+                            <div class="challenge-icon">🧩</div>
+                            <h3>SUDOKU MASTER</h3>
+                            <p>Expert-level Sudoku with advanced techniques</p>
+                            <div class="challenge-difficulty">🔥 Expert Level</div>
+                            <button class="challenge-play-btn">Start Challenge</button>
+                        </div>
+
+                        <!-- Reaction Trainer -->
+                        <div class="challenge-game-card" data-challenge="reaction-trainer">
+                            <div class="challenge-icon">⚡</div>
+                            <h3>REACTION TRAINER</h3>
+                            <p>Test and improve your reaction time</p>
+                            <div class="challenge-difficulty">⚡ Speed Test</div>
+                            <button class="challenge-play-btn">Start Challenge</button>
+                        </div>
+
+                        <!-- Quiz Master -->
+                        <div class="challenge-game-card" data-challenge="quiz-master">
+                            <div class="challenge-icon">🧠</div>
+                            <h3>QUIZ MASTER</h3>
+                            <p>Math & General Knowledge Quiz</p>
+                            <div class="challenge-difficulty">🤓 Brain Training</div>
+                            <button class="challenge-play-btn">Start Challenge</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sudoku Master Game -->
+                <div id="sudoku-master-game" class="game-container" style="display:none">
+                    <div class="sudoku-master-controls">
+                        <button id="sudoku-master-back" class="btn">← Back to Challenge Zone</button>
+                        <select id="sudoku-master-difficulty" class="difficulty-select">
+                            <option value="expert">Expert (Very Hard)</option>
+                            <option value="master">Master (Extreme)</option>
+                            <option value="grandmaster">Grandmaster (Insane)</option>
+                        </select>
+                        <button id="sudoku-master-new" class="btn">New Puzzle</button>
+                    </div>
+                    <div id="sudoku-master-board" class="sudoku-master-board"></div>
+                    <div class="sudoku-master-info">
+                        <span>Time: <span id="sudoku-master-time">00:00</span></span>
+                        <span>Mistakes: <span id="sudoku-master-mistakes">0/1</span></span>
+                    </div>
+                </div>
+
+                <!-- Reaction Trainer Game -->
+                <div id="reaction-trainer-game" class="game-container" style="display:none">
+                    <div class="reaction-controls">
+                        <button id="reaction-back" class="btn">← Back to Challenge Zone</button>
+                        <button id="reaction-start" class="btn">Start Test</button>
+                        <button id="reaction-reset" class="btn">Reset</button>
+                    </div>
+                    <div id="reaction-area" class="reaction-area">
+                        <div id="reaction-display">Click "Start Test" to begin</div>
+                        <div id="reaction-target" class="reaction-target" style="display:none"></div>
+                    </div>
+                    <div class="reaction-stats">
+                        <div class="stat-item">
+                            <span class="label">Best Time:</span>
+                            <span id="reaction-best" class="value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Average:</span>
+                            <span id="reaction-average" class="value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Tests:</span>
+                            <span id="reaction-count" class="value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Master Game -->
+                <div id="quiz-master-game" class="game-container" style="display:none">
+                    <div class="quiz-controls">
+                        <button id="quiz-back" class="btn">← Back to Challenge Zone</button>
+                        <select id="quiz-topic" class="difficulty-select">
+                            <option value="math">Basic Math</option>
+                            <option value="science">Science Facts</option>
+                            <option value="geography">Geography</option>
+                            <option value="history">History</option>
+                        </select>
+                        <button id="quiz-new" class="btn">New Question</button>
+                    </div>
+                    <div id="quiz-problem" class="quiz-problem">
+                        <div id="quiz-question"></div>
+                        <div id="quiz-options" class="quiz-options"></div>
+                    </div>
+                    <div class="quiz-stats">
+                        <div class="stat-item">
+                            <span class="label">Score:</span>
+                            <span id="quiz-score" class="value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Correct:</span>
+                            <span id="quiz-correct" class="value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Total:</span>
+                            <span id="quiz-total" class="value">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // Game card interactions and overlay management
+    const gameCards = document.querySelectorAll('.game-card');
+    const gameOverlay = document.getElementById('game-overlay');
+    const backBtn = document.getElementById('back-btn');
+    const currentGameTitle = document.getElementById('current-game-title');
+    const gamesGrid = document.querySelector('.games-grid');
+    
+    // Game title mapping
+    const gameTitles = {
+        'minesweeper': 'MINESWEEPER',
+        'tictactoe': 'TIC-TAC-TOE',
+        'memory': 'MEMORY GAME',
+        'snake': 'SNAKE GAME',
+        'tetris': 'TETRIS',
+        'sudoku': 'SUDOKU',
+        'pinball': 'PINBALL',
+        'mathtables': 'MATH TABLES',
+        'pacman': 'PAC-MAN'
+    };
+    
+    // Add click event to all game cards
+    gameCards.forEach(card => {
+        const playBtn = card.querySelector('.play-btn');
+        const gameType = card.getAttribute('data-game');
+        
+        if (gameType && gameType !== 'challenge') {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showGame(gameType);
+            });
+            
+            card.addEventListener('click', () => {
+                showGame(gameType);
+            });
+        } else if (card.classList.contains('challenge-card')) {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showChallengeZone();
+            });
+            
+            card.addEventListener('click', () => {
+                showChallengeZone();
+            });
+        }
+    });
+    
+    // Back button functionality
+    backBtn.addEventListener('click', () => {
+        hideGame();
+    });
+    
+    function showGame(gameType) {
+        // Hide all individual game containers
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        // Show the selected game
+        const gameContainer = document.getElementById(gameType + '-game');
+        if (gameContainer) {
+            gameContainer.style.display = 'block';
+        }
+        
+        // Update title and show overlay
+        currentGameTitle.textContent = gameTitles[gameType] || 'Game';
+        gamesGrid.style.display = 'none';
+        gameOverlay.style.display = 'block';
+        
+        // Reset game state when opening
+        if (gameType === 'tictactoe') tttInit();
+        if (gameType === 'memory') memoryInit();
+        if (gameType === 'snake') snakeInit();
+        if (gameType === 'tetris') tetrisInit();
+        if (gameType === 'sudoku') sudokuInit();
+        if (gameType === 'pinball') pinballInit();
+        if (gameType === 'mathtables') mathTablesInit();
+        if (gameType === 'pacman') pacmanInit();
+    }
+    
+    function hideGame() {
+        gamesGrid.style.display = 'grid';
+        gameOverlay.style.display = 'none';
+        
+        // Hide all games
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+    }
+    
+    // Initialize with grid view
+    hideGame();
+
+    // --- Challenge Zone Implementation ---
+    function showChallengeZone() {
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        document.getElementById('challenge-zone').style.display = 'block';
+        currentGameTitle.textContent = 'CHALLENGE ZONE';
+        gamesGrid.style.display = 'none';
+        gameOverlay.style.display = 'block';
+    }
+
+    // Challenge Zone game card handlers
+    document.querySelectorAll('.challenge-game-card').forEach(card => {
+        const challengeBtn = card.querySelector('.challenge-play-btn');
+        const challengeType = card.getAttribute('data-challenge');
+        
+        challengeBtn.addEventListener('click', () => {
+            showChallengeGame(challengeType);
+        });
+        
+        card.addEventListener('click', () => {
+            showChallengeGame(challengeType);
+        });
+    });
+
+    function showChallengeGame(challengeType) {
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        const gameContainer = document.getElementById(challengeType + '-game');
+        if (gameContainer) {
+            gameContainer.style.display = 'block';
+            
+            // Initialize specific challenge games
+            if (challengeType === 'sudoku-master') sudokuMasterInit();
+            if (challengeType === 'reaction-trainer') reactionTrainerInit();
+            if (challengeType === 'quiz-master') quizMasterInit();
+        }
+    }
+
+    // Back to Challenge Zone handlers
+    document.getElementById('sudoku-master-back').addEventListener('click', showChallengeZone);
+    document.getElementById('reaction-back').addEventListener('click', showChallengeZone);
+    document.getElementById('quiz-back').addEventListener('click', showChallengeZone);
+
+    // --- Sudoku Master Implementation ---
+    let sudokuMasterBoard = [];
+    let sudokuMasterSolution = [];
+    let sudokuMasterTimer = null;
+    let sudokuMasterTime = 0;
+    let sudokuMasterMistakes = 0;
+
+    function sudokuMasterInit() {
+        sudokuMasterTime = 0;
+        sudokuMasterMistakes = 0;
+        updateSudokuMasterDisplay();
+        generateSudokuMaster();
+        startSudokuMasterTimer();
+    }
+
+    function generateSudokuMaster() {
+        // Create expert level sudoku with minimal clues
+        sudokuMasterBoard = Array(9).fill().map(() => Array(9).fill(0));
+        sudokuMasterSolution = Array(9).fill().map(() => Array(9).fill(0));
+        
+        // Fill with valid solution
+        fillSudokuGrid(sudokuMasterSolution);
+        
+        // Copy to board and remove many numbers for expert difficulty
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                sudokuMasterBoard[i][j] = sudokuMasterSolution[i][j];
+            }
+        }
+        
+        // Remove 65-75 numbers for expert difficulty
+        const cellsToRemove = 70;
+        let removed = 0;
+        while (removed < cellsToRemove) {
+            const row = Math.floor(Math.random() * 9);
+            const col = Math.floor(Math.random() * 9);
+            if (sudokuMasterBoard[row][col] !== 0) {
+                sudokuMasterBoard[row][col] = 0;
+                removed++;
+            }
+        }
+        
+        renderSudokuMaster();
+    }
+
+    function renderSudokuMaster() {
+        const board = document.getElementById('sudoku-master-board');
+        board.innerHTML = '';
+        
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                const cell = document.createElement('input');
+                cell.type = 'number';
+                cell.min = '1';
+                cell.max = '9';
+                cell.className = 'sudoku-master-cell';
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                
+                if (sudokuMasterBoard[i][j] !== 0) {
+                    cell.value = sudokuMasterBoard[i][j];
+                    cell.disabled = true;
+                    cell.classList.add('given');
+                }
+                
+                cell.addEventListener('input', handleSudokuMasterInput);
+                board.appendChild(cell);
+            }
+        }
+    }
+
+    function handleSudokuMasterInput(e) {
+        const row = parseInt(e.target.dataset.row);
+        const col = parseInt(e.target.dataset.col);
+        const value = parseInt(e.target.value);
+        
+        if (value && value !== sudokuMasterSolution[row][col]) {
+            sudokuMasterMistakes++;
+            e.target.style.color = '#ff4757';
+            updateSudokuMasterDisplay();
+            
+            if (sudokuMasterMistakes >= 1) {
+                setTimeout(() => {
+                    alert('Game Over! Expert Sudoku allows only 1 mistake.');
+                    sudokuMasterInit();
+                }, 100);
+            }
+        } else if (value === sudokuMasterSolution[row][col]) {
+            e.target.style.color = '#2ed573';
+            checkSudokuMasterWin();
+        }
+    }
+
+    function checkSudokuMasterWin() {
+        const cells = document.querySelectorAll('.sudoku-master-cell');
+        let completed = true;
+        
+        cells.forEach(cell => {
+            if (!cell.value || cell.value == 0) {
+                completed = false;
+            }
+        });
+        
+        if (completed) {
+            clearInterval(sudokuMasterTimer);
+            setTimeout(() => {
+                alert(`🎉 Sudoku Master completed in ${Math.floor(sudokuMasterTime/60)}:${(sudokuMasterTime%60).toString().padStart(2,'0')}! 🎉`);
+            }, 500);
+        }
+    }
+
+    function startSudokuMasterTimer() {
+        clearInterval(sudokuMasterTimer);
+        sudokuMasterTimer = setInterval(() => {
+            sudokuMasterTime++;
+            updateSudokuMasterDisplay();
+        }, 1000);
+    }
+
+    function updateSudokuMasterDisplay() {
+        document.getElementById('sudoku-master-time').textContent = 
+            `${Math.floor(sudokuMasterTime/60)}:${(sudokuMasterTime%60).toString().padStart(2,'0')}`;
+        document.getElementById('sudoku-master-mistakes').textContent = `${sudokuMasterMistakes}/1`;
+    }
+
+    document.getElementById('sudoku-master-new').addEventListener('click', sudokuMasterInit);
+
+    // --- Reaction Trainer Implementation ---
+    let reactionTimes = [];
+    let reactionStartTime = 0;
+    let reactionTimeout = null;
+
+    function reactionTrainerInit() {
+        document.getElementById('reaction-display').textContent = 'Click "Start Test" to begin';
+        document.getElementById('reaction-target').style.display = 'none';
+        updateReactionStats();
+    }
+
+    function startReactionTest() {
+        document.getElementById('reaction-display').textContent = 'Wait for the target...';
+        document.getElementById('reaction-target').style.display = 'none';
+        
+        const delay = 2000 + Math.random() * 3000; // 2-5 seconds
+        reactionTimeout = setTimeout(() => {
+            showReactionTarget();
+        }, delay);
+    }
+
+    function showReactionTarget() {
+        const target = document.getElementById('reaction-target');
+        const area = document.getElementById('reaction-area');
+        
+        // Random position
+        const maxX = area.offsetWidth - 60;
+        const maxY = area.offsetHeight - 60;
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+        
+        target.style.left = x + 'px';
+        target.style.top = y + 'px';
+        target.style.display = 'block';
+        
+        reactionStartTime = Date.now();
+        document.getElementById('reaction-display').textContent = 'Click the target!';
+    }
+
+    function handleReactionClick() {
+        if (reactionStartTime > 0) {
+            const reactionTime = Date.now() - reactionStartTime;
+            reactionTimes.push(reactionTime);
+            
+            document.getElementById('reaction-target').style.display = 'none';
+            document.getElementById('reaction-display').textContent = `Reaction time: ${reactionTime}ms`;
+            
+            reactionStartTime = 0;
+            updateReactionStats();
+            
+            setTimeout(() => {
+                startReactionTest();
+            }, 1500);
+        }
+    }
+
+    function updateReactionStats() {
+        if (reactionTimes.length > 0) {
+            const best = Math.min(...reactionTimes);
+            const average = Math.round(reactionTimes.reduce((a, b) => a + b) / reactionTimes.length);
+            
+            document.getElementById('reaction-best').textContent = best + 'ms';
+            document.getElementById('reaction-average').textContent = average + 'ms';
+        }
+        document.getElementById('reaction-count').textContent = reactionTimes.length;
+    }
+
+    document.getElementById('reaction-start').addEventListener('click', startReactionTest);
+    document.getElementById('reaction-target').addEventListener('click', handleReactionClick);
+    document.getElementById('reaction-reset').addEventListener('click', () => {
+        reactionTimes = [];
+        clearTimeout(reactionTimeout);
+        reactionTrainerInit();
+    });
+
+    // --- Quiz Master Implementation ---
+    let quizScore = 0;
+    let quizCorrect = 0;
+    let quizTotal = 0;
+    let currentQuizProblem = null;
+
+    function quizMasterInit() {
+        quizScore = 0;
+        quizCorrect = 0;
+        quizTotal = 0;
+        updateQuizStats();
+        generateQuizProblem();
+    }
+
+    function generateQuizProblem() {
+        const topic = document.getElementById('quiz-topic').value;
+        const problems = {
+            math: generateMathProblem(),
+            science: generateScienceProblem(),
+            geography: generateGeographyProblem(),
+            history: generateHistoryProblem()
+        };
+        
+        currentQuizProblem = problems[topic];
+        displayQuizProblem();
+    }
+
+    function generateMathProblem() {
+        const operations = ['+', '-', '×', '÷'];
+        const operation = operations[Math.floor(Math.random() * operations.length)];
+        let num1, num2, correct;
+        
+        switch(operation) {
+            case '+':
+                num1 = Math.floor(Math.random() * 50) + 10;
+                num2 = Math.floor(Math.random() * 50) + 10;
+                correct = num1 + num2;
+                break;
+            case '-':
+                num1 = Math.floor(Math.random() * 50) + 30;
+                num2 = Math.floor(Math.random() * 30) + 5;
+                correct = num1 - num2;
+                break;
+            case '×':
+                num1 = Math.floor(Math.random() * 12) + 2;
+                num2 = Math.floor(Math.random() * 12) + 2;
+                correct = num1 * num2;
+                break;
+            case '÷':
+                correct = Math.floor(Math.random() * 12) + 2;
+                num2 = Math.floor(Math.random() * 9) + 2;
+                num1 = correct * num2;
+                break;
+        }
+        
+        return {
+            question: `What is ${num1} ${operation} ${num2}?`,
+            correct: correct,
+            options: generateMathOptions(correct)
+        };
+    }
+
+    function generateMathOptions(correct) {
+        const options = [correct];
+        while (options.length < 4) {
+            const wrong = correct + Math.floor(Math.random() * 20) - 10;
+            if (wrong !== correct && wrong > 0 && !options.includes(wrong)) {
+                options.push(wrong);
+            }
+        }
+        return options.sort(() => Math.random() - 0.5);
+    }
+
+    function generateScienceProblem() {
+        const questions = [
+            { q: "What is the largest planet in our solar system?", a: "Jupiter", options: ["Jupiter", "Saturn", "Neptune", "Earth"] },
+            { q: "How many bones are in an adult human body?", a: "206", options: ["206", "195", "220", "183"] },
+            { q: "What gas do plants absorb from the atmosphere?", a: "Carbon Dioxide", options: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"] },
+            { q: "What is the speed of light?", a: "300,000 km/s", options: ["300,000 km/s", "150,000 km/s", "500,000 km/s", "200,000 km/s"] },
+            { q: "Which organ pumps blood in the human body?", a: "Heart", options: ["Heart", "Liver", "Kidney", "Brain"] },
+            { q: "What is water's chemical formula?", a: "H2O", options: ["H2O", "CO2", "O2", "H2SO4"] }
+        ];
+        
+        const selected = questions[Math.floor(Math.random() * questions.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
+    function generateGeographyProblem() {
+        const questions = [
+            { q: "What is the capital of France?", a: "Paris", options: ["Paris", "London", "Rome", "Madrid"] },
+            { q: "Which is the longest river in the world?", a: "Nile", options: ["Nile", "Amazon", "Mississippi", "Yangtze"] },
+            { q: "How many continents are there?", a: "7", options: ["7", "6", "8", "5"] },
+            { q: "What is the smallest country in the world?", a: "Vatican City", options: ["Vatican City", "Monaco", "Malta", "Luxembourg"] },
+            { q: "Which mountain range contains Mount Everest?", a: "Himalayas", options: ["Himalayas", "Alps", "Rockies", "Andes"] },
+            { q: "What is the largest ocean?", a: "Pacific", options: ["Pacific", "Atlantic", "Indian", "Arctic"] }
+        ];
+        
+        const selected = questions[Math.floor(Math.random() * questions.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
+    function generateHistoryProblem() {
+        const questions = [
+            { q: "Who painted the Mona Lisa?", a: "Leonardo da Vinci", options: ["Leonardo da Vinci", "Michelangelo", "Picasso", "Van Gogh"] },
+            { q: "In which year did World War II end?", a: "1945", options: ["1945", "1944", "1946", "1943"] },
+            { q: "Who was the first person on the moon?", a: "Neil Armstrong", options: ["Neil Armstrong", "Buzz Aldrin", "John Glenn", "Yuri Gagarin"] },
+            { q: "Which empire was ruled by Julius Caesar?", a: "Roman Empire", options: ["Roman Empire", "Greek Empire", "Egyptian Empire", "Persian Empire"] },
+            { q: "When did the Berlin Wall fall?", a: "1989", options: ["1989", "1987", "1991", "1985"] },
+            { q: "Who invented the telephone?", a: "Alexander Graham Bell", options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Benjamin Franklin"] }
+        ];
+        
+        const selected = questions[Math.floor(Math.random() * questions.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
+    function displayQuizProblem() {
+        document.getElementById('quiz-question').textContent = currentQuizProblem.question;
+        
+        const optionsContainer = document.getElementById('quiz-options');
+        optionsContainer.innerHTML = '';
+        
+        currentQuizProblem.options.forEach(option => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option-btn';
+            btn.textContent = option;
+            btn.addEventListener('click', () => checkQuizAnswer(option));
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkQuizAnswer(answer) {
+        quizTotal++;
+        
+        if (answer === currentQuizProblem.correct) {
+            quizCorrect++;
+            quizScore += 10;
+            document.getElementById('quiz-question').textContent = '✅ Correct! +10 points';
+        } else {
+            document.getElementById('quiz-question').textContent = `❌ Wrong! Correct answer: ${currentQuizProblem.correct}`;
+        }
+        
+        updateQuizStats();
+        
+        setTimeout(() => {
+            generateQuizProblem();
+        }, 2000);
+    }
+
+    function updateQuizStats() {
+        document.getElementById('quiz-score').textContent = quizScore;
+        document.getElementById('quiz-correct').textContent = quizCorrect;
+        document.getElementById('quiz-total').textContent = quizTotal;
+    }
+
+    document.getElementById('quiz-new').addEventListener('click', generateQuizProblem);
+    document.getElementById('quiz-topic').addEventListener('change', generateQuizProblem);
+
+    // --- Sudoku Utility Functions ---
+    function fillSudokuGrid(grid) {
+        // Solve sudoku using backtracking
+        for (let row = 0; row < 9; row++) {
+            for (let col = 0; col < 9; col++) {
+                if (grid[row][col] === 0) {
+                    const numbers = [1,2,3,4,5,6,7,8,9].sort(() => Math.random() - 0.5);
+                    for (let num of numbers) {
+                        if (isValidSudokuMove(grid, row, col, num)) {
+                            grid[row][col] = num;
+                            if (fillSudokuGrid(grid)) {
+                                return true;
+                            }
+                            grid[row][col] = 0;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function isValidSudokuMove(grid, row, col, num) {
+        // Check row
+        for (let x = 0; x < 9; x++) {
+            if (grid[row][x] === num) return false;
+        }
+        
+        // Check column
+        for (let x = 0; x < 9; x++) {
+            if (grid[x][col] === num) return false;
+        }
+        
+        // Check 3x3 box
+        const startRow = row - row % 3;
+        const startCol = col - col % 3;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (grid[i + startRow][j + startCol] === num) return false;
+            }
+        }
+        
+        return true;
+    }
+
+    // --- Enhanced Tic-Tac-Toe ---
+    const tttBoard = document.getElementById('ttt-board');
+    const tttStatus = document.getElementById('ttt-status');
+    const tttReset = document.getElementById('ttt-reset');
+    let tttCells, tttCurrent, tttGameOver;
+    
+    function tttInit() {
+        tttBoard.innerHTML = '';
+        tttCells = Array(9).fill('');
+        tttCurrent = 'X';
+        tttGameOver = false;
+        tttStatus.textContent = "Player X's turn";
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'ttt-cell';
+            cell.addEventListener('click', () => tttMove(i));
+            tttBoard.appendChild(cell);
+        }
+    }
+    
+    function tttMove(i) {
+        if (tttCells[i] || tttGameOver) return;
+        tttCells[i] = tttCurrent;
+        tttBoard.children[i].textContent = tttCurrent;
+        tttBoard.children[i].style.color = tttCurrent === 'X' ? '#ff6b6b' : '#4ecdc4';
+        
+        if (tttCheckWin(tttCurrent)) {
+            tttStatus.textContent = `🎉 Player ${tttCurrent} wins! 🎉`;
+            tttStatus.style.color = '#96ceb4';
+            tttGameOver = true;
+            tttHighlightWin(tttCurrent);
+        } else if (tttCells.every(c => c)) {
+            tttStatus.textContent = "🤝 It's a draw! 🤝";
+            tttStatus.style.color = '#ffeaa7';
+            tttGameOver = true;
+        } else {
+            tttCurrent = tttCurrent === 'X' ? 'O' : 'X';
+            tttStatus.textContent = `Player ${tttCurrent}'s turn`;
+            tttStatus.style.color = '';
+        }
+    }
+    
+    function tttCheckWin(p) {
+        const winPatterns = [
+            [0,1,2],[3,4,5],[6,7,8], // rows
+            [0,3,6],[1,4,7],[2,5,8], // columns
+            [0,4,8],[2,4,6] // diagonals
+        ];
+        return winPatterns.find(pattern => pattern.every(i => tttCells[i] === p));
+    }
+    
+    function tttHighlightWin(player) {
+        const winPattern = tttCheckWin(player);
+        if (winPattern) {
+            winPattern.forEach(i => {
+                tttBoard.children[i].style.background = 'linear-gradient(45deg, #96ceb4, #ffeaa7)';
+                tttBoard.children[i].style.transform = 'scale(1.1)';
+            });
+        }
+    }
+    
+    tttReset.onclick = tttInit;
+    tttInit();
+
+    // --- Enhanced Memory Game ---
+    const memoryBoard = document.getElementById('memory-board');
+    const memoryReset = document.getElementById('memory-reset');
+    let memoryCards, memoryFlipped, memoryLock, memoryMatches, memoryMoves;
+    
+    function memoryInit() {
+        const emojis = [
+            '🍎','🍌','🍇','🍉','🍓','🍒','🍑','🍍',
+            '🥝','🍊','🥭','🍋','🍈','🫐','🥥','🍅',
+            '🥑','🌽','🥕','🍆','🥒','🌶️','🫑','🥬'
+        ];
+        memoryCards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+        memoryFlipped = [];
+        memoryLock = false;
+        memoryMatches = 0;
+        memoryMoves = 0;
+        memoryBoard.innerHTML = '';
+        
+        memoryCards.forEach((emoji, i) => {
+            const card = document.createElement('div');
+            card.className = 'memory-card';
+            card.dataset.index = i;
+            card.onclick = () => memoryFlip(card, i);
+            memoryBoard.appendChild(card);
+        });
+    }
+    
+    function memoryFlip(card, i) {
+        if (memoryLock || card.classList.contains('matched') || card.classList.contains('flipped')) return;
+        
+        card.textContent = memoryCards[i];
+        card.classList.add('flipped');
+        memoryFlipped.push(card);
+        
+        if (memoryFlipped.length === 2) {
+            memoryMoves++;
+            memoryLock = true;
+            
+            setTimeout(() => {
+                if (memoryFlipped[0].textContent === memoryFlipped[1].textContent) {
+                    memoryFlipped[0].classList.add('matched');
+                    memoryFlipped[1].classList.add('matched');
+                    memoryMatches++;
+                    
+                    if (memoryMatches === 24) {
+                        setTimeout(() => {
+                            alert(`🎉 Congratulations! You won in ${memoryMoves} moves! 🎉`);
+                        }, 500);
+                    }
+                } else {
+                    memoryFlipped[0].textContent = '';
+                    memoryFlipped[1].textContent = '';
+                    memoryFlipped[0].classList.remove('flipped');
+                    memoryFlipped[1].classList.remove('flipped');
+                }
+                memoryFlipped = [];
+                memoryLock = false;
+            }, 1000);
+        }
+    }
+    
+    memoryReset.onclick = memoryInit;
+    memoryInit();
+
+    // --- Enhanced Snake Game ---
+    const snakeCanvas = document.getElementById('snake-canvas');
+    const snakeScore = document.getElementById('snake-score');
+    const snakeReset = document.getElementById('snake-reset');
+    let snake, snakeDir, snakeFood, snakeInterval, snakeScoreVal, snakeGameOver;
+    const GRID_SIZE = 16;
+    const CELL_SIZE = 20;
+    
+    function snakeInit() {
+        snake = [{x:8,y:8}];
+        snakeDir = {x:1,y:0};
+        snakeFood = snakeGenerateFood();
+        snakeScoreVal = 0;
+        snakeGameOver = false;
+        snakeScore.textContent = 'Score: 0';
+        snakeScore.style.color = '';
+        clearInterval(snakeInterval);
+        snakeInterval = setInterval(snakeStep, 150);
+        snakeDraw();
+    }
+    
+    function snakeGenerateFood() {
+        let food;
+        do {
+            food = {
+                x: Math.floor(Math.random() * GRID_SIZE),
+                y: Math.floor(Math.random() * GRID_SIZE)
+            };
+        } while (snake.some(segment => segment.x === food.x && segment.y === food.y));
+        return food;
+    }
+    
+    function snakeStep() {
+        if (snakeGameOver) return;
+        
+        const head = {x: snake[0].x + snakeDir.x, y: snake[0].y + snakeDir.y};
+        
+        // Check collisions
+        if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE || 
+            snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+            snakeGameOver = true;
+            snakeScore.textContent = `Game Over! Final Score: ${snakeScoreVal}`;
+            snakeScore.style.color = '#ff6b6b';
+            clearInterval(snakeInterval);
+            return;
+        }
+        
+        snake.unshift(head);
+        
+        // Check food collision
+        if (head.x === snakeFood.x && head.y === snakeFood.y) {
+            snakeScoreVal++;
+            snakeScore.textContent = `Score: ${snakeScoreVal}`;
+            snakeFood = snakeGenerateFood();
+        } else {
+            snake.pop();
+        }
+        
+        snakeDraw();
+    }
+    
+    function snakeDraw() {
+        const ctx = snakeCanvas.getContext('2d');
+        
+        // Clear canvas with gradient background
+        const bgGradient = ctx.createLinearGradient(0, 0, 0, snakeCanvas.height);
+        bgGradient.addColorStop(0, '#2c3e50');
+        bgGradient.addColorStop(0.5, '#34495e');
+        bgGradient.addColorStop(1, '#2c3e50');
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+        
+        // Draw grid pattern
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        for (let x = 0; x <= snakeCanvas.width; x += CELL_SIZE) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, snakeCanvas.height);
+            ctx.stroke();
+        }
+        for (let y = 0; y <= snakeCanvas.height; y += CELL_SIZE) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(snakeCanvas.width, y);
+            ctx.stroke();
+        }
+        
+        // Draw snake with 3D effect
+        snake.forEach((segment, index) => {
+            const x = segment.x * CELL_SIZE;
+            const y = segment.y * CELL_SIZE;
+            
+            if (index === 0) {
+                // Head with enhanced 3D effect
+                const headGradient = ctx.createLinearGradient(x, y, x + CELL_SIZE, y + CELL_SIZE);
+                headGradient.addColorStop(0, '#2ecc71');
+                headGradient.addColorStop(0.3, '#27ae60');
+                headGradient.addColorStop(0.7, '#229954');
+                headGradient.addColorStop(1, '#1e8449');
+                
+                // Shadow
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                ctx.fillRect(x + 2, y + 2, CELL_SIZE - 1, CELL_SIZE - 1);
+                
+                // Main head
+                ctx.fillStyle = headGradient;
+                ctx.fillRect(x, y, CELL_SIZE - 1, CELL_SIZE - 1);
+                
+                // Top highlight
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                ctx.fillRect(x + 2, y + 2, CELL_SIZE - 5, 3);
+                
+                // Left highlight
+                ctx.fillRect(x + 2, y + 2, 3, CELL_SIZE - 5);
+                
+                // Bottom shadow
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                ctx.fillRect(x, y + CELL_SIZE - 4, CELL_SIZE - 1, 3);
+                
+                // Right shadow
+                ctx.fillRect(x + CELL_SIZE - 4, y, 3, CELL_SIZE - 1);
+                
+                // Eyes
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(x + 6, y + 6, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(x + 14, y + 6, 2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.fillStyle = '#000000';
+                ctx.beginPath();
+                ctx.arc(x + 6, y + 6, 1, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(x + 14, y + 6, 1, 0, Math.PI * 2);
+                ctx.fill();
+            } else {
+                // Body with 3D effect
+                const bodyGradient = ctx.createLinearGradient(x, y, x + CELL_SIZE, y + CELL_SIZE);
+                const intensity = Math.max(0.3, 1 - index * 0.1);
+                bodyGradient.addColorStop(0, `rgba(46, 204, 113, ${intensity})`);
+                bodyGradient.addColorStop(0.3, `rgba(39, 174, 96, ${intensity})`);
+                bodyGradient.addColorStop(0.7, `rgba(34, 153, 84, ${intensity})`);
+                bodyGradient.addColorStop(1, `rgba(30, 132, 73, ${intensity})`);
+                
+                // Shadow
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                ctx.fillRect(x + 1, y + 1, CELL_SIZE - 1, CELL_SIZE - 1);
+                
+                // Main body
+                ctx.fillStyle = bodyGradient;
+                ctx.fillRect(x, y, CELL_SIZE - 1, CELL_SIZE - 1);
+                
+                // Top highlight
+                ctx.fillStyle = `rgba(255, 255, 255, ${0.3 * intensity})`;
+                ctx.fillRect(x + 1, y + 1, CELL_SIZE - 3, 2);
+                
+                // Left highlight
+                ctx.fillRect(x + 1, y + 1, 2, CELL_SIZE - 3);
+                
+                // Bottom shadow
+                ctx.fillStyle = `rgba(0, 0, 0, ${0.3 * intensity})`;
+                ctx.fillRect(x, y + CELL_SIZE - 3, CELL_SIZE - 1, 2);
+                
+                // Right shadow
+                ctx.fillRect(x + CELL_SIZE - 3, y, 2, CELL_SIZE - 1);
+            }
+        });
+        
+        // Draw food with enhanced 3D effect and glow
+        const foodX = snakeFood.x * CELL_SIZE;
+        const foodY = snakeFood.y * CELL_SIZE;
+        
+        // Glow effect
+        const glowGradient = ctx.createRadialGradient(
+            foodX + CELL_SIZE/2, foodY + CELL_SIZE/2, 0,
+            foodX + CELL_SIZE/2, foodY + CELL_SIZE/2, CELL_SIZE
+        );
+        glowGradient.addColorStop(0, 'rgba(231, 76, 60, 0.8)');
+        glowGradient.addColorStop(1, 'rgba(231, 76, 60, 0)');
+        ctx.fillStyle = glowGradient;
+        ctx.fillRect(foodX - 5, foodY - 5, CELL_SIZE + 10, CELL_SIZE + 10);
+        
+        // Food shadow
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        ctx.fillRect(foodX + 2, foodY + 2, CELL_SIZE - 1, CELL_SIZE - 1);
+        
+        // Main food with gradient
+        const foodGradient = ctx.createLinearGradient(foodX, foodY, foodX + CELL_SIZE, foodY + CELL_SIZE);
+        foodGradient.addColorStop(0, '#e74c3c');
+        foodGradient.addColorStop(0.3, '#c0392b');
+        foodGradient.addColorStop(0.7, '#a93226');
+        foodGradient.addColorStop(1, '#922b21');
+        ctx.fillStyle = foodGradient;
+        ctx.fillRect(foodX, foodY, CELL_SIZE - 1, CELL_SIZE - 1);
+        
+        // Food highlights
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.fillRect(foodX + 2, foodY + 2, CELL_SIZE - 5, 3);
+        ctx.fillRect(foodX + 2, foodY + 2, 3, CELL_SIZE - 5);
+        
+        // Food shadows
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.fillRect(foodX, foodY + CELL_SIZE - 4, CELL_SIZE - 1, 3);
+        ctx.fillRect(foodX + CELL_SIZE - 4, foodY, 3, CELL_SIZE - 1);
+        
+        // Add sparkle effect to food
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(foodX + CELL_SIZE - 5, foodY + 5, 1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(foodX + 5, foodY + CELL_SIZE - 5, 1, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    
+    // Enhanced keyboard controls
+    let lastDirection = null;
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('snake-game').style.display === 'none' || snakeGameOver) return;
+        
+        let newDir = null;
+        switch(e.key) {
+            case 'ArrowUp':
+            case 'w':
+            case 'W':
+                if (snakeDir.y !== 1) newDir = {x:0, y:-1};
+                break;
+            case 'ArrowDown':
+            case 's':
+            case 'S':
+                if (snakeDir.y !== -1) newDir = {x:0, y:1};
+                break;
+            case 'ArrowLeft':
+            case 'a':
+            case 'A':
+                if (snakeDir.x !== 1) newDir = {x:-1, y:0};
+                break;
+            case 'ArrowRight':
+            case 'd':
+            case 'D':
+                if (snakeDir.x !== -1) newDir = {x:1, y:0};
+                break;
+        }
+        
+        if (newDir && JSON.stringify(newDir) !== JSON.stringify(lastDirection)) {
+            snakeDir = newDir;
+            lastDirection = newDir;
+            e.preventDefault();
+        }
+    });
+    
+    snakeReset.onclick = snakeInit;
+    snakeInit();
+
+    // --- Enhanced Tetris Game ---
+    const tetrisCanvas = document.getElementById('tetris-canvas');
+    const tetrisNextCanvas = document.getElementById('tetris-next-canvas');
+    const tetrisScoreEl = document.getElementById('tetris-score-value');
+    const tetrisLevelEl = document.getElementById('tetris-level-value');
+    const tetrisLinesEl = document.getElementById('tetris-lines-value');
+    const tetrisReset = document.getElementById('tetris-reset');
+    
+    let tetrisCtx, tetrisNextCtx;
+    let tetrisBoard, tetrisCurrentPiece, tetrisNextPiece;
+    let tetrisScore, tetrisLevel, tetrisLines, tetrisGameOver, tetrisPaused;
+    let tetrisDropTime, tetrisLastTime, tetrisInterval;
+    
+    const TETRIS_ROWS = 20;
+    const TETRIS_COLS = 10;
+    const TETRIS_BLOCK_SIZE = 30;
+    
+    const tetrisPieces = [
+        { // I-piece
+            shape: [
+                [0,0,0,0],
+                [1,1,1,1],
+                [0,0,0,0],
+                [0,0,0,0]
+            ],
+            color: '#00f0f0'
+        },
+        { // O-piece
+            shape: [
+                [1,1],
+                [1,1]
+            ],
+            color: '#f0f000'
+        },
+        { // T-piece
+            shape: [
+                [0,1,0],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#a000f0'
+        },
+        { // S-piece
+            shape: [
+                [0,1,1],
+                [1,1,0],
+                [0,0,0]
+            ],
+            color: '#00f000'
+        },
+        { // Z-piece
+            shape: [
+                [1,1,0],
+                [0,1,1],
+                [0,0,0]
+            ],
+            color: '#f00000'
+        },
+        { // J-piece
+            shape: [
+                [1,0,0],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#0000f0'
+        },
+        { // L-piece
+            shape: [
+                [0,0,1],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#f0a000'
+        }
+    ];
+    
+    function tetrisInit() {
+        tetrisCtx = tetrisCanvas.getContext('2d');
+        tetrisNextCtx = tetrisNextCanvas.getContext('2d');
+        
+        tetrisBoard = Array(TETRIS_ROWS).fill().map(() => Array(TETRIS_COLS).fill(0));
+        tetrisScore = 0;
+        tetrisLevel = 1;
+        tetrisLines = 0;
+        tetrisGameOver = false;
+        tetrisPaused = false;
+        tetrisDropTime = 0;
+        tetrisLastTime = 0;
+        
+        tetrisCurrentPiece = tetrisCreatePiece();
+        tetrisNextPiece = tetrisCreatePiece();
+        
+        tetrisUpdateDisplay();
+        tetrisDrawNext();
+        
+        clearInterval(tetrisInterval);
+        tetrisInterval = setInterval(tetrisGameLoop, 16);
+    }
+    
+    function tetrisCreatePiece() {
+        const piece = tetrisPieces[Math.floor(Math.random() * tetrisPieces.length)];
+        return {
+            shape: piece.shape.map(row => [...row]),
+            color: piece.color,
+            x: Math.floor(TETRIS_COLS / 2) - Math.floor(piece.shape[0].length / 2),
+            y: 0
+        };
+    }
+    
+    function tetrisGameLoop() {
+        if (tetrisGameOver || tetrisPaused) return;
+        
+        const now = Date.now();
+        const deltaTime = now - tetrisLastTime;
+        tetrisLastTime = now;
+        
+        tetrisDropTime += deltaTime;
+        if (tetrisDropTime > (1000 - (tetrisLevel - 1) * 100)) {
+            tetrisMovePiece(0, 1);
+            tetrisDropTime = 0;
+        }
+        
+        tetrisDraw();
+    }
+    
+    function tetrisMovePiece(dx, dy, newShape = null) {
+        const piece = {
+            shape: newShape || tetrisCurrentPiece.shape,
+            x: tetrisCurrentPiece.x + dx,
+            y: tetrisCurrentPiece.y + dy,
+            color: tetrisCurrentPiece.color
+        };
+        
+        if (tetrisIsValidMove(piece)) {
+            tetrisCurrentPiece = piece;
+            return true;
+        } else if (dy > 0) {
+            // Piece has landed
+            tetrisPlacePiece();
+            tetrisClearLines();
+            tetrisCurrentPiece = tetrisNextPiece;
+            tetrisNextPiece = tetrisCreatePiece();
+            tetrisDrawNext();
+            
+            if (!tetrisIsValidMove(tetrisCurrentPiece)) {
+                tetrisGameOver = true;
+                tetrisScoreEl.textContent = `Game Over! Score: ${tetrisScore}`;
+                tetrisScoreEl.style.color = '#ff6b6b';
+            }
+        }
+        return false;
+    }
+    
+    function tetrisIsValidMove(piece) {
+        for (let y = 0; y < piece.shape.length; y++) {
+            for (let x = 0; x < piece.shape[y].length; x++) {
+                if (piece.shape[y][x]) {
+                    const boardX = piece.x + x;
+                    const boardY = piece.y + y;
+                    
+                    if (boardX < 0 || boardX >= TETRIS_COLS || 
+                        boardY >= TETRIS_ROWS || 
+                        (boardY >= 0 && tetrisBoard[boardY][boardX])) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    
+    function tetrisPlacePiece() {
+        for (let y = 0; y < tetrisCurrentPiece.shape.length; y++) {
+            for (let x = 0; x < tetrisCurrentPiece.shape[y].length; x++) {
+                if (tetrisCurrentPiece.shape[y][x]) {
+                    const boardX = tetrisCurrentPiece.x + x;
+                    const boardY = tetrisCurrentPiece.y + y;
+                    if (boardY >= 0) {
+                        tetrisBoard[boardY][boardX] = tetrisCurrentPiece.color;
+                    }
+                }
+            }
+        }
+    }
+    
+    function tetrisClearLines() {
+        let linesCleared = 0;
+        for (let y = TETRIS_ROWS - 1; y >= 0; y--) {
+            if (tetrisBoard[y].every(cell => cell !== 0)) {
+                tetrisBoard.splice(y, 1);
+                tetrisBoard.unshift(Array(TETRIS_COLS).fill(0));
+                linesCleared++;
+                y++; // Check the same row again
+            }
+        }
+        
+        if (linesCleared > 0) {
+            tetrisLines += linesCleared;
+            tetrisScore += linesCleared * 100 * tetrisLevel;
+            tetrisLevel = Math.floor(tetrisLines / 10) + 1;
+            tetrisUpdateDisplay();
+        }
+    }
+    
+    function tetrisRotatePiece() {
+        const rotated = tetrisCurrentPiece.shape[0].map((_, i) =>
+            tetrisCurrentPiece.shape.map(row => row[i]).reverse()
+        );
+        tetrisMovePiece(0, 0, rotated);
+    }
+    
+    function tetrisDraw() {
+        // Clear canvas with gradient background
+        const bgGradient = tetrisCtx.createLinearGradient(0, 0, 0, tetrisCanvas.height);
+        bgGradient.addColorStop(0, '#2c3e50');
+        bgGradient.addColorStop(0.5, '#34495e');
+        bgGradient.addColorStop(1, '#2c3e50');
+        tetrisCtx.fillStyle = bgGradient;
+        tetrisCtx.fillRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+        
+        // Draw board blocks with 3D effect
+        for (let y = 0; y < TETRIS_ROWS; y++) {
+            for (let x = 0; x < TETRIS_COLS; x++) {
+                if (tetrisBoard[y][x]) {
+                    drawTetris3DBlock(x * TETRIS_BLOCK_SIZE, y * TETRIS_BLOCK_SIZE, tetrisBoard[y][x]);
+                }
+            }
+        }
+        
+        // Draw current piece with 3D effect
+        if (tetrisCurrentPiece) {
+            for (let y = 0; y < tetrisCurrentPiece.shape.length; y++) {
+                for (let x = 0; x < tetrisCurrentPiece.shape[y].length; x++) {
+                    if (tetrisCurrentPiece.shape[y][x]) {
+                        const drawX = (tetrisCurrentPiece.x + x) * TETRIS_BLOCK_SIZE;
+                        const drawY = (tetrisCurrentPiece.y + y) * TETRIS_BLOCK_SIZE;
+                        drawTetris3DBlock(drawX, drawY, tetrisCurrentPiece.color, true);
+                    }
+                }
+            }
+        }
+        
+        // Draw enhanced grid lines
+        tetrisCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        tetrisCtx.lineWidth = 1;
+        for (let x = 0; x <= TETRIS_COLS; x++) {
+            tetrisCtx.beginPath();
+            tetrisCtx.moveTo(x * TETRIS_BLOCK_SIZE, 0);
+            tetrisCtx.lineTo(x * TETRIS_BLOCK_SIZE, tetrisCanvas.height);
+            tetrisCtx.stroke();
+        }
+        for (let y = 0; y <= TETRIS_ROWS; y++) {
+            tetrisCtx.beginPath();
+            tetrisCtx.moveTo(0, y * TETRIS_BLOCK_SIZE);
+            tetrisCtx.lineTo(tetrisCanvas.width, y * TETRIS_BLOCK_SIZE);
+            tetrisCtx.stroke();
+        }
+    }
+
+    function drawTetris3DBlock(x, y, color, isActive = false) {
+        const size = TETRIS_BLOCK_SIZE;
+        
+        // Add glow effect for active pieces
+        if (isActive) {
+            const glowGradient = tetrisCtx.createRadialGradient(
+                x + size/2, y + size/2, 0,
+                x + size/2, y + size/2, size
+            );
+            glowGradient.addColorStop(0, color + '80');
+            glowGradient.addColorStop(1, color + '00');
+            tetrisCtx.fillStyle = glowGradient;
+            tetrisCtx.fillRect(x - 5, y - 5, size + 10, size + 10);
+        }
+        
+        // Draw shadow
+        tetrisCtx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        tetrisCtx.fillRect(x + 2, y + 2, size - 1, size - 1);
+        
+        // Main block with gradient
+        const mainGradient = tetrisCtx.createLinearGradient(x, y, x + size, y + size);
+        mainGradient.addColorStop(0, color);
+        mainGradient.addColorStop(0.3, color);
+        mainGradient.addColorStop(0.7, adjustBrightness(color, -20));
+        mainGradient.addColorStop(1, adjustBrightness(color, -40));
+        tetrisCtx.fillStyle = mainGradient;
+        tetrisCtx.fillRect(x, y, size - 1, size - 1);
+        
+        // Top highlight
+        tetrisCtx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        tetrisCtx.fillRect(x + 2, y + 2, size - 5, 4);
+        
+        // Left highlight
+        tetrisCtx.fillRect(x + 2, y + 2, 4, size - 5);
+        
+        // Bottom shadow
+        tetrisCtx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        tetrisCtx.fillRect(x, y + size - 5, size - 1, 4);
+        
+        // Right shadow
+        tetrisCtx.fillRect(x + size - 5, y, 4, size - 1);
+        
+        // Inner bevel effect
+        tetrisCtx.strokeStyle = adjustBrightness(color, 30);
+        tetrisCtx.lineWidth = 1;
+        tetrisCtx.strokeRect(x + 1, y + 1, size - 3, size - 3);
+        
+        tetrisCtx.strokeStyle = adjustBrightness(color, -30);
+        tetrisCtx.strokeRect(x + size - 2, y + size - 2, 1, 1);
+    }
+
+    function adjustBrightness(color, amount) {
+        // Convert hex to RGB
+        const hex = color.replace('#', '');
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+        
+        // Adjust brightness
+        const newR = Math.max(0, Math.min(255, r + amount));
+        const newG = Math.max(0, Math.min(255, g + amount));
+        const newB = Math.max(0, Math.min(255, b + amount));
+        
+        // Convert back to hex
+        return `#${newR.toString(16).padStart(2, '0')}${newG.toString(16).padStart(2, '0')}${newB.toString(16).padStart(2, '0')}`;
+    }
+    
+    function tetrisDrawNext() {
+        // Clear with gradient background
+        const bgGradient = tetrisNextCtx.createLinearGradient(0, 0, 0, tetrisNextCanvas.height);
+        bgGradient.addColorStop(0, '#2c3e50');
+        bgGradient.addColorStop(1, '#34495e');
+        tetrisNextCtx.fillStyle = bgGradient;
+        tetrisNextCtx.fillRect(0, 0, tetrisNextCanvas.width, tetrisNextCanvas.height);
+        
+        if (tetrisNextPiece) {
+            const blockSize = 16;
+            const offsetX = (tetrisNextCanvas.width - tetrisNextPiece.shape[0].length * blockSize) / 2;
+            const offsetY = (tetrisNextCanvas.height - tetrisNextPiece.shape.length * blockSize) / 2;
+            
+            for (let y = 0; y < tetrisNextPiece.shape.length; y++) {
+                for (let x = 0; x < tetrisNextPiece.shape[y].length; x++) {
+                    if (tetrisNextPiece.shape[y][x]) {
+                        const drawX = offsetX + x * blockSize;
+                        const drawY = offsetY + y * blockSize;
+                        
+                        // Draw mini 3D block
+                        // Shadow
+                        tetrisNextCtx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                        tetrisNextCtx.fillRect(drawX + 1, drawY + 1, blockSize - 1, blockSize - 1);
+                        
+                        // Main block
+                        const miniGradient = tetrisNextCtx.createLinearGradient(drawX, drawY, drawX + blockSize, drawY + blockSize);
+                        miniGradient.addColorStop(0, tetrisNextPiece.color);
+                        miniGradient.addColorStop(0.7, adjustBrightness(tetrisNextPiece.color, -20));
+                        miniGradient.addColorStop(1, adjustBrightness(tetrisNextPiece.color, -40));
+                        tetrisNextCtx.fillStyle = miniGradient;
+                        tetrisNextCtx.fillRect(drawX, drawY, blockSize - 1, blockSize - 1);
+                        
+                        // Highlights
+                        tetrisNextCtx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                        tetrisNextCtx.fillRect(drawX + 1, drawY + 1, blockSize - 3, 2);
+                        tetrisNextCtx.fillRect(drawX + 1, drawY + 1, 2, blockSize - 3);
+                        
+                        // Shadows
+                        tetrisNextCtx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                        tetrisNextCtx.fillRect(drawX, drawY + blockSize - 3, blockSize - 1, 2);
+                        tetrisNextCtx.fillRect(drawX + blockSize - 3, drawY, 2, blockSize - 1);
+                    }
+                }
+            }
+        }
+    }
+    
+    function tetrisUpdateDisplay() {
+        tetrisScoreEl.textContent = tetrisScore;
+        tetrisScoreEl.style.color = '';
+        tetrisLevelEl.textContent = tetrisLevel;
+        tetrisLinesEl.textContent = tetrisLines;
+    }
+    
+    // Tetris controls
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('tetris-game').style.display === 'none' || tetrisGameOver) return;
+        
+        switch(e.key) {
+            case 'ArrowLeft':
+                tetrisMovePiece(-1, 0);
+                e.preventDefault();
+                break;
+            case 'ArrowRight':
+                tetrisMovePiece(1, 0);
+                e.preventDefault();
+                break;
+            case 'ArrowDown':
+                tetrisMovePiece(0, 1);
+                e.preventDefault();
+                break;
+            case 'ArrowUp':
+                tetrisRotatePiece();
+                e.preventDefault();
+                break;
+            case ' ':
+                // Hard drop
+                while (tetrisMovePiece(0, 1)) {}
+                e.preventDefault();
+                break;
+            case 'p':
+            case 'P':
+                tetrisPaused = !tetrisPaused;
+                break;
+        }
+    });
+    
+    tetrisReset.onclick = tetrisInit;
+    tetrisInit();
+
+    // --- Sudoku Game Implementation ---
+    let sudokuBoard = [];
+    let sudokuSolution = [];
+    let selectedCell = null;
+    let sudokuMistakes = 0;
+    let sudokuStartTime = null;
+    let sudokuTimer = null;
+    let sudokuDifficulty = 'easy';
+
+    const sudokuBoardElement = document.getElementById('sudoku-board');
+    const sudokuDifficultyElement = document.getElementById('sudoku-difficulty');
+    const sudokuTimerElement = document.getElementById('sudoku-timer');
+    const sudokuMistakesElement = document.getElementById('sudoku-mistakes');
+    const sudokuNewBtn = document.getElementById('sudoku-new');
+    const sudokuDifficultySelect = document.getElementById('sudoku-difficulty-select');
+    const sudokuHintBtn = document.getElementById('sudoku-hint');
+    const sudokuCheckBtn = document.getElementById('sudoku-check');
+    const numberBtns = document.querySelectorAll('.number-btn');
+
+    function sudokuInit() {
+        sudokuMistakes = 0;
+        sudokuStartTime = Date.now();
+        sudokuBoard = Array(9).fill().map(() => Array(9).fill(0));
+        generateSudoku();
+        renderSudoku();
+        updateSudokuUI();
+        startSudokuTimer();
+    }
+
+    function generateSudoku() {
+        // Generate a complete valid sudoku solution
+        sudokuSolution = Array(9).fill().map(() => Array(9).fill(0));
+        
+        // Fill the board with a valid solution
+        fillSudokuGrid(sudokuSolution);
+        
+        // Copy solution to board
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                sudokuBoard[i][j] = sudokuSolution[i][j];
+            }
+        }
+        
+        // Remove numbers based on difficulty
+        const cellsToRemove = { easy: 40, medium: 50, hard: 60 }[sudokuDifficulty];
+        removeSudokuNumbers(cellsToRemove);
+    }
+
+    function fillSudokuGrid(grid) {
+        for (let row = 0; row < 9; row++) {
+            for (let col = 0; col < 9; col++) {
+                if (grid[row][col] === 0) {
+                    const numbers = [1,2,3,4,5,6,7,8,9].sort(() => Math.random() - 0.5);
+                    for (let num of numbers) {
+                        if (isValidSudokuMove(grid, row, col, num)) {
+                            grid[row][col] = num;
+                            if (fillSudokuGrid(grid)) {
+                                return true;
+                            }
+                            grid[row][col] = 0;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function isValidSudokuMove(grid, row, col, num) {
+        // Check row
+        for (let j = 0; j < 9; j++) {
+            if (grid[row][j] === num) return false;
+        }
+        
+        // Check column
+        for (let i = 0; i < 9; i++) {
+            if (grid[i][col] === num) return false;
+        }
+        
+        // Check 3x3 box
+        const boxRow = Math.floor(row / 3) * 3;
+        const boxCol = Math.floor(col / 3) * 3;
+        for (let i = boxRow; i < boxRow + 3; i++) {
+            for (let j = boxCol; j < boxCol + 3; j++) {
+                if (grid[i][j] === num) return false;
+            }
+        }
+        
+        return true;
+    }
+
+    function removeSudokuNumbers(count) {
+        let removed = 0;
+        while (removed < count) {
+            const row = Math.floor(Math.random() * 9);
+            const col = Math.floor(Math.random() * 9);
+            if (sudokuBoard[row][col] !== 0) {
+                sudokuBoard[row][col] = 0;
+                removed++;
+            }
+        }
+    }
+
+    function renderSudoku() {
+        sudokuBoardElement.innerHTML = '';
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                const cell = document.createElement('div');
+                cell.className = 'sudoku-cell';
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                
+                if (sudokuBoard[i][j] !== 0) {
+                    cell.textContent = sudokuBoard[i][j];
+                    if (sudokuSolution[i][j] === sudokuBoard[i][j]) {
+                        cell.classList.add('given');
+                    }
+                }
+                
+                cell.addEventListener('click', selectSudokuCell);
+                sudokuBoardElement.appendChild(cell);
+            }
+        }
+    }
+
+    function selectSudokuCell(e) {
+        const cell = e.target;
+        const row = parseInt(cell.dataset.row);
+        const col = parseInt(cell.dataset.col);
+        
+        if (cell.classList.contains('given')) return;
+        
+        document.querySelectorAll('.sudoku-cell').forEach(c => c.classList.remove('selected'));
+        cell.classList.add('selected');
+        selectedCell = { row, col, element: cell };
+    }
+
+    function placeSudokuNumber(num) {
+        if (!selectedCell) return;
+        
+        const { row, col, element } = selectedCell;
+        
+        if (num === 0) {
+            sudokuBoard[row][col] = 0;
+            element.textContent = '';
+            element.classList.remove('error');
+            return;
+        }
+        
+        if (sudokuSolution[row][col] === num) {
+            sudokuBoard[row][col] = num;
+            element.textContent = num;
+            element.classList.remove('error');
+            checkSudokuWin();
+        } else {
+            sudokuMistakes++;
+            element.classList.add('error');
+            updateSudokuUI();
+            
+            if (sudokuMistakes >= 3) {
+                clearInterval(sudokuTimer);
+                setTimeout(() => {
+                    alert('Game Over! Too many mistakes. Try again!');
+                    sudokuInit();
+                }, 500);
+            }
+        }
+    }
+
+    function sudokuHint() {
+        if (!selectedCell) return;
+        
+        const { row, col, element } = selectedCell;
+        const correctNum = sudokuSolution[row][col];
+        
+        sudokuBoard[row][col] = correctNum;
+        element.textContent = correctNum;
+        element.classList.add('hint');
+        element.classList.remove('error');
+        
+        setTimeout(() => {
+            element.classList.remove('hint');
+        }, 1000);
+        
+        checkSudokuWin();
+    }
+
+    function checkSudokuBoard() {
+        let errors = 0;
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if (sudokuBoard[i][j] !== 0 && sudokuBoard[i][j] !== sudokuSolution[i][j]) {
+                    errors++;
+                }
+            }
+        }
+        alert(`Board checked! ${errors} errors found.`);
+    }
+
+    function checkSudokuWin() {
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if (sudokuBoard[i][j] !== sudokuSolution[i][j]) {
+                    return;
+                }
+            }
+        }
+        
+        clearInterval(sudokuTimer);
+        const timeSpent = Math.floor((Date.now() - sudokuStartTime) / 1000);
+        const minutes = Math.floor(timeSpent / 60);
+        const seconds = timeSpent % 60;
+        alert(`Congratulations! You solved the puzzle in ${minutes}:${seconds.toString().padStart(2, '0')}!`);
+    }
+
+    function startSudokuTimer() {
+        if (sudokuTimer) clearInterval(sudokuTimer);
+        sudokuTimer = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - sudokuStartTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            sudokuTimerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    function updateSudokuUI() {
+        sudokuDifficultyElement.textContent = sudokuDifficulty.charAt(0).toUpperCase() + sudokuDifficulty.slice(1);
+        sudokuMistakesElement.textContent = `${sudokuMistakes}/3`;
+    }
+
+    // Sudoku event listeners
+    sudokuNewBtn.addEventListener('click', sudokuInit);
+    sudokuDifficultySelect.addEventListener('change', (e) => {
+        sudokuDifficulty = e.target.value;
+        sudokuInit();
+    });
+    sudokuHintBtn.addEventListener('click', sudokuHint);
+    sudokuCheckBtn.addEventListener('click', checkSudokuBoard);
+    
+    numberBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const num = parseInt(e.target.dataset.number);
+            placeSudokuNumber(num);
+        });
+    });
+
+    // --- Enhanced Math Tables Game Implementation ---
+    let mathTablesScore = 0;
+    let mathTablesLevel = 1;
+    let mathTablesStreak = 0;
+    let mathTablesCurrentTable = 'random';
+    let mathTablesCurrentQuestion = null;
+    let mathTablesCorrectAnswer = 0;
+    let mathTablesCanvas = null;
+    let mathTablesCtx = null;
+    let mathTablesAnimationId = null;
+    let mathTablesParticles = [];
+    let mathTablesFloatingNumbers = [];
+    let mathTablesStars = [];
+    let mathTablesBackground = { rotation: 0, time: 0 };
+
+    const mathTablesScoreElement = document.getElementById('mathtables-score');
+    const mathTablesLevelElement = document.getElementById('mathtables-level');
+    const mathTablesStreakElement = document.getElementById('mathtables-streak');
+    const mathTablesCurrentTableElement = document.getElementById('mathtables-current-table');
+    const mathTablesNewBtn = document.getElementById('mathtables-new');
+    const mathTablesTableSelect = document.getElementById('mathtables-table-select');
+    const mathTablesHintBtn = document.getElementById('mathtables-hint');
+    const mathTablesNum1Element = document.getElementById('mathtables-num1');
+    const mathTablesNum2Element = document.getElementById('mathtables-num2');
+    const mathTablesAnswerElement = document.getElementById('mathtables-answer');
+    const mathTablesFeedbackElement = document.getElementById('mathtables-feedback');
+    const mathTablesOptionBtns = document.querySelectorAll('.mathtables-option-btn');
+
+    function mathTablesInit() {
+        mathTablesScore = 0;
+        mathTablesLevel = 1;
+        mathTablesStreak = 0;
+        mathTablesCurrentTable = mathTablesTableSelect.value;
+        mathTablesCanvas = document.getElementById('mathtables-canvas');
+        mathTablesCtx = mathTablesCanvas.getContext('2d');
+        mathTablesParticles = [];
+        mathTablesFloatingNumbers = [];
+        mathTablesStars = [];
+        
+        // Initialize background stars
+        for (let i = 0; i < 50; i++) {
+            mathTablesStars.push({
+                x: Math.random() * mathTablesCanvas.width,
+                y: Math.random() * mathTablesCanvas.height,
+                size: Math.random() * 3 + 1,
+                brightness: Math.random(),
+                twinkleSpeed: Math.random() * 0.02 + 0.01
+            });
+        }
+        
+        updateMathTablesUI();
+        generateMathTablesQuestion();
+        startMathTablesAnimation();
+    }
+
+    function generateMathTablesQuestion() {
+        let table, multiplier;
+        
+        if (mathTablesCurrentTable === 'random') {
+            table = Math.floor(Math.random() * 9) + 2; // 2-10
+        } else {
+            table = parseInt(mathTablesCurrentTable);
+        }
+        
+        multiplier = Math.floor(Math.random() * 10) + 1; // 1-10
+        mathTablesCorrectAnswer = table * multiplier;
+        
+        mathTablesCurrentQuestion = { table, multiplier };
+        mathTablesNum1Element.textContent = table;
+        mathTablesNum2Element.textContent = multiplier;
+        mathTablesAnswerElement.textContent = '?';
+        mathTablesFeedbackElement.textContent = '';
+        
+        // Generate answer options
+        const options = [mathTablesCorrectAnswer];
+        while (options.length < 4) {
+            const wrongAnswer = mathTablesCorrectAnswer + Math.floor(Math.random() * 20) - 10;
+            if (wrongAnswer > 0 && !options.includes(wrongAnswer)) {
+                options.push(wrongAnswer);
+            }
+        }
+        
+        // Shuffle options
+        for (let i = options.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [options[i], options[j]] = [options[j], options[i]];
+        }
+        
+        // Set button values
+        mathTablesOptionBtns.forEach((btn, index) => {
+            btn.textContent = options[index];
+            btn.disabled = false;
+            btn.classList.remove('correct', 'wrong', 'disabled');
+        });
+    }
+
+    function checkMathTablesAnswer(selectedAnswer) {
+        const isCorrect = selectedAnswer === mathTablesCorrectAnswer;
+        
+        mathTablesOptionBtns.forEach(btn => {
+            btn.disabled = true;
+            if (parseInt(btn.textContent) === mathTablesCorrectAnswer) {
+                btn.classList.add('correct');
+            } else if (parseInt(btn.textContent) === selectedAnswer && !isCorrect) {
+                btn.classList.add('wrong');
+            } else {
+                btn.classList.add('disabled');
+            }
+        });
+        
+        mathTablesAnswerElement.textContent = mathTablesCorrectAnswer;
+        
+        if (isCorrect) {
+            mathTablesStreak++;
+            const points = (10 + mathTablesLevel * 5) * Math.max(1, mathTablesStreak);
+            mathTablesScore += points;
+            
+            mathTablesFeedbackElement.textContent = `🎉 Correct! +${points} points!`;
+            mathTablesFeedbackElement.style.color = '#2ecc71';
+            
+            // Create celebration particles
+            createMathTablesParticles(mathTablesCanvas.width / 2, mathTablesCanvas.height / 2, '#2ecc71', 20);
+            
+            // Add floating number animation
+            mathTablesFloatingNumbers.push({
+                x: mathTablesCanvas.width / 2,
+                y: mathTablesCanvas.height / 2,
+                text: `+${points}`,
+                life: 60,
+                color: '#2ecc71'
+            });
+            
+            if (mathTablesStreak % 5 === 0) {
+                mathTablesLevel++;
+                mathTablesFeedbackElement.textContent += ` Level Up! 🚀`;
+                createMathTablesParticles(mathTablesCanvas.width / 2, mathTablesCanvas.height / 3, '#f39c12', 30);
+            }
+        } else {
+            mathTablesStreak = 0;
+            mathTablesFeedbackElement.textContent = `❌ Try again! The answer is ${mathTablesCorrectAnswer}`;
+            mathTablesFeedbackElement.style.color = '#e74c3c';
+            
+            createMathTablesParticles(mathTablesCanvas.width / 2, mathTablesCanvas.height / 2, '#e74c3c', 10);
+        }
+        
+        updateMathTablesUI();
+        
+        setTimeout(() => {
+            generateMathTablesQuestion();
+        }, 2000);
+    }
+
+    function createMathTablesParticles(x, y, color, count) {
+        for (let i = 0; i < count; i++) {
+            mathTablesParticles.push({
+                x: x + (Math.random() - 0.5) * 100,
+                y: y + (Math.random() - 0.5) * 100,
+                vx: (Math.random() - 0.5) * 12,
+                vy: (Math.random() - 0.5) * 12 - 2, // slight upward bias
+                life: 80 + Math.random() * 40, // longer life for better trails
+                maxLife: 80 + Math.random() * 40,
+                color: color,
+                size: Math.random() * 8 + 3,
+                trail: [],
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.2
+            });
+        }
+        
+        // Add special celebration effects for correct answers
+        if (color === '#2ecc71') {
+            // Add star burst effect
+            for (let i = 0; i < 8; i++) {
+                const angle = (i / 8) * Math.PI * 2;
+                mathTablesParticles.push({
+                    x: x,
+                    y: y,
+                    vx: Math.cos(angle) * 8,
+                    vy: Math.sin(angle) * 8,
+                    life: 100,
+                    maxLife: 100,
+                    color: '#f1c40f', // golden stars
+                    size: 6,
+                    trail: [],
+                    rotation: angle,
+                    rotationSpeed: 0.1
+                });
+            }
+            
+            // Add confetti pieces
+            for (let i = 0; i < 15; i++) {
+                mathTablesParticles.push({
+                    x: x + (Math.random() - 0.5) * 50,
+                    y: y + (Math.random() - 0.5) * 50,
+                    vx: (Math.random() - 0.5) * 10,
+                    vy: (Math.random() - 0.5) * 10 - 5,
+                    life: 120,
+                    maxLife: 120,
+                    color: ['#e74c3c', '#3498db', '#f39c12', '#9b59b6', '#2ecc71'][Math.floor(Math.random() * 5)],
+                    size: Math.random() * 4 + 2,
+                    trail: [],
+                    rotation: Math.random() * Math.PI * 2,
+                    rotationSpeed: (Math.random() - 0.5) * 0.3
+                });
+            }
+        }
+        
+        // Add special level up effects
+        if (count === 30 && color === '#f39c12') {
+            // Add spiral effect for level up
+            for (let i = 0; i < 20; i++) {
+                const angle = (i / 20) * Math.PI * 4; // double spiral
+                const radius = i * 3;
+                mathTablesParticles.push({
+                    x: x + Math.cos(angle) * radius * 0.5,
+                    y: y + Math.sin(angle) * radius * 0.5,
+                    vx: Math.cos(angle) * 6,
+                    vy: Math.sin(angle) * 6 - 3,
+                    life: 150,
+                    maxLife: 150,
+                    color: '#f39c12',
+                    size: Math.random() * 6 + 4,
+                    trail: [],
+                    rotation: angle,
+                    rotationSpeed: 0.15
+                });
+            }
+        }
+    }
+
+    function startMathTablesAnimation() {
+        function animate() {
+            drawMathTablesCanvas();
+            mathTablesAnimationId = requestAnimationFrame(animate);
+        }
+        animate();
+    }
+
+    function drawMathTablesCanvas() {
+        // Clear canvas with dynamic animated gradient background
+        mathTablesBackground.time += 0.02;
+        mathTablesBackground.rotation += 0.005;
+        
+        // Create multi-layered animated background
+        const gradient = mathTablesCtx.createRadialGradient(
+            mathTablesCanvas.width / 2, mathTablesCanvas.height / 2, 0,
+            mathTablesCanvas.width / 2, mathTablesCanvas.height / 2, Math.max(mathTablesCanvas.width, mathTablesCanvas.height)
+        );
+        
+        const hue1 = (Math.sin(mathTablesBackground.time * 0.5) * 60 + 200) % 360;
+        const hue2 = (Math.sin(mathTablesBackground.time * 0.7 + Math.PI) * 60 + 280) % 360;
+        const hue3 = (Math.sin(mathTablesBackground.time * 0.3 + Math.PI * 0.5) * 60 + 320) % 360;
+        
+        gradient.addColorStop(0, `hsla(${hue1}, 80%, 25%, 0.9)`);
+        gradient.addColorStop(0.4, `hsla(${hue2}, 70%, 20%, 0.8)`);
+        gradient.addColorStop(0.8, `hsla(${hue3}, 60%, 15%, 0.7)`);
+        gradient.addColorStop(1, `hsla(${hue1 + 180}, 50%, 10%, 0.6)`);
+        
+        mathTablesCtx.fillStyle = gradient;
+        mathTablesCtx.fillRect(0, 0, mathTablesCanvas.width, mathTablesCanvas.height);
+        
+        // Add animated geometric patterns
+        drawMathTablesGeometricPatterns();
+        
+        // Draw enhanced animated stars with constellation effect
+        drawMathTablesEnhancedStars();
+        
+        // Draw mathematical symbols floating around
+        drawMathTablesFloatingSymbols();
+        
+        // Draw animated 3D numbers if question exists
+        if (mathTablesCurrentQuestion) {
+            drawMathTablesEnhanced3DNumbers();
+        }
+        
+        // Update and draw enhanced particles with trails
+        drawMathTablesEnhancedParticles();
+        
+        // Update and draw floating numbers with better effects
+        drawMathTablesEnhancedFloatingNumbers();
+        
+        // Draw level progress rings
+        drawMathTablesProgressRings();
+    }
+
+    function drawMathTablesGeometricPatterns() {
+        const time = mathTablesBackground.time;
+        const centerX = mathTablesCanvas.width / 2;
+        const centerY = mathTablesCanvas.height / 2;
+        
+        // Draw rotating geometric shapes
+        mathTablesCtx.save();
+        mathTablesCtx.translate(centerX, centerY);
+        mathTablesCtx.rotate(time * 0.1);
+        
+        // Outer hexagon
+        for (let i = 0; i < 6; i++) {
+            const angle = (i / 6) * Math.PI * 2;
+            const radius = 100 + Math.sin(time * 2 + i) * 20;
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+            
+            mathTablesCtx.strokeStyle = `hsla(${(time * 50 + i * 60) % 360}, 70%, 60%, 0.3)`;
+            mathTablesCtx.lineWidth = 2;
+            mathTablesCtx.beginPath();
+            if (i === 0) mathTablesCtx.moveTo(x, y);
+            else mathTablesCtx.lineTo(x, y);
+        }
+        mathTablesCtx.closePath();
+        mathTablesCtx.stroke();
+        
+        // Inner rotating triangles
+        mathTablesCtx.rotate(-time * 0.3);
+        for (let i = 0; i < 3; i++) {
+            const angle = (i / 3) * Math.PI * 2 + time;
+            const radius = 50;
+            
+            mathTablesCtx.strokeStyle = `hsla(${(time * 100 + i * 120) % 360}, 80%, 70%, 0.4)`;
+            mathTablesCtx.lineWidth = 3;
+            mathTablesCtx.beginPath();
+            
+            for (let j = 0; j < 3; j++) {
+                const triAngle = angle + (j / 3) * Math.PI * 2;
+                const x = Math.cos(triAngle) * radius;
+                const y = Math.sin(triAngle) * radius;
+                if (j === 0) mathTablesCtx.moveTo(x, y);
+                else mathTablesCtx.lineTo(x, y);
+            }
+            mathTablesCtx.closePath();
+            mathTablesCtx.stroke();
+        }
+        
+        mathTablesCtx.restore();
+    }
+
+    function drawMathTablesEnhancedStars() {
+        mathTablesStars.forEach((star, index) => {
+            star.brightness += star.twinkleSpeed;
+            if (star.brightness > 1) star.brightness = 0;
+            
+            const alpha = Math.sin(star.brightness * Math.PI) * 0.9 + 0.1;
+            const size = star.size * (0.5 + alpha * 0.5);
+            
+            // Create glow effect
+            const glowGradient = mathTablesCtx.createRadialGradient(star.x, star.y, 0, star.x, star.y, size * 4);
+            glowGradient.addColorStop(0, `rgba(255, 255, 255, ${alpha * 0.8})`);
+            glowGradient.addColorStop(0.3, `rgba(173, 216, 255, ${alpha * 0.4})`);
+            glowGradient.addColorStop(1, 'rgba(173, 216, 255, 0)');
+            
+            mathTablesCtx.fillStyle = glowGradient;
+            mathTablesCtx.beginPath();
+            mathTablesCtx.arc(star.x, star.y, size * 4, 0, Math.PI * 2);
+            mathTablesCtx.fill();
+            
+            // Draw main star
+            mathTablesCtx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            mathTablesCtx.beginPath();
+            mathTablesCtx.arc(star.x, star.y, size, 0, Math.PI * 2);
+            mathTablesCtx.fill();
+            
+            // Draw enhanced star rays
+            if (alpha > 0.6) {
+                mathTablesCtx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.7})`;
+                mathTablesCtx.lineWidth = 2;
+                mathTablesCtx.beginPath();
+                
+                // Horizontal ray
+                mathTablesCtx.moveTo(star.x - size * 3, star.y);
+                mathTablesCtx.lineTo(star.x + size * 3, star.y);
+                
+                // Vertical ray
+                mathTablesCtx.moveTo(star.x, star.y - size * 3);
+                mathTablesCtx.lineTo(star.x, star.y + size * 3);
+                
+                // Diagonal rays
+                mathTablesCtx.moveTo(star.x - size * 2, star.y - size * 2);
+                mathTablesCtx.lineTo(star.x + size * 2, star.y + size * 2);
+                mathTablesCtx.moveTo(star.x - size * 2, star.y + size * 2);
+                mathTablesCtx.lineTo(star.x + size * 2, star.y - size * 2);
+                
+                mathTablesCtx.stroke();
+            }
+            
+            // Connect nearby stars with constellation lines
+            mathTablesStars.forEach((otherStar, otherIndex) => {
+                if (index < otherIndex) {
+                    const distance = Math.sqrt(
+                        Math.pow(star.x - otherStar.x, 2) + Math.pow(star.y - otherStar.y, 2)
+                    );
+                    
+                    if (distance < 80 && alpha > 0.5 && Math.sin(otherStar.brightness * Math.PI) > 0.5) {
+                        mathTablesCtx.strokeStyle = `rgba(173, 216, 255, ${alpha * 0.3})`;
+                        mathTablesCtx.lineWidth = 1;
+                        mathTablesCtx.beginPath();
+                        mathTablesCtx.moveTo(star.x, star.y);
+                        mathTablesCtx.lineTo(otherStar.x, otherStar.y);
+                        mathTablesCtx.stroke();
+                    }
+                }
+            });
+        });
+    }
+
+    function drawMathTablesFloatingSymbols() {
+        const time = mathTablesBackground.time;
+        const symbols = ['+', '−', '×', '÷', '=', '∞', 'π', '²', '³', '√'];
+        
+        symbols.forEach((symbol, index) => {
+            const angle = (index / symbols.length) * Math.PI * 2 + time * 0.5;
+            const radius = 150 + Math.sin(time * 2 + index) * 30;
+            const x = mathTablesCanvas.width / 2 + Math.cos(angle) * radius;
+            const y = mathTablesCanvas.height / 2 + Math.sin(angle) * radius * 0.6;
+            
+            const alpha = (Math.sin(time * 3 + index) + 1) * 0.3 + 0.1;
+            const scale = 0.8 + Math.sin(time * 4 + index) * 0.3;
+            
+            mathTablesCtx.save();
+            mathTablesCtx.translate(x, y);
+            mathTablesCtx.scale(scale, scale);
+            mathTablesCtx.rotate(Math.sin(time + index) * 0.3);
+            
+            // Glow effect
+            mathTablesCtx.shadowColor = `hsla(${(index * 36) % 360}, 80%, 60%, ${alpha})`;
+            mathTablesCtx.shadowBlur = 15;
+            
+            mathTablesCtx.fillStyle = `hsla(${(index * 36) % 360}, 80%, 80%, ${alpha})`;
+            mathTablesCtx.font = 'bold 20px Arial';
+            mathTablesCtx.textAlign = 'center';
+            mathTablesCtx.fillText(symbol, 0, 5);
+            
+            mathTablesCtx.restore();
+        });
+    }
+
+    function drawMathTablesEnhanced3DNumbers() {
+        const centerX = mathTablesCanvas.width / 2;
+        const centerY = mathTablesCanvas.height / 2;
+        const time = mathTablesBackground.time;
+        
+        // Draw floating 3D numbers around the equation with enhanced effects
+        const { table, multiplier } = mathTablesCurrentQuestion;
+        
+        // Animate the table number with orbital motion
+        const tableAngle = time * 2;
+        const tableRadius = 80 + Math.sin(time * 3) * 20;
+        const tableX = centerX - 80 + Math.cos(tableAngle) * 15;
+        const tableY = centerY + Math.sin(tableAngle * 0.7) * 10;
+        drawEnhanced3DNumber(table.toString(), tableX, tableY, '#3498db', time, 1.2);
+        
+        // Draw animated multiplication symbol with pulsing effect
+        const multScale = 1 + Math.sin(time * 6) * 0.2;
+        mathTablesCtx.save();
+        mathTablesCtx.translate(centerX, centerY);
+        mathTablesCtx.scale(multScale, multScale);
+        
+        // Glow effect for multiplication symbol
+        mathTablesCtx.shadowColor = '#ecf0f1';
+        mathTablesCtx.shadowBlur = 20;
+        mathTablesCtx.fillStyle = '#ecf0f1';
+        mathTablesCtx.font = 'bold 40px Arial';
+        mathTablesCtx.textAlign = 'center';
+        mathTablesCtx.fillText('×', 0, 8);
+        mathTablesCtx.restore();
+        
+        // Animate the multiplier number with different motion
+        const multAngle = time * 2.5 + Math.PI;
+        const multX = centerX + 80 + Math.cos(multAngle) * 15;
+        const multY = centerY + Math.sin(multAngle * 0.8) * 10;
+        drawEnhanced3DNumber(multiplier.toString(), multX, multY, '#e74c3c', time + Math.PI, 1.2);
+        
+        // Draw result with special animation
+        if (mathTablesAnswerElement.textContent !== '?') {
+            const resultY = centerY + 60 + Math.sin(time * 4) * 5;
+            drawEnhanced3DNumber(mathTablesAnswerElement.textContent, centerX + 150, resultY, '#2ecc71', time + Math.PI * 0.5, 1.5);
+        }
+        
+        // Draw multiplication table visualization
+        const tableSize = 8;
+        for (let i = 1; i <= tableSize; i++) {
+            const angle = (i / tableSize) * Math.PI * 2 + time * 0.5;
+            const radius = 120 + Math.sin(time * 2 + i) * 25;
+            const x = centerX + Math.cos(angle) * radius;
+            const y = centerY + Math.sin(angle) * radius * 0.6;
+            const result = table * i;
+            
+            const alpha = Math.max(0.3, Math.sin(time * 3 + i) * 0.4 + 0.6);
+            const isCurrentMultiplier = (i === multiplier);
+            const color = isCurrentMultiplier ? '#f39c12' : `rgba(46, 204, 113, ${alpha})`;
+            const scale = isCurrentMultiplier ? 1 + Math.sin(time * 8) * 0.3 : 0.8;
+            
+            drawEnhanced3DNumber(result.toString(), x, y, color, time + i, scale);
+            
+            // Draw connecting lines for current operation
+            if (isCurrentMultiplier) {
+                mathTablesCtx.strokeStyle = `rgba(243, 156, 18, ${alpha * 0.5})`;
+                mathTablesCtx.lineWidth = 3;
+                mathTablesCtx.setLineDash([5, 5]);
+                mathTablesCtx.beginPath();
+                mathTablesCtx.moveTo(centerX, centerY);
+                mathTablesCtx.lineTo(x, y);
+                mathTablesCtx.stroke();
+                mathTablesCtx.setLineDash([]);
+            }
+        }
+        
+        // Draw educational hints floating around
+        drawMathTablesEducationalHints();
+    }
+
+    function drawEnhanced3DNumber(text, x, y, color, time, scale = 1) {
+        mathTablesCtx.save();
+        mathTablesCtx.translate(x, y);
+        
+        const wobble = Math.sin(time * 4) * 0.1;
+        const pulse = 1 + Math.sin(time * 6) * 0.1;
+        mathTablesCtx.rotate(wobble);
+        mathTablesCtx.scale(scale * pulse, scale * pulse);
+        
+        const fontSize = 32 * scale;
+        
+        // Enhanced glow effect
+        const glowGradient = mathTablesCtx.createRadialGradient(0, 0, 0, 0, 0, fontSize * 2);
+        glowGradient.addColorStop(0, `${color}60`);
+        glowGradient.addColorStop(0.5, `${color}30`);
+        glowGradient.addColorStop(1, `${color}00`);
+        
+        mathTablesCtx.fillStyle = glowGradient;
+        mathTablesCtx.beginPath();
+        mathTablesCtx.arc(0, 0, fontSize * 2, 0, Math.PI * 2);
+        mathTablesCtx.fill();
+        
+        // Draw enhanced 3D shadow with multiple layers
+        mathTablesCtx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        mathTablesCtx.font = `bold ${fontSize}px Arial`;
+        mathTablesCtx.textAlign = 'center';
+        mathTablesCtx.fillText(text, 4, 4);
+        
+        // Draw multiple depth layers for better 3D effect
+        for (let i = 8; i >= 0; i--) {
+            const depth = i;
+            const brightness = 1 - (depth * 0.1);
+            const depthColor = adjustMathTablesColorBrightness(color, brightness);
+            
+            mathTablesCtx.fillStyle = depthColor;
+            mathTablesCtx.fillText(text, -depth * 0.5, -depth * 0.5);
+        }
+        
+        // Draw multiple highlights for enhanced effect
+        mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        mathTablesCtx.fillText(text, -2, -2);
+        
+        mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        mathTablesCtx.fillText(text, -1, -1);
+        
+        // Add sparkle effects
+        if (Math.sin(time * 10) > 0.8) {
+            for (let i = 0; i < 3; i++) {
+                const sparkleX = (Math.random() - 0.5) * fontSize;
+                const sparkleY = (Math.random() - 0.5) * fontSize;
+                
+                mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                mathTablesCtx.beginPath();
+                mathTablesCtx.arc(sparkleX, sparkleY, 2, 0, Math.PI * 2);
+                mathTablesCtx.fill();
+                
+                // Sparkle rays
+                mathTablesCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+                mathTablesCtx.lineWidth = 1;
+                mathTablesCtx.beginPath();
+                mathTablesCtx.moveTo(sparkleX - 4, sparkleY);
+                mathTablesCtx.lineTo(sparkleX + 4, sparkleY);
+                mathTablesCtx.moveTo(sparkleX, sparkleY - 4);
+                mathTablesCtx.lineTo(sparkleX, sparkleY + 4);
+                mathTablesCtx.stroke();
+            }
+        }
+        
+        mathTablesCtx.restore();
+    }
+
+    function drawMathTablesEducationalHints() {
+        const time = mathTablesBackground.time;
+        const hints = [
+            `${mathTablesCurrentQuestion.table} groups`,
+            `×${mathTablesCurrentQuestion.multiplier}`,
+            'Count them!',
+            'Pattern?'
+        ];
+        
+        hints.forEach((hint, index) => {
+            const angle = (index / hints.length) * Math.PI * 2 + time * 0.3;
+            const radius = 200 + Math.sin(time * 2 + index) * 20;
+            const x = mathTablesCanvas.width / 2 + Math.cos(angle) * radius;
+            const y = mathTablesCanvas.height / 2 + Math.sin(angle) * radius * 0.4;
+            
+            const alpha = (Math.sin(time * 2 + index * 2) + 1) * 0.3 + 0.2;
+            
+            mathTablesCtx.save();
+            mathTablesCtx.translate(x, y);
+            mathTablesCtx.rotate(Math.sin(time * 2 + index) * 0.1);
+            
+            mathTablesCtx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            mathTablesCtx.font = 'italic 14px Arial';
+            mathTablesCtx.textAlign = 'center';
+            mathTablesCtx.fillText(hint, 0, 0);
+            
+            mathTablesCtx.restore();
+        });
+    }
+
+    function drawMathTablesEnhancedParticles() {
+        // Update and draw particles with trails and better physics
+        mathTablesParticles = mathTablesParticles.filter(particle => {
+            // Store previous position for trail effect
+            if (!particle.trail) particle.trail = [];
+            particle.trail.push({ x: particle.x, y: particle.y });
+            if (particle.trail.length > 5) particle.trail.shift();
+            
+            // Update particle physics
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.vy += 0.08; // reduced gravity for more floating effect
+            particle.vx *= 0.995; // air resistance
+            particle.life--;
+            
+            // Draw particle trail
+            if (particle.trail.length > 1) {
+                mathTablesCtx.strokeStyle = particle.color + '40';
+                mathTablesCtx.lineWidth = particle.size * 0.5;
+                mathTablesCtx.lineCap = 'round';
+                mathTablesCtx.beginPath();
+                mathTablesCtx.moveTo(particle.trail[0].x, particle.trail[0].y);
+                for (let i = 1; i < particle.trail.length; i++) {
+                    mathTablesCtx.lineTo(particle.trail[i].x, particle.trail[i].y);
+                }
+                mathTablesCtx.stroke();
+            }
+            
+            // Draw main particle with glow
+            const alpha = particle.life / particle.maxLife;
+            const size = particle.size * (0.5 + alpha * 0.5);
+            
+            // Glow effect
+            const glowGradient = mathTablesCtx.createRadialGradient(
+                particle.x, particle.y, 0,
+                particle.x, particle.y, size * 3
+            );
+            glowGradient.addColorStop(0, particle.color + Math.floor(alpha * 255 * 0.8).toString(16).padStart(2, '0'));
+            glowGradient.addColorStop(1, particle.color + '00');
+            
+            mathTablesCtx.fillStyle = glowGradient;
+            mathTablesCtx.beginPath();
+            mathTablesCtx.arc(particle.x, particle.y, size * 3, 0, Math.PI * 2);
+            mathTablesCtx.fill();
+            
+            // Main particle
+            mathTablesCtx.fillStyle = particle.color + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+            mathTablesCtx.beginPath();
+            mathTablesCtx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
+            mathTablesCtx.fill();
+            
+            // Add sparkle effect to particles
+            if (Math.random() < 0.1) {
+                mathTablesCtx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.8})`;
+                mathTablesCtx.beginPath();
+                mathTablesCtx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
+                mathTablesCtx.fill();
+            }
+            
+            return particle.life > 0;
+        });
+    }
+
+    function drawMathTablesEnhancedFloatingNumbers() {
+        // Update and draw floating numbers with enhanced effects
+        mathTablesFloatingNumbers = mathTablesFloatingNumbers.filter(floater => {
+            floater.y -= 3;
+            floater.x += Math.sin(floater.life * 0.1) * 0.5; // gentle swaying
+            floater.life--;
+            
+            const alpha = floater.life / 60;
+            const scale = 1 + Math.sin(floater.life * 0.2) * 0.2; // pulsing effect
+            
+            mathTablesCtx.save();
+            mathTablesCtx.translate(floater.x, floater.y);
+            mathTablesCtx.scale(scale, scale);
+            
+            // Enhanced glow effect
+            mathTablesCtx.shadowColor = floater.color;
+            mathTablesCtx.shadowBlur = 15 * alpha;
+            
+            // Draw outline for better visibility
+            mathTablesCtx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.8})`;
+            mathTablesCtx.lineWidth = 2;
+            mathTablesCtx.font = 'bold 28px Arial';
+            mathTablesCtx.textAlign = 'center';
+            mathTablesCtx.strokeText(floater.text, 0, 0);
+            
+            // Draw main text
+            mathTablesCtx.fillStyle = floater.color + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+            mathTablesCtx.fillText(floater.text, 0, 0);
+            
+            mathTablesCtx.restore();
+            
+            return floater.life > 0;
+        });
+    }
+
+    function drawMathTablesProgressRings() {
+        const centerX = mathTablesCanvas.width / 2;
+        const centerY = mathTablesCanvas.height / 2;
+        const time = mathTablesBackground.time;
+        
+        // Draw level progress ring
+        const progressRadius = 50;
+        const progressAngle = (mathTablesStreak % 5) / 5 * Math.PI * 2;
+        
+        // Background ring
+        mathTablesCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        mathTablesCtx.lineWidth = 8;
+        mathTablesCtx.beginPath();
+        mathTablesCtx.arc(centerX, centerY, progressRadius, 0, Math.PI * 2);
+        mathTablesCtx.stroke();
+        
+        // Progress ring with animated glow
+        const glowIntensity = 1 + Math.sin(time * 8) * 0.3;
+        mathTablesCtx.strokeStyle = `rgba(46, 204, 113, ${0.8 * glowIntensity})`;
+        mathTablesCtx.lineWidth = 6;
+        mathTablesCtx.lineCap = 'round';
+        mathTablesCtx.beginPath();
+        mathTablesCtx.arc(centerX, centerY, progressRadius, -Math.PI / 2, -Math.PI / 2 + progressAngle);
+        mathTablesCtx.stroke();
+        
+        // Streak indicator dots
+        for (let i = 0; i < 5; i++) {
+            const dotAngle = (i / 5) * Math.PI * 2 - Math.PI / 2;
+            const dotX = centerX + Math.cos(dotAngle) * progressRadius;
+            const dotY = centerY + Math.sin(dotAngle) * progressRadius;
+            
+            if (i < mathTablesStreak % 5) {
+                mathTablesCtx.fillStyle = '#2ecc71';
+                mathTablesCtx.beginPath();
+                mathTablesCtx.arc(dotX, dotY, 4, 0, Math.PI * 2);
+                mathTablesCtx.fill();
+                
+                // Add glow to completed dots
+                const dotGlow = mathTablesCtx.createRadialGradient(dotX, dotY, 0, dotX, dotY, 8);
+                dotGlow.addColorStop(0, '#2ecc71');
+                dotGlow.addColorStop(1, 'rgba(46, 204, 113, 0)');
+                mathTablesCtx.fillStyle = dotGlow;
+                mathTablesCtx.beginPath();
+                mathTablesCtx.arc(dotX, dotY, 8, 0, Math.PI * 2);
+                mathTablesCtx.fill();
+            } else {
+                mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                mathTablesCtx.beginPath();
+                mathTablesCtx.arc(dotX, dotY, 2, 0, Math.PI * 2);
+                mathTablesCtx.fill();
+            }
+        }
+        
+        // Level display in center
+        if (mathTablesLevel > 1) {
+            mathTablesCtx.save();
+            mathTablesCtx.translate(centerX, centerY);
+            
+            const levelScale = 1 + Math.sin(time * 4) * 0.1;
+            mathTablesCtx.scale(levelScale, levelScale);
+            
+            mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            mathTablesCtx.font = 'bold 14px Arial';
+            mathTablesCtx.textAlign = 'center';
+            mathTablesCtx.fillText(`LVL ${mathTablesLevel}`, 0, 5);
+            
+            mathTablesCtx.restore();
+        }
+    }
+
+    function drawMathTables3DNumbers() {
+        const centerX = mathTablesCanvas.width / 2;
+        const centerY = mathTablesCanvas.height / 2;
+        const time = mathTablesBackground.time;
+        
+        // Draw floating 3D numbers around the equation
+        const { table, multiplier } = mathTablesCurrentQuestion;
+        
+        // Animate the table number
+        const tableX = centerX - 100 + Math.sin(time * 2) * 10;
+        const tableY = centerY + Math.cos(time * 1.5) * 5;
+        draw3DNumber(table.toString(), tableX, tableY, '#3498db', time);
+        
+        // Draw multiplication symbol
+        mathTablesCtx.fillStyle = '#ecf0f1';
+        mathTablesCtx.font = 'bold 32px Arial';
+        mathTablesCtx.textAlign = 'center';
+        mathTablesCtx.fillText('×', centerX, centerY + 5);
+        
+        // Animate the multiplier number
+        const multX = centerX + 100 + Math.sin(time * 2.5) * 10;
+        const multY = centerY + Math.cos(time * 2) * 5;
+        draw3DNumber(multiplier.toString(), multX, multY, '#e74c3c', time + Math.PI);
+        
+        // Draw floating helper numbers
+        for (let i = 1; i <= 10; i++) {
+            const angle = (i / 10) * Math.PI * 2 + time;
+            const radius = 120 + Math.sin(time * 3 + i) * 20;
+            const x = centerX + Math.cos(angle) * radius;
+            const y = centerY + Math.sin(angle) * radius * 0.5;
+            const result = table * i;
+            
+            const alpha = Math.max(0.2, Math.sin(time * 2 + i) * 0.3 + 0.5);
+            draw3DNumber(result.toString(), x, y, `rgba(46, 204, 113, ${alpha})`, time + i, 0.7);
+        }
+    }
+
+    function draw3DNumber(text, x, y, color, time, scale = 1) {
+        mathTablesCtx.save();
+        mathTablesCtx.translate(x, y);
+        
+        const wobble = Math.sin(time * 4) * 2;
+        mathTablesCtx.rotate(wobble * 0.02);
+        mathTablesCtx.scale(scale, scale);
+        
+        // Draw shadow
+        mathTablesCtx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        mathTablesCtx.font = `bold ${32 * scale}px Arial`;
+        mathTablesCtx.textAlign = 'center';
+        mathTablesCtx.fillText(text, 3, 3);
+        
+        // Draw 3D depth layers
+        for (let i = 5; i >= 0; i--) {
+            const depth = i;
+            const brightness = 1 - (depth * 0.15);
+            const depthColor = adjustMathTablesColorBrightness(color, brightness);
+            
+            mathTablesCtx.fillStyle = depthColor;
+            mathTablesCtx.fillText(text, -depth, -depth);
+        }
+        
+        // Draw highlight
+        mathTablesCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        mathTablesCtx.fillText(text, -1, -1);
+        
+        mathTablesCtx.restore();
+    }
+
+    function adjustMathTablesColorBrightness(color, brightness) {
+        if (color.startsWith('rgba')) {
+            return color.replace(/[\d.]+\)$/, `${brightness})`);
+        } else if (color.startsWith('#')) {
+            const r = parseInt(color.substr(1, 2), 16);
+            const g = parseInt(color.substr(3, 2), 16);
+            const b = parseInt(color.substr(5, 2), 16);
+            
+            const newR = Math.floor(r * brightness);
+            const newG = Math.floor(g * brightness);
+            const newB = Math.floor(b * brightness);
+            
+            return `rgb(${newR}, ${newG}, ${newB})`;
+        }
+        return color;
+    }
+
+    function updateMathTablesUI() {
+        mathTablesScoreElement.textContent = mathTablesScore;
+        mathTablesLevelElement.textContent = mathTablesLevel;
+        mathTablesStreakElement.textContent = mathTablesStreak;
+        
+        if (mathTablesCurrentTable === 'random') {
+            mathTablesCurrentTableElement.textContent = 'Mixed';
+        } else {
+            mathTablesCurrentTableElement.textContent = `${mathTablesCurrentTable}x`;
+        }
+    }
+
+    function showMathTablesHint() {
+        if (mathTablesCurrentQuestion) {
+            const { table, multiplier } = mathTablesCurrentQuestion;
+            const steps = [];
+            for (let i = 1; i <= multiplier; i++) {
+                steps.push(table * i);
+            }
+            mathTablesFeedbackElement.textContent = `💡 Hint: ${table} + ${table} + ... = ${steps.join(', ')}`;
+            mathTablesFeedbackElement.style.color = '#f39c12';
+        }
+    }
+
+    // Math Tables event listeners
+    mathTablesNewBtn.addEventListener('click', mathTablesInit);
+    mathTablesTableSelect.addEventListener('change', (e) => {
+        mathTablesCurrentTable = e.target.value;
+        generateMathTablesQuestion();
+    });
+    mathTablesHintBtn.addEventListener('click', showMathTablesHint);
+    
+    mathTablesOptionBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const selectedAnswer = parseInt(e.target.textContent);
+            checkMathTablesAnswer(selectedAnswer);
+        });
+    });
+
+    // --- Enhanced Pinball Game Implementation ---
+    let pinballCanvas = null;
+    let pinballCtx = null;
+    let pinballScore = 0;
+    let pinballBall = 1;
+    let pinballMultiplier = 1;
+    let pinballBalls = [];
+    let pinballFlippers = { left: false, right: false };
+    let pinballTargets = [];
+    let pinballBumpers = [];
+    let pinballLights = [];
+    let pinballRamps = [];
+    let pinballAnimationId = null;
+    let pinballPhysics = { gravity: 0.15, bounce: 0.75, friction: 0.985 };
+    let pinballMission = 'Space Launch';
+    let pinballMissionProgress = 0;
+    let pinballTiltWarnings = 0;
+    let pinballComboMultiplier = 1;
+    let pinballLastTargetHit = null;
+    let pinballParticles = [];
+    let pinballSounds = {};
+
+    const pinballScoreElement = document.getElementById('pinball-score');
+    const pinballBallElement = document.getElementById('pinball-ball');
+    const pinballMultiplierElement = document.getElementById('pinball-multiplier');
+    const pinballMissionElement = document.getElementById('pinball-mission');
+    const pinballLaunchBtn = document.getElementById('pinball-launch');
+    const pinballResetBtn = document.getElementById('pinball-reset');
+    const pinballTiltBtn = document.getElementById('pinball-tilt');
+    const leftFlipperBtn = document.getElementById('left-flipper');
+    const rightFlipperBtn = document.getElementById('right-flipper');
+
+    const pinballMissions = [
+        'Space Launch', 'Orbit Station', 'Moon Landing', 'Mars Mission', 
+        'Asteroid Field', 'Black Hole', 'Warp Drive', 'Galaxy Explorer'
+    ];
+
+    function pinballInit() {
+        pinballCanvas = document.getElementById('pinball-canvas');
+        pinballCtx = pinballCanvas.getContext('2d');
+        
+        pinballScore = 0;
+        pinballBall = 1;
+        pinballMultiplier = 1;
+        pinballComboMultiplier = 1;
+        pinballTiltWarnings = 0;
+        pinballMission = pinballMissions[0];
+        pinballMissionProgress = 0;
+        pinballBalls = [];
+        pinballFlippers = { left: false, right: false };
+        pinballParticles = [];
+        
+        // Initialize space-themed targets
+        pinballTargets = [
+            { x: 80, y: 120, width: 35, height: 20, points: 1000, hit: false, color: '#74b9ff', label: 'ORBIT' },
+            { x: 180, y: 100, width: 35, height: 20, points: 1500, hit: false, color: '#00cec9', label: 'MOON' },
+            { x: 280, y: 110, width: 35, height: 20, points: 2000, hit: false, color: '#fd79a8', label: 'MARS' },
+            { x: 120, y: 180, width: 30, height: 15, points: 500, hit: false, color: '#a29bfe', label: 'FUEL' },
+            { x: 250, y: 190, width: 30, height: 15, points: 500, hit: false, color: '#ffeaa7', label: 'CREW' }
+        ];
+        
+        // Initialize space bumpers
+        pinballBumpers = [
+            { x: 120, y: 250, radius: 30, points: 100, color: '#ff6b9d', glow: false },
+            { x: 220, y: 280, radius: 35, points: 150, color: '#6c5ce7', glow: false },
+            { x: 320, y: 260, radius: 30, points: 200, color: '#00cec9', glow: false },
+            { x: 170, y: 350, radius: 25, points: 75, color: '#fd79a8', glow: false }
+        ];
+
+        // Initialize mission lights
+        pinballLights = [
+            { x: 60, y: 80, radius: 8, lit: false, color: '#74b9ff' },
+            { x: 120, y: 60, radius: 8, lit: false, color: '#00cec9' },
+            { x: 180, y: 80, radius: 8, lit: false, color: '#fd79a8' },
+            { x: 240, y: 60, radius: 8, lit: false, color: '#a29bfe' },
+            { x: 300, y: 80, radius: 8, lit: false, color: '#ffeaa7' }
+        ];
+
+        // Initialize ramps
+        pinballRamps = [
+            { x1: 50, y1: 400, x2: 150, y2: 300, width: 15, color: '#636e72', points: 2500 },
+            { x1: 300, y1: 400, x2: 380, y2: 300, width: 15, color: '#636e72', points: 3000 }
+        ];
+        
+        updatePinballUI();
+        
+        if (pinballAnimationId) cancelAnimationFrame(pinballAnimationId);
+        pinballGameLoop();
+    }
+
+    function launchPinballBall() {
+        if (pinballBalls.length > 0) return;
+        
+        // Add launch effect
+        createPinballParticles(420, 580, '#ffeaa7', 10);
+        
+        pinballBalls.push({
+            x: 420,
+            y: 580,
+            vx: -8 - Math.random() * 3,
+            vy: -12 - Math.random() * 4,
+            radius: 10,
+            active: true,
+            trail: []
+        });
+
+        // Play launch sound effect (visual feedback)
+        pinballCanvas.style.filter = 'brightness(1.3)';
+        setTimeout(() => {
+            pinballCanvas.style.filter = 'brightness(1)';
+        }, 200);
+    }
+
+    function createPinballParticles(x, y, color, count) {
+        for (let i = 0; i < count; i++) {
+            pinballParticles.push({
+                x: x + (Math.random() - 0.5) * 20,
+                y: y + (Math.random() - 0.5) * 20,
+                vx: (Math.random() - 0.5) * 10,
+                vy: (Math.random() - 0.5) * 10,
+                radius: Math.random() * 3 + 1,
+                color: color,
+                life: 1.0,
+                decay: 0.02
+            });
+        }
+    }
+
+    function updatePinballPhysics() {
+        // Update particles
+        pinballParticles = pinballParticles.filter(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            particle.vx *= 0.95;
+            particle.vy *= 0.95;
+            particle.life -= particle.decay;
+            return particle.life > 0;
+        });
+
+        pinballBalls.forEach((ball, index) => {
+            if (!ball.active) return;
+            
+            // Add to trail
+            ball.trail.push({ x: ball.x, y: ball.y });
+            if (ball.trail.length > 5) ball.trail.shift();
+            
+            // Apply gravity
+            ball.vy += pinballPhysics.gravity;
+            
+            // Apply friction
+            ball.vx *= pinballPhysics.friction;
+            ball.vy *= pinballPhysics.friction;
+            
+            // Update position
+            ball.x += ball.vx;
+            ball.y += ball.vy;
+            
+            // Wall collisions with enhanced physics
+            if (ball.x <= ball.radius + 20) {
+                ball.vx = Math.abs(ball.vx) * pinballPhysics.bounce;
+                ball.x = ball.radius + 20;
+                createPinballParticles(ball.x, ball.y, '#74b9ff', 3);
+            }
+            if (ball.x >= pinballCanvas.width - ball.radius - 20) {
+                ball.vx = -Math.abs(ball.vx) * pinballPhysics.bounce;
+                ball.x = pinballCanvas.width - ball.radius - 20;
+                createPinballParticles(ball.x, ball.y, '#74b9ff', 3);
+            }
+            
+            if (ball.y <= ball.radius) {
+                ball.vy = Math.abs(ball.vy) * pinballPhysics.bounce;
+                ball.y = ball.radius;
+                createPinballParticles(ball.x, ball.y, '#ffeaa7', 5);
+            }
+            
+            // Bottom boundary (ball lost)
+            if (ball.y > pinballCanvas.height) {
+                ball.active = false;
+                pinballBalls.splice(index, 1);
+                createPinballParticles(ball.x, pinballCanvas.height - 20, '#ff6b6b', 8);
+                
+                if (pinballBalls.length === 0) {
+                    pinballBall++;
+                    if (pinballBall > 3) {
+                        setTimeout(() => {
+                            alert(`🚀 Mission Complete! Final Score: ${pinballScore.toLocaleString()}`);
+                            pinballInit();
+                        }, 1000);
+                        return;
+                    }
+                    updatePinballUI();
+                }
+            }
+            
+            // Enhanced collision detection
+            checkEnhancedFlipperCollisions(ball);
+            checkEnhancedTargetCollisions(ball);
+            checkEnhancedBumperCollisions(ball);
+            checkRampCollisions(ball);
+            checkLightCollisions(ball);
+        });
+
+        // Update bumper glow effects
+        pinballBumpers.forEach(bumper => {
+            if (bumper.glow) {
+                bumper.glow--;
+            }
+        });
+    }
+
+    function checkEnhancedFlipperCollisions(ball) {
+        const leftFlipperX = 80;
+        const rightFlipperX = 260;
+        const flipperY = 570;
+        const flipperWidth = 120;
+        const flipperHeight = 15;
+        
+        // Left flipper with enhanced physics
+        if (pinballFlippers.left && 
+            ball.x > leftFlipperX - ball.radius &&
+            ball.x < leftFlipperX + flipperWidth + ball.radius &&
+            ball.y > flipperY - ball.radius &&
+            ball.y < flipperY + flipperHeight + ball.radius) {
+            
+            const flipperForce = 6 + Math.abs(ball.vx) * 0.2;
+            ball.vy = -Math.abs(ball.vy) - flipperForce;
+            ball.vx -= 2;
+            ball.y = flipperY - ball.radius;
+            createPinballParticles(ball.x, ball.y, '#00cec9', 5);
+            
+            // Add score for flipper skill
+            pinballScore += 10 * pinballMultiplier;
+            updatePinballUI();
+        }
+        
+        // Right flipper with enhanced physics
+        if (pinballFlippers.right && 
+            ball.x > rightFlipperX - ball.radius &&
+            ball.x < rightFlipperX + flipperWidth + ball.radius &&
+            ball.y > flipperY - ball.radius &&
+            ball.y < flipperY + flipperHeight + ball.radius) {
+            
+            const flipperForce = 6 + Math.abs(ball.vx) * 0.2;
+            ball.vy = -Math.abs(ball.vy) - flipperForce;
+            ball.vx += 2;
+            ball.y = flipperY - ball.radius;
+            createPinballParticles(ball.x, ball.y, '#fd79a8', 5);
+            
+            // Add score for flipper skill
+            pinballScore += 10 * pinballMultiplier;
+            updatePinballUI();
+        }
+    }
+
+    function checkEnhancedTargetCollisions(ball) {
+        pinballTargets.forEach(target => {
+            if (!target.hit &&
+                ball.x > target.x - ball.radius &&
+                ball.x < target.x + target.width + ball.radius &&
+                ball.y > target.y - ball.radius &&
+                ball.y < target.y + target.height + ball.radius) {
+                
+                target.hit = true;
+                const points = target.points * pinballMultiplier * pinballComboMultiplier;
+                pinballScore += points;
+                ball.vy *= -1;
+                
+                // Create explosion effect
+                createPinballParticles(target.x + target.width/2, target.y + target.height/2, target.color, 15);
+                
+                // Show bonus text
+                showBonusText(target.x + target.width/2, target.y, `+${points.toLocaleString()}`);
+                
+                // Combo system
+                if (pinballLastTargetHit && Date.now() - pinballLastTargetHit < 2000) {
+                    pinballComboMultiplier += 0.5;
+                }
+                pinballLastTargetHit = Date.now();
+                
+                // Mission progress
+                pinballMissionProgress++;
+                if (pinballMissionProgress >= 3) {
+                    completePinballMission();
+                }
+                
+                updatePinballUI();
+            }
+        });
+    }
+
+    function checkEnhancedBumperCollisions(ball) {
+        pinballBumpers.forEach(bumper => {
+            const dx = ball.x - bumper.x;
+            const dy = ball.y - bumper.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < ball.radius + bumper.radius) {
+                const points = bumper.points * pinballMultiplier;
+                pinballScore += points;
+                
+                // Enhanced bounce physics
+                const angle = Math.atan2(dy, dx);
+                const force = 8 + Math.random() * 2;
+                ball.vx = Math.cos(angle) * force;
+                ball.vy = Math.sin(angle) * force;
+                
+                // Move ball outside bumper
+                const overlap = ball.radius + bumper.radius - distance;
+                ball.x += Math.cos(angle) * overlap;
+                ball.y += Math.sin(angle) * overlap;
+                
+                // Visual effects
+                bumper.glow = 20;
+                createPinballParticles(bumper.x, bumper.y, bumper.color, 10);
+                showBonusText(bumper.x, bumper.y - 40, `+${points}`);
+                
+                updatePinballUI();
+            }
+        });
+    }
+
+    function checkRampCollisions(ball) {
+        pinballRamps.forEach(ramp => {
+            // Simplified ramp collision detection
+            const rampCenterX = (ramp.x1 + ramp.x2) / 2;
+            const rampCenterY = (ramp.y1 + ramp.y2) / 2;
+            const dx = ball.x - rampCenterX;
+            const dy = ball.y - rampCenterY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < ball.radius + ramp.width) {
+                const points = ramp.points * pinballMultiplier;
+                pinballScore += points;
+                
+                // Ramp boost
+                ball.vy -= 8;
+                ball.vx += (Math.random() - 0.5) * 6;
+                
+                createPinballParticles(rampCenterX, rampCenterY, '#ffeaa7', 12);
+                showBonusText(rampCenterX, rampCenterY - 30, `RAMP BONUS +${points.toLocaleString()}`);
+                
+                updatePinballUI();
+            }
+        });
+    }
+
+    function checkLightCollisions(ball) {
+        pinballLights.forEach(light => {
+            const dx = ball.x - light.x;
+            const dy = ball.y - light.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < ball.radius + light.radius && !light.lit) {
+                light.lit = true;
+                pinballScore += 250 * pinballMultiplier;
+                createPinballParticles(light.x, light.y, light.color, 8);
+                
+                // Check if all lights are lit
+                if (pinballLights.every(l => l.lit)) {
+                    pinballMultiplier++;
+                    showBonusText(pinballCanvas.width/2, 100, `MULTIBALL! x${pinballMultiplier}`);
+                    // Reset lights for next round
+                    pinballLights.forEach(l => l.lit = false);
+                    
+                    // Add extra ball for multiball
+                    if (pinballBalls.length === 1) {
+                        launchPinballBall();
+                    }
+                }
+                
+                updatePinballUI();
+            }
+        });
+    }
+
+    function completePinballMission() {
+        const missionBonus = 10000 * pinballMultiplier;
+        pinballScore += missionBonus;
+        showBonusText(pinballCanvas.width/2, pinballCanvas.height/2, `MISSION COMPLETE! +${missionBonus.toLocaleString()}`);
+        
+        // Move to next mission
+        const currentIndex = pinballMissions.indexOf(pinballMission);
+        if (currentIndex < pinballMissions.length - 1) {
+            pinballMission = pinballMissions[currentIndex + 1];
+        } else {
+            pinballMission = 'GALAXY MASTER';
+            pinballMultiplier += 2;
+        }
+        
+        pinballMissionProgress = 0;
+        pinballTargets.forEach(target => target.hit = false);
+        
+        updatePinballUI();
+    }
+
+    function showBonusText(x, y, text) {
+        const bonusElement = document.createElement('div');
+        bonusElement.className = 'pinball-bonus-text';
+        bonusElement.textContent = text;
+        bonusElement.style.left = `${x}px`;
+        bonusElement.style.top = `${y}px`;
+        
+        pinballCanvas.parentElement.appendChild(bonusElement);
+        
+        setTimeout(() => {
+            bonusElement.remove();
+        }, 1000);
+    }
+
+    function drawEnhancedPinballBoard() {
+        // Clear with casino-style background
+        const gradient = pinballCtx.createLinearGradient(0, 0, 0, pinballCanvas.height);
+        gradient.addColorStop(0, '#1a0033');
+        gradient.addColorStop(0.2, '#2d1b47');
+        gradient.addColorStop(0.4, '#4a2c5e');
+        gradient.addColorStop(0.6, '#2d1b47');
+        gradient.addColorStop(1, '#1a0033');
+        pinballCtx.fillStyle = gradient;
+        pinballCtx.fillRect(0, 0, pinballCanvas.width, pinballCanvas.height);
+        
+        // Draw casino carpet pattern
+        pinballCtx.strokeStyle = 'rgba(138, 43, 226, 0.15)';
+        pinballCtx.lineWidth = 1;
+        for (let i = 0; i < pinballCanvas.width; i += 30) {
+            for (let j = 0; j < pinballCanvas.height; j += 30) {
+                pinballCtx.strokeRect(i, j, 30, 30);
+            }
+        }
+        
+        // Draw ornate side walls with casino styling
+        const wallGradient = pinballCtx.createLinearGradient(0, 0, 25, 0);
+        wallGradient.addColorStop(0, '#9b59b6');
+        wallGradient.addColorStop(0.3, '#8e44ad');
+        wallGradient.addColorStop(0.7, '#7d3c98');
+        wallGradient.addColorStop(1, '#6c3483');
+        pinballCtx.fillStyle = wallGradient;
+        pinballCtx.fillRect(0, 0, 25, pinballCanvas.height);
+        pinballCtx.fillRect(pinballCanvas.width - 25, 0, 25, pinballCanvas.height);
+        
+        // Add decorative border patterns
+        pinballCtx.strokeStyle = '#bb8fce';
+        pinballCtx.lineWidth = 2;
+        pinballCtx.strokeRect(25, 0, pinballCanvas.width - 50, pinballCanvas.height);
+        
+        // Draw casino-style mission lights with ornate frames
+        pinballLights.forEach(light => {
+            if (light.lit) {
+                // Glow effect for lit lights
+                const glowGradient = pinballCtx.createRadialGradient(light.x, light.y, 0, light.x, light.y, light.radius * 4);
+                glowGradient.addColorStop(0, light.color);
+                glowGradient.addColorStop(1, 'transparent');
+                pinballCtx.fillStyle = glowGradient;
+                pinballCtx.fillRect(light.x - light.radius * 4, light.y - light.radius * 4, light.radius * 8, light.radius * 8);
+            }
+            
+            // Ornate light frame
+            pinballCtx.strokeStyle = '#bb8fce';
+            pinballCtx.lineWidth = 3;
+            pinballCtx.beginPath();
+            pinballCtx.arc(light.x, light.y, light.radius + 3, 0, Math.PI * 2);
+            pinballCtx.stroke();
+            
+            pinballCtx.fillStyle = light.lit ? light.color : '#2d1b47';
+            pinballCtx.beginPath();
+            pinballCtx.arc(light.x, light.y, light.radius, 0, Math.PI * 2);
+            pinballCtx.fill();
+            
+            if (light.lit) {
+                pinballCtx.strokeStyle = '#ffffff';
+                pinballCtx.lineWidth = 2;
+                pinballCtx.stroke();
+            }
+        });
+        
+        // Draw casino-style targets with purple frames
+        pinballTargets.forEach(target => {
+            if (!target.hit) {
+                // Purple frame around target
+                pinballCtx.strokeStyle = '#bb8fce';
+                pinballCtx.lineWidth = 2;
+                pinballCtx.strokeRect(target.x - 2, target.y - 2, target.width + 4, target.height + 4);
+                
+                const targetGradient = pinballCtx.createLinearGradient(target.x, target.y, target.x, target.y + target.height);
+                targetGradient.addColorStop(0, target.color);
+                targetGradient.addColorStop(0.5, '#ffffff');
+                targetGradient.addColorStop(1, target.color);
+                pinballCtx.fillStyle = targetGradient;
+                pinballCtx.fillRect(target.x, target.y, target.width, target.height);
+                
+                // Target label with elegant font
+                pinballCtx.fillStyle = '#2c3e50';
+                pinballCtx.font = 'bold 8px serif';
+                pinballCtx.textAlign = 'center';
+                pinballCtx.strokeStyle = '#ffffff';
+                pinballCtx.lineWidth = 1;
+                pinballCtx.strokeText(target.label, target.x + target.width/2, target.y + target.height/2 + 3);
+                pinballCtx.fillText(target.label, target.x + target.width/2, target.y + target.height/2 + 3);
+            }
+        });
+        
+        // Draw casino-style bumpers with purple and jewel effects
+        pinballBumpers.forEach(bumper => {
+            if (bumper.glow > 0) {
+                const glowGradient = pinballCtx.createRadialGradient(bumper.x, bumper.y, 0, bumper.x, bumper.y, bumper.radius * 2.5);
+                glowGradient.addColorStop(0, bumper.color);
+                glowGradient.addColorStop(1, 'transparent');
+                pinballCtx.fillStyle = glowGradient;
+                pinballCtx.beginPath();
+                pinballCtx.arc(bumper.x, bumper.y, bumper.radius * 2.5, 0, Math.PI * 2);
+                pinballCtx.fill();
+            }
+            
+            // Purple ring around bumper
+            pinballCtx.strokeStyle = '#bb8fce';
+            pinballCtx.lineWidth = 4;
+            pinballCtx.beginPath();
+            pinballCtx.arc(bumper.x, bumper.y, bumper.radius + 3, 0, Math.PI * 2);
+            pinballCtx.stroke();
+            
+            // Jewel-like bumper center
+            const bumperGradient = pinballCtx.createRadialGradient(bumper.x - 8, bumper.y - 8, 0, bumper.x, bumper.y, bumper.radius);
+            bumperGradient.addColorStop(0, '#ffffff');
+            bumperGradient.addColorStop(0.3, bumper.color);
+            bumperGradient.addColorStop(0.7, '#9b59b6');
+            bumperGradient.addColorStop(1, '#6c3483');
+            pinballCtx.fillStyle = bumperGradient;
+            pinballCtx.beginPath();
+            pinballCtx.arc(bumper.x, bumper.y, bumper.radius, 0, Math.PI * 2);
+            pinballCtx.fill();
+        });
+        
+        // Draw casino-style ramps with purple trim
+        pinballRamps.forEach(ramp => {
+            // Purple base
+            pinballCtx.strokeStyle = '#bb8fce';
+            pinballCtx.lineWidth = ramp.width + 4;
+            pinballCtx.lineCap = 'round';
+            pinballCtx.beginPath();
+            pinballCtx.moveTo(ramp.x1, ramp.y1);
+            pinballCtx.lineTo(ramp.x2, ramp.y2);
+            pinballCtx.stroke();
+            
+            // Ramp surface
+            pinballCtx.strokeStyle = ramp.color;
+            pinballCtx.lineWidth = ramp.width;
+            pinballCtx.beginPath();
+            pinballCtx.moveTo(ramp.x1, ramp.y1);
+            pinballCtx.lineTo(ramp.x2, ramp.y2);
+            pinballCtx.stroke();
+        });
+        
+        // Draw larger casino-style flippers with ornate design
+        const leftFlipperAngle = pinballFlippers.left ? -0.4 : 0;
+        const rightFlipperAngle = pinballFlippers.right ? 0.4 : 0;
+        
+        // Left flipper
+        pinballCtx.save();
+        pinballCtx.translate(80, 570);
+        pinballCtx.rotate(leftFlipperAngle);
+        
+        // Purple outline
+        pinballCtx.strokeStyle = '#bb8fce';
+        pinballCtx.lineWidth = 4;
+        pinballCtx.strokeRect(-2, -9, 124, 18);
+        
+        const leftGradient = pinballCtx.createLinearGradient(0, 0, 120, 0);
+        leftGradient.addColorStop(0, '#00cec9');
+        leftGradient.addColorStop(0.3, '#74b9ff');
+        leftGradient.addColorStop(0.7, '#0984e3');
+        leftGradient.addColorStop(1, '#2d3436');
+        pinballCtx.fillStyle = leftGradient;
+        pinballCtx.fillRect(0, -7, 120, 14);
+        
+        // Elegant pattern
+        pinballCtx.fillStyle = '#bb8fce';
+        for (let i = 10; i < 110; i += 20) {
+            pinballCtx.fillRect(i, -3, 8, 6);
+        }
+        pinballCtx.restore();
+        
+        // Right flipper
+        pinballCtx.save();
+        pinballCtx.translate(380, 570);
+        pinballCtx.rotate(rightFlipperAngle);
+        
+        // Purple outline
+        pinballCtx.strokeStyle = '#bb8fce';
+        pinballCtx.lineWidth = 4;
+        pinballCtx.strokeRect(-122, -9, 124, 18);
+        
+        const rightGradient = pinballCtx.createLinearGradient(0, 0, -120, 0);
+        rightGradient.addColorStop(0, '#fd79a8');
+        rightGradient.addColorStop(0.3, '#e84393');
+        rightGradient.addColorStop(0.7, '#d63031');
+        rightGradient.addColorStop(1, '#2d3436');
+        pinballCtx.fillStyle = rightGradient;
+        pinballCtx.fillRect(-120, -7, 120, 14);
+        
+        // Elegant pattern
+        pinballCtx.fillStyle = '#bb8fce';
+        for (let i = -110; i < -10; i += 20) {
+            pinballCtx.fillRect(i, -3, 8, 6);
+        }
+        pinballCtx.restore();
+        
+        // Draw ornate launch area
+        const launchGradient = pinballCtx.createLinearGradient(400, 0, 450, 0);
+        launchGradient.addColorStop(0, '#9b59b6');
+        launchGradient.addColorStop(0.5, '#fd79a8');
+        launchGradient.addColorStop(1, '#e84393');
+        pinballCtx.fillStyle = launchGradient;
+        pinballCtx.fillRect(400, 0, 50, 630);
+        
+        // Launch area decorative pattern
+        pinballCtx.strokeStyle = '#6c3483';
+        pinballCtx.lineWidth = 2;
+        for (let i = 20; i < 630; i += 40) {
+            pinballCtx.strokeRect(405, i, 40, 30);
+        }
+        
+        // Draw particles
+        pinballParticles.forEach(particle => {
+            pinballCtx.globalAlpha = particle.life;
+            pinballCtx.fillStyle = particle.color;
+            pinballCtx.beginPath();
+            pinballCtx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+            pinballCtx.fill();
+        });
+        pinballCtx.globalAlpha = 1;
+        
+        // Draw balls with casino-style trail effect
+        pinballBalls.forEach(ball => {
+            if (ball.active) {
+                // Draw trail
+                ball.trail.forEach((pos, index) => {
+                    const alpha = (index + 1) / ball.trail.length * 0.6;
+                    pinballCtx.globalAlpha = alpha;
+                    pinballCtx.fillStyle = '#bb8fce';
+                    pinballCtx.beginPath();
+                    pinballCtx.arc(pos.x, pos.y, ball.radius * alpha, 0, Math.PI * 2);
+                    pinballCtx.fill();
+                });
+                
+                // Draw main ball with elegant glow
+                pinballCtx.globalAlpha = 1;
+                
+                // Purple outline
+                pinballCtx.strokeStyle = '#bb8fce';
+                pinballCtx.lineWidth = 2;
+                pinballCtx.beginPath();
+                pinballCtx.arc(ball.x, ball.y, ball.radius + 1, 0, Math.PI * 2);
+                pinballCtx.stroke();
+                
+                const ballGradient = pinballCtx.createRadialGradient(ball.x - 3, ball.y - 3, 0, ball.x, ball.y, ball.radius);
+                ballGradient.addColorStop(0, '#ffffff');
+                ballGradient.addColorStop(0.4, '#bb8fce');
+                ballGradient.addColorStop(0.8, '#9b59b6');
+                ballGradient.addColorStop(1, '#8e44ad');
+                pinballCtx.fillStyle = ballGradient;
+                pinballCtx.beginPath();
+                pinballCtx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+                pinballCtx.fill();
+                
+                // Ball glow effect
+                const glowGradient = pinballCtx.createRadialGradient(ball.x, ball.y, ball.radius, ball.x, ball.y, ball.radius * 2.5);
+                glowGradient.addColorStop(0, 'rgba(187, 143, 206, 0.4)');
+                glowGradient.addColorStop(1, 'transparent');
+                pinballCtx.fillStyle = glowGradient;
+                pinballCtx.beginPath();
+                pinballCtx.arc(ball.x, ball.y, ball.radius * 2.5, 0, Math.PI * 2);
+                pinballCtx.fill();
+            }
+        });
+    }
+
+    function pinballGameLoop() {
+        updatePinballPhysics();
+        drawEnhancedPinballBoard();
+        pinballAnimationId = requestAnimationFrame(pinballGameLoop);
+    }
+
+    function updatePinballUI() {
+        pinballScoreElement.textContent = pinballScore.toLocaleString();
+        pinballBallElement.textContent = `${pinballBall}/3`;
+        pinballMultiplierElement.textContent = `x${pinballMultiplier}`;
+        pinballMissionElement.textContent = pinballMission;
+    }
+
+    function pinballTilt() {
+        if (pinballBalls.length === 0) return;
+        
+        pinballTiltWarnings++;
+        if (pinballTiltWarnings >= 3) {
+            // Disable flippers for tilt
+            pinballFlippers.left = false;
+            pinballFlippers.right = false;
+            showBonusText(pinballCanvas.width/2, pinballCanvas.height/2, 'TILT! FLIPPERS DISABLED');
+            
+            setTimeout(() => {
+                pinballTiltWarnings = 0;
+            }, 3000);
+        } else {
+            // Gentle nudge
+            pinballBalls.forEach(ball => {
+                ball.vx += (Math.random() - 0.5) * 4;
+                ball.vy += (Math.random() - 0.5) * 2;
+            });
+            showBonusText(pinballCanvas.width/2, 100, `NUDGE WARNING ${pinballTiltWarnings}/3`);
+        }
+    }
+
+    // Enhanced pinball event listeners
+    pinballLaunchBtn.addEventListener('click', launchPinballBall);
+    pinballResetBtn.addEventListener('click', pinballInit);
+    pinballTiltBtn.addEventListener('click', pinballTilt);
+    
+    leftFlipperBtn.addEventListener('mousedown', () => {
+        if (pinballTiltWarnings < 3) pinballFlippers.left = true;
+    });
+    leftFlipperBtn.addEventListener('mouseup', () => pinballFlippers.left = false);
+    leftFlipperBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        if (pinballTiltWarnings < 3) pinballFlippers.left = true;
+    });
+    leftFlipperBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        pinballFlippers.left = false;
+    });
+    
+    rightFlipperBtn.addEventListener('mousedown', () => {
+        if (pinballTiltWarnings < 3) pinballFlippers.right = true;
+    });
+    rightFlipperBtn.addEventListener('mouseup', () => pinballFlippers.right = false);
+    rightFlipperBtn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        if (pinballTiltWarnings < 3) pinballFlippers.right = true;
+    });
+    rightFlipperBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        pinballFlippers.right = false;
+    });
+    
+    // Enhanced keyboard controls for pinball
+    document.addEventListener('keydown', (e) => {
+        if (document.getElementById('pinball-game').style.display !== 'none') {
+            if ((e.code === 'ArrowLeft' || e.code === 'KeyA') && pinballTiltWarnings < 3) {
+                pinballFlippers.left = true;
+            }
+            if ((e.code === 'ArrowRight' || e.code === 'KeyD') && pinballTiltWarnings < 3) {
+                pinballFlippers.right = true;
+            }
+            if (e.code === 'Space') {
+                e.preventDefault();
+                launchPinballBall();
+            }
+            if (e.code === 'ArrowUp') {
+                e.preventDefault();
+                pinballTilt();
+            }
+        }
+    });
+    
+    document.addEventListener('keyup', (e) => {
+        if (document.getElementById('pinball-game').style.display !== 'none') {
+            if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                pinballFlippers.left = false;
+            }
+            if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                pinballFlippers.right = false;
+            }
+        }
+    });
+
+    // --- Pac-Man Game Implementation ---
+    const pacmanCanvas = document.getElementById('pacman-canvas');
+    const pacmanCtx = pacmanCanvas.getContext('2d');
+    const pacmanScoreEl = document.getElementById('pacman-score');
+    const pacmanLivesEl = document.getElementById('pacman-lives');
+    const pacmanLevelEl = document.getElementById('pacman-level');
+    const pacmanDotsEl = document.getElementById('pacman-dots');
+    const pacmanStartBtn = document.getElementById('pacman-start');
+    const pacmanPauseBtn = document.getElementById('pacman-pause');
+    const pacmanResetBtn = document.getElementById('pacman-reset');
+    
+    let pacmanGame = {
+        running: false,
+        paused: false,
+        score: 0,
+        lives: 3,
+        level: 1,
+        dotsEaten: 0,
+        totalDots: 240,
+        powerPelletTimer: 0,
+        gameLoop: null
+    };
+    
+    const PACMAN_CELL_SIZE = 20;
+    const ROWS = 30;
+    const COLS = 35;
+    
+    // Pac-Man maze layout (1 = wall, 0 = dot, 2 = power pellet, 3 = empty)
+    const pacmanMaze = [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1],
+        [1,2,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,2,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,0,1],
+        [1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1],
+        [1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1],
+        [3,3,3,3,3,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,3,3,3,3,3,3,3],
+        [1,1,1,1,1,1,0,1,1,0,1,1,1,3,3,3,3,3,3,3,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1],
+        [3,3,3,3,3,3,0,0,0,0,1,3,3,3,3,3,3,3,3,3,3,1,0,0,0,0,0,3,3,3,3,3,3,3,3],
+        [1,1,1,1,1,1,0,1,1,0,1,3,3,3,3,3,3,3,3,3,3,1,0,1,1,0,1,1,1,1,1,1,1,1,1],
+        [3,3,3,3,3,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,3,3,3,3,3,3,3,3],
+        [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1,1,1,1],
+        [1,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,1,1,0,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,0,1,1,1,1,0,1,0,1],
+        [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,1],
+        [1,1,1,0,1,1,0,1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,0,1],
+        [1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,1],
+        [1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1],
+        [1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,1,1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,1,0,1],
+        [1,0,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1],
+        [1,1,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,0,1,1,0,1,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,2,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,2,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ];
+    
+    // Create a deep copy of the original maze for resetting
+    const originalPacmanMaze = pacmanMaze.map(row => [...row]);
+    
+    // Pac-Man player object
+    let pacman = {
+        x: 17,
+        y: 26,
+        direction: { x: 0, y: 0 },
+        nextDirection: { x: 0, y: 0 },
+        mouth: 0
+    };
+    
+    // Ghost objects with different colors and slow movement
+    let ghosts = [
+        { x: 17, y: 14, direction: { x: 1, y: 0 }, color: '#ff0000', vulnerable: false, returnHome: false }, // Red
+        { x: 16, y: 14, direction: { x: -1, y: 0 }, color: '#ff69b4', vulnerable: false, returnHome: false }, // Pink
+        { x: 18, y: 14, direction: { x: 0, y: -1 }, color: '#00ff00', vulnerable: false, returnHome: false }, // Green
+        { x: 15, y: 14, direction: { x: 1, y: 0 }, color: '#ff8c00', vulnerable: false, returnHome: false } // Orange
+    ];
+    
+    let gameSpeed = 0;
+    
+    function pacmanInit() {
+        pacmanGame.running = false;
+        pacmanGame.paused = false;
+        pacmanGame.score = 0;
+        pacmanGame.lives = 3;
+        pacmanGame.level = 1;
+        pacmanGame.dotsEaten = 0;
+        pacmanGame.powerPelletTimer = 0;
+        
+        // Reset maze to original state
+        for (let y = 0; y < ROWS; y++) {
+            for (let x = 0; x < COLS; x++) {
+                pacmanMaze[y][x] = originalPacmanMaze[y][x];
+            }
+        }
+        
+        // Calculate total dots in maze
+        let totalDots = 0;
+        for (let y = 0; y < ROWS; y++) {
+            for (let x = 0; x < COLS; x++) {
+                if (originalPacmanMaze[y][x] === 0 || originalPacmanMaze[y][x] === 2) {
+                    totalDots++;
+                }
+            }
+        }
+        pacmanGame.totalDots = totalDots;
+        
+        // Reset Pac-Man position
+        pacman.x = 17;
+        pacman.y = 26;
+        pacman.direction = { x: 0, y: 0 };
+        pacman.nextDirection = { x: 0, y: 0 };
+        pacman.mouth = 0;
+        
+        // Reset ghosts
+        ghosts = [
+            { x: 17, y: 14, direction: { x: 1, y: 0 }, color: '#ff0000', vulnerable: false, returnHome: false }, // Red
+            { x: 16, y: 14, direction: { x: -1, y: 0 }, color: '#ff69b4', vulnerable: false, returnHome: false }, // Pink
+            { x: 18, y: 14, direction: { x: 0, y: -1 }, color: '#00ff00', vulnerable: false, returnHome: false }, // Green
+            { x: 15, y: 14, direction: { x: 1, y: 0 }, color: '#ff8c00', vulnerable: false, returnHome: false } // Orange
+        ];
+        
+        // Explicitly ensure all ghosts are not vulnerable
+        ghosts.forEach(ghost => {
+            ghost.vulnerable = false;
+            ghost.returnHome = false;
+        });
+        
+        gameSpeed = 0;
+        updatePacmanDisplay();
+        drawPacmanGame();
+        
+        // Reset button states
+        pacmanStartBtn.textContent = '🎮 Start Game';
+        pacmanStartBtn.disabled = false;
+        
+        if (pacmanGame.gameLoop) {
+            clearInterval(pacmanGame.gameLoop);
+        }
+    }
+    
+    function startPacmanGame() {
+        if (pacmanGame.running) return;
+        
+        // Ensure all ghosts are not vulnerable at game start
+        ghosts.forEach(ghost => {
+            ghost.vulnerable = false;
+            ghost.returnHome = false;
+        });
+        
+        // Reset power pellet timer to ensure no vulnerability at start
+        pacmanGame.powerPelletTimer = 0;
+        
+        pacmanGame.running = true;
+        pacmanGame.paused = false;
+        
+        // Faster game speed for more exciting play
+        pacmanGame.gameLoop = setInterval(() => {
+            if (!pacmanGame.paused) {
+                gameSpeed++;
+                // Update every 4 frames for faster movement
+                if (gameSpeed % 4 === 0) {
+                    updatePacmanGame();
+                }
+                drawPacmanGame();
+            }
+        }, 40); // 25 FPS for smooth and fast animation
+        
+        pacmanStartBtn.textContent = '🎮 Running';
+        pacmanStartBtn.disabled = true;
+    }
+    
+    function pausePacmanGame() {
+        pacmanGame.paused = !pacmanGame.paused;
+        pacmanPauseBtn.textContent = pacmanGame.paused ? '▶️ Resume' : '⏸️ Pause';
+    }
+    
+    function updatePacmanGame() {
+        // Update Pac-Man movement
+        updatePacmanMovement();
+        
+        // Update ghosts (faster but still slightly slower than Pac-Man)
+        if (gameSpeed % 8 === 0) { // Ghosts move at 1/2 speed of Pac-Man
+            updateGhosts();
+        }
+        
+        // Check collisions
+        checkPacmanCollisions();
+        
+        // Update power pellet timer
+        if (pacmanGame.powerPelletTimer > 0) {
+            pacmanGame.powerPelletTimer--;
+            if (pacmanGame.powerPelletTimer === 0) {
+                ghosts.forEach(ghost => ghost.vulnerable = false);
+            }
+        }
+        
+        updatePacmanDisplay();
+    }
+    
+    function updatePacmanMovement() {
+        // Try to change direction if requested
+        const nextX = pacman.x + pacman.nextDirection.x;
+        const nextY = pacman.y + pacman.nextDirection.y;
+        
+        // Allow direction change if next move is valid or if we can change direction at current position
+        if (isValidMove(nextX, nextY) || (pacman.nextDirection.x !== 0 || pacman.nextDirection.y !== 0)) {
+            // Only change direction if it's different from current direction
+            if (pacman.nextDirection.x !== pacman.direction.x || pacman.nextDirection.y !== pacman.direction.y) {
+                if (isValidMove(nextX, nextY)) {
+                    pacman.direction = { ...pacman.nextDirection };
+                }
+            }
+        }
+        
+        // Move in current direction
+        const newX = pacman.x + pacman.direction.x;
+        const newY = pacman.y + pacman.direction.y;
+        
+        if (isValidMove(newX, newY)) {
+            pacman.x = newX;
+            pacman.y = newY;
+            
+            // Tunnel effect (left-right wrap)
+            if (pacman.x < 0) pacman.x = COLS - 1;
+            if (pacman.x >= COLS) pacman.x = 0;
+            
+            // Animate mouth only when moving
+            pacman.mouth = (pacman.mouth + 0.4) % (Math.PI * 2);
+        } else {
+            // Stop moving if hit wall but keep direction for mouth animation
+            // pacman.direction remains the same for proper mouth orientation
+        }
+    }
+    
+    function updateGhosts() {
+        ghosts.forEach(ghost => {
+            const directions = [
+                { x: 0, y: -1 }, // up
+                { x: 1, y: 0 },  // right
+                { x: 0, y: 1 },  // down
+                { x: -1, y: 0 }  // left
+            ];
+            
+            // Simple AI: choose random valid direction
+            let validDirections = directions.filter(dir => {
+                const newX = ghost.x + dir.x;
+                const newY = ghost.y + dir.y;
+                return isValidMove(newX, newY) && 
+                       !(dir.x === -ghost.direction.x && dir.y === -ghost.direction.y); // Don't reverse
+            });
+            
+            if (validDirections.length === 0) {
+                // If no valid directions, can reverse
+                validDirections = directions.filter(dir => {
+                    const newX = ghost.x + dir.x;
+                    const newY = ghost.y + dir.y;
+                    return isValidMove(newX, newY);
+                });
+            }
+            
+            if (validDirections.length > 0) {
+                // Choose direction towards or away from Pac-Man based on vulnerability
+                if (ghost.vulnerable) {
+                    // Run away from Pac-Man
+                    const awayDirections = validDirections.sort((a, b) => {
+                        const distA = Math.abs((ghost.x + a.x) - pacman.x) + Math.abs((ghost.y + a.y) - pacman.y);
+                        const distB = Math.abs((ghost.x + b.x) - pacman.x) + Math.abs((ghost.y + b.y) - pacman.y);
+                        return distB - distA; // Sort by distance descending
+                    });
+                    ghost.direction = awayDirections[0];
+                } else {
+                    // Random movement (simple AI)
+                    ghost.direction = validDirections[Math.floor(Math.random() * validDirections.length)];
+                }
+            }
+            
+            // Move ghost
+            const newX = ghost.x + ghost.direction.x;
+            const newY = ghost.y + ghost.direction.y;
+            
+            if (isValidMove(newX, newY)) {
+                ghost.x = newX;
+                ghost.y = newY;
+                
+                // Tunnel effect
+                if (ghost.x < 0) ghost.x = COLS - 1;
+                if (ghost.x >= COLS) ghost.x = 0;
+            }
+        });
+    }
+    
+    function isValidMove(x, y) {
+        // Handle tunnel wrapping
+        if (x < 0 || x >= COLS) return true; // Allow horizontal tunnel
+        if (y < 0 || y >= ROWS) return false; // Don't allow vertical out of bounds
+        
+        // Check if the maze cell exists and is not a wall
+        return pacmanMaze[y] && pacmanMaze[y][x] !== undefined && pacmanMaze[y][x] !== 1;
+    }
+    
+    function checkPacmanCollisions() {
+        // Check dot collection
+        if (pacmanMaze[pacman.y] && pacmanMaze[pacman.y][pacman.x] === 0) {
+            pacmanMaze[pacman.y][pacman.x] = 3; // Mark as eaten
+            pacmanGame.score += 10;
+            pacmanGame.dotsEaten++;
+        }
+        
+        // Check power pellet collection
+        if (pacmanMaze[pacman.y] && pacmanMaze[pacman.y][pacman.x] === 2) {
+            pacmanMaze[pacman.y][pacman.x] = 3; // Mark as eaten
+            pacmanGame.score += 50;
+            pacmanGame.powerPelletTimer = 300; // 300 frames = 15 seconds at 20fps
+            ghosts.forEach(ghost => ghost.vulnerable = true);
+        }
+        
+        // Check ghost collisions
+        ghosts.forEach((ghost, index) => {
+            if (Math.abs(ghost.x - pacman.x) < 1 && Math.abs(ghost.y - pacman.y) < 1) {
+                if (ghost.vulnerable) {
+                    // Eat ghost
+                    pacmanGame.score += 200;
+                    ghost.x = 14; // Return to center
+                    ghost.y = 11;
+                    ghost.vulnerable = false;
+                } else {
+                    // Pac-Man dies
+                    pacmanGame.lives--;
+                    if (pacmanGame.lives <= 0) {
+                        gameOver();
+                    } else {
+                        resetPositions();
+                    }
+                }
+            }
+        });
+        
+        // Check level completion
+        if (pacmanGame.dotsEaten >= pacmanGame.totalDots) {
+            pacmanGame.running = false;
+            
+            // Show level completion message
+            const levelCompleteMsg = `🎉 Level ${pacmanGame.level} Complete! 🎉\n\nScore: ${pacmanGame.score}\nGet ready for Level ${pacmanGame.level + 1}!`;
+            
+            setTimeout(() => {
+                alert(levelCompleteMsg);
+                pacmanGame.level++;
+                pacmanGame.score += 500; // Bonus points for completing level
+                resetLevel();
+                
+                // Start next level automatically
+                setTimeout(() => {
+                    startPacmanGame();
+                }, 1000);
+            }, 500);
+        }
+    }
+    
+    function resetPositions() {
+        pacman.x = 17;
+        pacman.y = 26;
+        pacman.direction = { x: 0, y: 0 };
+        
+        // Position ghosts in the center area
+        ghosts[0].x = 17; ghosts[0].y = 14;
+        ghosts[1].x = 16; ghosts[1].y = 14;
+        ghosts[2].x = 18; ghosts[2].y = 14;
+        ghosts[3].x = 15; ghosts[3].y = 14;
+        
+        ghosts.forEach(ghost => {
+            ghost.vulnerable = false;
+            ghost.returnHome = false;
+        });
+        
+        pacmanGame.powerPelletTimer = 0;
+    }
+    
+    function resetLevel() {
+        // Reset maze to original state
+        for (let y = 0; y < ROWS; y++) {
+            for (let x = 0; x < COLS; x++) {
+                pacmanMaze[y][x] = originalPacmanMaze[y][x];
+            }
+        }
+        
+        pacmanGame.dotsEaten = 0;
+        resetPositions();
+        updatePacmanDisplay();
+    }
+    
+    function gameOver() {
+        pacmanGame.running = false;
+        clearInterval(pacmanGame.gameLoop);
+        
+        pacmanStartBtn.textContent = '🎮 Start Game';
+        pacmanStartBtn.disabled = false;
+        
+        setTimeout(() => {
+            alert(`Game Over! Final Score: ${pacmanGame.score}`);
+        }, 100);
+    }
+    
+    function drawPacmanGame() {
+        // Clear canvas with dark background
+        pacmanCtx.fillStyle = '#000020';
+        pacmanCtx.fillRect(0, 0, pacmanCanvas.width, pacmanCanvas.height);
+        
+        // Draw maze
+        for (let y = 0; y < ROWS; y++) {
+            for (let x = 0; x < COLS; x++) {
+                const cellValue = pacmanMaze[y][x];
+                const pixelX = x * PACMAN_CELL_SIZE;
+                const pixelY = y * PACMAN_CELL_SIZE;
+                
+                if (cellValue === 1) {
+                    // Blue maze walls
+                    pacmanCtx.fillStyle = '#0066ff';
+                    pacmanCtx.fillRect(pixelX, pixelY, PACMAN_CELL_SIZE, PACMAN_CELL_SIZE);
+                    
+                    // Add wall highlight for 3D effect
+                    pacmanCtx.fillStyle = '#0088ff';
+                    pacmanCtx.fillRect(pixelX, pixelY, PACMAN_CELL_SIZE, 2);
+                    pacmanCtx.fillRect(pixelX, pixelY, 2, PACMAN_CELL_SIZE);
+                } else if (cellValue === 0) {
+                    // Sparkling dots with animation (larger size)
+                    const sparkle = Math.sin(gameSpeed * 0.1) * 0.3 + 0.7;
+                    pacmanCtx.fillStyle = `rgba(255, 255, 255, ${sparkle})`;
+                    pacmanCtx.beginPath();
+                    pacmanCtx.arc(pixelX + PACMAN_CELL_SIZE/2, pixelY + PACMAN_CELL_SIZE/2, 3, 0, Math.PI * 2);
+                    pacmanCtx.fill();
+                    
+                    // Add sparkle effect
+                    pacmanCtx.fillStyle = `rgba(255, 255, 0, ${sparkle * 0.5})`;
+                    pacmanCtx.beginPath();
+                    pacmanCtx.arc(pixelX + PACMAN_CELL_SIZE/2, pixelY + PACMAN_CELL_SIZE/2, 1.5, 0, Math.PI * 2);
+                    pacmanCtx.fill();
+                } else if (cellValue === 2) {
+                    // Power pellets (larger sparkling dots)
+                    const sparkle = Math.sin(gameSpeed * 0.15) * 0.4 + 0.6;
+                    pacmanCtx.fillStyle = `rgba(255, 255, 255, ${sparkle})`;
+                    pacmanCtx.beginPath();
+                    pacmanCtx.arc(pixelX + PACMAN_CELL_SIZE/2, pixelY + PACMAN_CELL_SIZE/2, 8, 0, Math.PI * 2);
+                    pacmanCtx.fill();
+                    
+                    // Add glow effect
+                    pacmanCtx.fillStyle = `rgba(255, 255, 0, ${sparkle * 0.3})`;
+                    pacmanCtx.beginPath();
+                    pacmanCtx.arc(pixelX + PACMAN_CELL_SIZE/2, pixelY + PACMAN_CELL_SIZE/2, 10, 0, Math.PI * 2);
+                    pacmanCtx.fill();
+                }
+            }
+        }
+        
+        // Draw Pac-Man as a yellow chomping face
+        const pacmanPixelX = pacman.x * PACMAN_CELL_SIZE + PACMAN_CELL_SIZE/2;
+        const pacmanPixelY = pacman.y * PACMAN_CELL_SIZE + PACMAN_CELL_SIZE/2;
+        
+        // Pac-Man body with glow effect
+        pacmanCtx.fillStyle = 'rgba(255, 255, 0, 0.3)';
+        pacmanCtx.beginPath();
+        pacmanCtx.arc(pacmanPixelX, pacmanPixelY, PACMAN_CELL_SIZE/2 + 2, 0, Math.PI * 2);
+        pacmanCtx.fill();
+        
+        pacmanCtx.fillStyle = '#ffff00';
+        pacmanCtx.beginPath();
+        
+        // Calculate mouth direction based on movement (improved logic)
+        let mouthDirection = 0; // Default facing right
+        
+        if (pacman.direction.x > 0) { // Moving Right
+            mouthDirection = 0;
+        } else if (pacman.direction.x < 0) { // Moving Left
+            mouthDirection = Math.PI;
+        } else if (pacman.direction.y > 0) { // Moving Down
+            mouthDirection = Math.PI/2;
+        } else if (pacman.direction.y < 0) { // Moving Up
+            mouthDirection = -Math.PI/2;
+        } else {
+            // If not moving, keep last direction or face right
+            mouthDirection = 0;
+        }
+        
+        // Animate mouth opening and closing
+        const mouthAnimation = Math.abs(Math.sin(pacman.mouth * 2)) * 0.6 + 0.1;
+        const mouthSize = mouthAnimation * 1.2; // Bigger mouth opening
+        
+        const startAngle = mouthDirection - mouthSize;
+        const endAngle = mouthDirection + mouthSize;
+        
+        // Draw Pac-Man body with mouth
+        pacmanCtx.arc(pacmanPixelX, pacmanPixelY, PACMAN_CELL_SIZE/2 - 1, endAngle, startAngle + Math.PI * 2);
+        pacmanCtx.lineTo(pacmanPixelX, pacmanPixelY);
+        pacmanCtx.fill();
+        
+        // Add Pac-Man eye for character (better positioned)
+        pacmanCtx.fillStyle = '#000000';
+        pacmanCtx.beginPath();
+        
+        // Position eye based on direction
+        let eyeX = pacmanPixelX;
+        let eyeY = pacmanPixelY - 4;
+        
+        if (pacman.direction.x > 0) { // Moving Right
+            eyeX += 3;
+            eyeY -= 1;
+        } else if (pacman.direction.x < 0) { // Moving Left
+            eyeX -= 3;
+            eyeY -= 1;
+        } else if (pacman.direction.y > 0) { // Moving Down
+            eyeX += 1;
+            eyeY += 1;
+        } else if (pacman.direction.y < 0) { // Moving Up
+            eyeX += 1;
+            eyeY -= 3;
+        } else {
+            // Default eye position
+            eyeX += 3;
+            eyeY -= 1;
+        }
+        
+        pacmanCtx.arc(eyeX, eyeY, 2, 0, Math.PI * 2);
+        pacmanCtx.fill();
+        
+        // Draw colorful ghosts
+        ghosts.forEach(ghost => {
+            const ghostPixelX = ghost.x * PACMAN_CELL_SIZE + PACMAN_CELL_SIZE/2;
+            const ghostPixelY = ghost.y * PACMAN_CELL_SIZE + PACMAN_CELL_SIZE/2;
+            
+            // Ghost glow effect
+            pacmanCtx.fillStyle = ghost.color + '40'; // Semi-transparent version
+            pacmanCtx.beginPath();
+            pacmanCtx.arc(ghostPixelX, ghostPixelY, PACMAN_CELL_SIZE/2 + 2, 0, Math.PI * 2);
+            pacmanCtx.fill();
+            
+            // Set ghost color based on vulnerability state  
+            // Only change color if power pellet was consumed AND timer is active
+            if (pacmanGame.powerPelletTimer > 60 && ghost.vulnerable) {
+                // Normal vulnerable state - blue color
+                pacmanCtx.fillStyle = '#0000ff';
+            } else if (pacmanGame.powerPelletTimer > 0 && pacmanGame.powerPelletTimer <= 60 && ghost.vulnerable) {
+                // Blinking when vulnerability is ending - blue/white flash
+                pacmanCtx.fillStyle = pacmanGame.powerPelletTimer % 20 < 10 ? '#0000ff' : '#ffffff';
+            } else {
+                // Normal state - use ghost's original color
+                pacmanCtx.fillStyle = ghost.color;
+            }
+            
+            // Ghost body (more rounded and colorful)
+            pacmanCtx.beginPath();
+            pacmanCtx.arc(ghostPixelX, ghostPixelY - 2, PACMAN_CELL_SIZE/2 - 2, Math.PI, 0);
+            pacmanCtx.lineTo(ghostPixelX + PACMAN_CELL_SIZE/2 - 2, ghostPixelY + PACMAN_CELL_SIZE/2 - 2);
+            pacmanCtx.lineTo(ghostPixelX + 3, ghostPixelY + PACMAN_CELL_SIZE/2 - 2);
+            pacmanCtx.lineTo(ghostPixelX + 1, ghostPixelY + 2);
+            pacmanCtx.lineTo(ghostPixelX - 1, ghostPixelY + PACMAN_CELL_SIZE/2 - 2);
+            pacmanCtx.lineTo(ghostPixelX - 3, ghostPixelY + PACMAN_CELL_SIZE/2 - 2);
+            pacmanCtx.lineTo(ghostPixelX - PACMAN_CELL_SIZE/2 + 2, ghostPixelY + PACMAN_CELL_SIZE/2 - 2);
+            pacmanCtx.closePath();
+            pacmanCtx.fill();
+            
+            // Ghost eyes (larger and more expressive)
+            pacmanCtx.fillStyle = '#ffffff';
+            pacmanCtx.beginPath();
+            pacmanCtx.arc(ghostPixelX - 4, ghostPixelY - 3, 3, 0, Math.PI * 2);
+            pacmanCtx.arc(ghostPixelX + 4, ghostPixelY - 3, 3, 0, Math.PI * 2);
+            pacmanCtx.fill();
+            
+            // Ghost pupils
+            pacmanCtx.fillStyle = '#000000';
+            pacmanCtx.beginPath();
+            pacmanCtx.arc(ghostPixelX - 4, ghostPixelY - 3, 1.5, 0, Math.PI * 2);
+            pacmanCtx.arc(ghostPixelX + 4, ghostPixelY - 3, 1.5, 0, Math.PI * 2);
+            pacmanCtx.fill();
+            
+            // Add highlight for 3D effect
+            if (!ghost.vulnerable) {
+                pacmanCtx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                pacmanCtx.beginPath();
+                pacmanCtx.arc(ghostPixelX - 2, ghostPixelY - 4, 3, 0, Math.PI * 2);
+                pacmanCtx.fill();
+            }
+        });
+    }
+    
+    function updatePacmanDisplay() {
+        pacmanScoreEl.textContent = pacmanGame.score;
+        pacmanLivesEl.textContent = pacmanGame.lives;
+        pacmanLevelEl.textContent = pacmanGame.level;
+        pacmanDotsEl.textContent = `${pacmanGame.dotsEaten}/${pacmanGame.totalDots}`;
+    }
+    
+    // Event listeners
+    pacmanStartBtn.addEventListener('click', startPacmanGame);
+    pacmanPauseBtn.addEventListener('click', pausePacmanGame);
+    pacmanResetBtn.addEventListener('click', pacmanInit);
+    
+    // Keyboard controls for Pac-Man
+    document.addEventListener('keydown', (e) => {
+        if (!pacmanGame.running || pacmanGame.paused) return;
+        
+        switch(e.key) {
+            case 'ArrowUp':
+                pacman.nextDirection = { x: 0, y: -1 };
+                e.preventDefault();
+                break;
+            case 'ArrowDown':
+                pacman.nextDirection = { x: 0, y: 1 };
+                e.preventDefault();
+                break;
+            case 'ArrowLeft':
+                pacman.nextDirection = { x: -1, y: 0 };
+                e.preventDefault();
+                break;
+            case 'ArrowRight':
+                pacman.nextDirection = { x: 1, y: 0 };
+                e.preventDefault();
+                break;
+        }
+    });
+    
+    </script>
+</body>
+</html>

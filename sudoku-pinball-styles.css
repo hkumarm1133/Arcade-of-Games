@@ -1,0 +1,193 @@
+/* Sudoku Game Styles */
+.sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    max-width: 450px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: linear-gradient(145deg, #fd79a8, #e84393);
+    border-radius: 15px;
+    box-shadow: 
+        10px 10px 20px rgba(0,0,0,0.3),
+        -5px -5px 10px rgba(255,255,255,0.1);
+    border: 5px solid #2d3436;
+}
+
+.sudoku-cell {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, #a29bfe, #6c5ce7);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        4px 4px 8px rgba(0,0,0,0.3),
+        -2px -2px 4px rgba(255,255,255,0.3),
+        inset 1px 1px 2px rgba(255,255,255,0.5),
+        inset -1px -1px 2px rgba(0,0,0,0.1);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid transparent;
+}
+
+.sudoku-cell:hover {
+    background: linear-gradient(145deg, #b8b5ff, #8a84ff);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        6px 6px 12px rgba(0,0,0,0.4),
+        -3px -3px 6px rgba(255,255,255,0.4),
+        inset 2px 2px 4px rgba(255,255,255,0.6);
+}
+
+.sudoku-cell.given {
+    background: linear-gradient(145deg, #74b9ff, #0984e3);
+    cursor: default;
+    font-weight: 900;
+}
+
+.sudoku-cell.selected {
+    background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+    color: #2d3436;
+    border: 2px solid #f39c12;
+}
+
+.sudoku-cell.error {
+    background: linear-gradient(145deg, #ff6b6b, #e84393);
+    animation: shake 0.5s ease-in-out;
+}
+
+.sudoku-cell.hint {
+    background: linear-gradient(145deg, #55efc4, #00b894);
+    animation: pulse 1s ease-in-out;
+}
+
+/* Sudoku thick borders for 3x3 boxes */
+.sudoku-cell:nth-child(3n) {
+    border-right: 3px solid #2d3436;
+}
+
+.sudoku-cell:nth-child(n+19):nth-child(-n+27),
+.sudoku-cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid #2d3436;
+}
+
+.sudoku-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.number-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #ff6b9d, #6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.number-btn:hover {
+    background: linear-gradient(45deg, #e84393, #5f3dc4);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 18px rgba(255, 107, 157, 0.6);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Pinball Game Styles */
+.pinball-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#pinball-canvas {
+    background: linear-gradient(145deg, #2d3436, #636e72);
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.3),
+        0 1px 8px rgba(0,0,0,0.06);
+    border: 5px solid #fd79a8;
+    margin-bottom: 20px;
+}
+
+.pinball-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    gap: 20px;
+}
+
+.flipper-btn {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #ff6b9d, #6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border: 3px solid rgba(255,255,255,0.3);
+    user-select: none;
+}
+
+.flipper-btn:hover {
+    background: linear-gradient(45deg, #e84393, #5f3dc4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 107, 157, 0.6);
+}
+
+.flipper-btn:active {
+    transform: translateY(-1px) scale(0.95);
+    background: linear-gradient(45deg, #d63031, #4a148c);
+}
+
+.left-flipper {
+    transform: rotate(-15deg);
+}
+
+.right-flipper {
+    transform: rotate(15deg);
+}
+
+.pinball-instructions {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    font-size: 0.9em;
+}

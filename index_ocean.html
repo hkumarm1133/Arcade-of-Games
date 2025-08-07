@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Adventure Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>🌊 Ocean Adventure World</h1>
+            <p class="subtitle">Dive into magical underwater adventures and treasure hunts!</p>
+        </header>
+        <main>
+            <div class="games-grid">
+                <!-- Minesweeper Card -->
+                <div class="game-card" data-game="minesweeper">
+                    <div class="game-icon">🏴‍☠️</div>
+                    <h3>Pirate Treasure Hunt</h3>
+                    <p class="game-description">Find buried treasure chests while avoiding dangerous sea mines!</p>
+                    <div class="game-features">
+                        <span class="feature">💰 Gold Coins</span>
+                        <span class="feature">⚓ Pirate Quest</span>
+                        <span class="feature">💎 Sea Gems</span>
+                    </div>
+                    <button class="play-btn">Set Sail!</button>
+                </div>
+
+                <!-- Tic-Tac-Toe Card -->
+                <div class="game-card" data-game="tictactoe">
+                    <div class="game-icon">🦀</div>
+                    <h3>Crab Battle</h3>
+                    <p class="game-description">Epic underwater battle between sea creatures!</p>
+                    <div class="game-features">
+                        <span class="feature">🐙 2 Creatures</span>
+                        <span class="feature">🌊 Ocean War</span>
+                        <span class="feature">⚡ Quick Splash</span>
+                    </div>
+                    <button class="play-btn">Dive In!</button>
+                </div>
+
+                <!-- Memory Game Card -->
+                <div class="game-card" data-game="memory">
+                    <div class="game-icon">🐠</div>
+                    <h3>Coral Memory</h3>
+                    <p class="game-description">Match beautiful sea creatures hiding in coral reefs!</p>
+                    <div class="game-features">
+                        <span class="feature">🐟 Sea Friends</span>
+                        <span class="feature">🪸 Coral Magic</span>
+                        <span class="feature">🌊 Ocean Points</span>
+                    </div>
+                    <button class="play-btn">Explore Reef!</button>
+                </div>
+
+                <!-- Snake Game Card -->
+                <div class="game-card" data-game="snake">
+                    <div class="game-icon">🐍</div>
+                    <h3>Sea Serpent</h3>
+                    <p class="game-description">Guide the magical sea serpent through underwater caves!</p>
+                    <div class="game-features">
+                        <span class="feature">🦐 Tasty Shrimp</span>
+                        <span class="feature">🌊 Deep Swim</span>
+                        <span class="feature">🎮 Ocean Flow</span>
+                    </div>
+                    <button class="play-btn">Swim Deep!</button>
+                </div>
+
+                <!-- Tetris Card -->
+                <div class="game-card" data-game="tetris">
+                    <div class="game-icon">🏰</div>
+                    <h3>Coral Castle</h3>
+                    <p class="game-description">Build amazing underwater castles with colorful coral blocks!</p>
+                    <div class="game-features">
+                        <span class="feature">🔄 Stack Coral</span>
+                        <span class="feature">🌈 Ocean Colors</span>
+                        <span class="feature">🏆 Build High</span>
+                    </div>
+                    <button class="play-btn">Build Castle!</button>
+                </div>
+
+                <!-- Challenge Zone Card -->
+                <div class="game-card challenge-card">
+                    <div class="game-icon">🧜‍♀️</div>
+                    <h3>Mermaid Academy</h3>
+                    <p class="game-description">Advanced ocean missions for brave young sailors - puzzles and sea adventures!</p>
+                    <div class="game-features">
+                        <span class="feature">🌟 Ocean Puzzles</span>
+                        <span class="feature">🐙 Sea Science</span>
+                        <span class="feature">🎓 Sailor School</span>
+                    </div>
+                    <button class="play-btn challenge-btn">Join Academy!</button>
+                </div>
+            </div>
+
+            <!-- Individual Game Containers (Hidden by default) -->
+            <div class="game-overlay" id="game-overlay">
+                <div class="game-header">
+                    <button class="back-btn" id="back-btn">← Back to Ocean</button>
+                    <h2 id="current-game-title">Game</h2>
+                </div>
+                <!-- Minesweeper Game UI -->
+                <div id="minesweeper-game" class="game-container">
+                    <h2>🏴‍☠️ Pirate Treasure Hunt</h2>
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="label">💣 Sea Mines:</span>
+                            <span id="mine-count" class="value">10</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">⏰ Time:</span>
+                            <span id="timer" class="value">000</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="reset-btn" class="btn">🌊 New Voyage</button>
+                        <select id="difficulty" class="difficulty-select">
+                            <option value="beginner">⛵ Cabin Boy (9x9, 10 mines)</option>
+                            <option value="intermediate">🏴‍☠️ Pirate (16x16, 40 mines)</option>
+                            <option value="expert">👑 Captain (30x16, 99 mines)</option>
+                        </select>
+                    </div>
+                    <div id="game-board" class="game-board"></div>
+                    <div id="game-status" class="game-status hidden">
+                        <div class="status-message">
+                            <h2 id="status-text"></h2>
+                            <button id="play-again-btn" class="btn">🎉 Sail Again</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder for other games -->
+                <div id="tictactoe-game" class="game-container" style="display:none">
+                    <h2>🦀 Crab Battle Arena</h2>
+                    <div id="ttt-status" class="ttt-status"></div>
+                    <div id="ttt-board" class="ttt-board"></div>
+                    <button id="ttt-reset" class="btn">🌊 New Battle</button>
+                </div>
+                <div id="memory-game" class="game-container" style="display:none">
+                    <h2>🐠 Coral Memory Reef</h2>
+                    <div id="memory-board" class="memory-board"></div>
+                    <button id="memory-reset" class="btn">🪸 New Dive</button>
+                </div>
+                <div id="snake-game" class="game-container" style="display:none">
+                    <h2>🐍 Sea Serpent Adventure</h2>
+                    <canvas id="snake-canvas" width="320" height="320" style="background:linear-gradient(45deg, #4facfe, #00f2fe);display:block;margin:0 auto;border-radius:15px;border:3px solid #fff;box-shadow:0 8px 32px rgba(0,0,0,0.1);"></canvas>
+                    <div id="snake-score" class="snake-score">🦐 Shrimp Eaten: 0</div>
+                    <button id="snake-reset" class="btn">🌊 New Dive</button>
+                    <div class="snake-instructions">Use arrow keys or WASD to swim!</div>
+                </div>
+                <div id="tetris-game" class="game-container" style="display:none">
+                    <h2>🏰 Coral Castle Builder</h2>
+                    <div class="tetris-ui">
+                        <div class="tetris-side-panel">
+                            <div class="tetris-info">
+                                <div class="tetris-score">
+                                    <div class="label">🌊 Score:</div>
+                                    <div id="tetris-score-value" class="value">0</div>
+                                </div>
+                                <div class="tetris-level">
+                                    <div class="label">🏆 Level:</div>
+                                    <div id="tetris-level-value" class="value">1</div>
+                                </div>
+                                <div class="tetris-lines">
+                                    <div class="label">📏 Lines:</div>
+                                    <div id="tetris-lines-value" class="value">0</div>
+                                </div>
+                            </div>
+                            <div class="tetris-next">
+                                <h3>🔮 Next Coral:</h3>
+                                <canvas id="tetris-next-canvas" width="80" height="80"></canvas>
+                            </div>
+                        </div>
+                        <canvas id="tetris-canvas" width="300" height="600"></canvas>
+                    </div>
+                    <button id="tetris-reset" class="btn">🌊 New Castle</button>
+                    <div class="tetris-instructions">
+                        🎮 Arrow keys: Move/Rotate • Space: Drop Fast • P: Pause
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // Game card interactions and overlay management
+    const gameCards = document.querySelectorAll('.game-card');
+    const gameOverlay = document.getElementById('game-overlay');
+    const backBtn = document.getElementById('back-btn');
+    const currentGameTitle = document.getElementById('current-game-title');
+    const gamesGrid = document.querySelector('.games-grid');
+    
+    // Game title mapping
+    const gameTitles = {
+        'minesweeper': 'Pirate Treasure Hunt',
+        'tictactoe': 'Crab Battle Arena',
+        'memory': 'Coral Memory Reef',
+        'snake': 'Sea Serpent Adventure',
+        'tetris': 'Coral Castle Builder'
+    };
+    
+    // Add click event to all game cards
+    gameCards.forEach(card => {
+        const playBtn = card.querySelector('.play-btn');
+        const gameType = card.getAttribute('data-game');
+        
+        if (gameType && gameType !== 'challenge') {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showGame(gameType);
+            });
+            
+            card.addEventListener('click', () => {
+                showGame(gameType);
+            });
+        } else if (card.classList.contains('challenge-card')) {
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                alert('🧜‍♀️ Mermaid Academy opening soon! 🌊\n\nGet ready for amazing ocean adventures:\n• 🌟 Ocean Puzzles\n• 🐙 Sea Science\n• 🎓 Sailor School\n\nStay tuned for the adventure!');
+            });
+        }
+    });
+    
+    // Back button functionality
+    backBtn.addEventListener('click', () => {
+        hideGame();
+    });
+    
+    function showGame(gameType) {
+        // Hide all individual game containers
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        // Show the selected game
+        const gameContainer = document.getElementById(gameType + '-game');
+        if (gameContainer) {
+            gameContainer.style.display = 'block';
+        }
+        
+        // Update title and show overlay
+        currentGameTitle.textContent = gameTitles[gameType] || 'Game';
+        gamesGrid.style.display = 'none';
+        gameOverlay.style.display = 'block';
+        
+        // Reset game state when opening
+        if (gameType === 'tictactoe') tttInit();
+        if (gameType === 'memory') memoryInit();
+        if (gameType === 'snake') snakeInit();
+        if (gameType === 'tetris') tetrisInit();
+    }
+    
+    function hideGame() {
+        gamesGrid.style.display = 'grid';
+        gameOverlay.style.display = 'none';
+        
+        // Hide all games
+        document.querySelectorAll('.game-container').forEach(container => {
+            container.style.display = 'none';
+        });
+    }
+    
+    // Initialize with grid view
+    hideGame();
+
+    // --- Enhanced Tic-Tac-Toe ---
+    const tttBoard = document.getElementById('ttt-board');
+    const tttStatus = document.getElementById('ttt-status');
+    const tttReset = document.getElementById('ttt-reset');
+    let tttCells, tttCurrent, tttGameOver;
+    
+    function tttInit() {
+        tttBoard.innerHTML = '';
+        tttCells = Array(9).fill('');
+        tttCurrent = 'X';
+        tttGameOver = false;
+        tttStatus.textContent = "Crab X's turn";
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'ttt-cell';
+            cell.addEventListener('click', () => tttMove(i));
+            tttBoard.appendChild(cell);
+        }
+    }
+    
+    function tttMove(i) {
+        if (tttCells[i] || tttGameOver) return;
+        tttCells[i] = tttCurrent;
+        tttBoard.children[i].textContent = tttCurrent;
+        tttBoard.children[i].style.color = tttCurrent === 'X' ? '#ff6b6b' : '#4ecdc4';
+        
+        if (tttCheckWin(tttCurrent)) {
+            tttStatus.textContent = `🎉 Crab ${tttCurrent} wins the ocean battle! 🌊`;
+            tttStatus.style.color = '#17a2b8';
+            tttGameOver = true;
+            tttHighlightWin(tttCurrent);
+        } else if (tttCells.every(c => c)) {
+            tttStatus.textContent = "🤝 It's a peaceful ocean draw! 🌊";
+            tttStatus.style.color = '#20c997';
+            tttGameOver = true;
+        } else {
+            tttCurrent = tttCurrent === 'X' ? 'O' : 'X';
+            tttStatus.textContent = `Crab ${tttCurrent}'s turn`;
+            tttStatus.style.color = '';
+        }
+    }
+    
+    function tttCheckWin(p) {
+        const winPatterns = [
+            [0,1,2],[3,4,5],[6,7,8], // rows
+            [0,3,6],[1,4,7],[2,5,8], // columns
+            [0,4,8],[2,4,6] // diagonals
+        ];
+        return winPatterns.find(pattern => pattern.every(i => tttCells[i] === p));
+    }
+    
+    function tttHighlightWin(player) {
+        const winPattern = tttCheckWin(player);
+        if (winPattern) {
+            winPattern.forEach(i => {
+                tttBoard.children[i].style.background = 'linear-gradient(45deg, #17a2b8, #20c997)';
+                tttBoard.children[i].style.transform = 'scale(1.1)';
+            });
+        }
+    }
+    
+    tttReset.onclick = tttInit;
+    tttInit();
+
+    // --- Enhanced Memory Game ---
+    const memoryBoard = document.getElementById('memory-board');
+    const memoryReset = document.getElementById('memory-reset');
+    let memoryCards, memoryFlipped, memoryLock, memoryMatches, memoryMoves;
+    
+    function memoryInit() {
+        const emojis = ['🐠','🐟','🦀','🐙','🐡','🦈','🐚','🪸'];
+        memoryCards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+        memoryFlipped = [];
+        memoryLock = false;
+        memoryMatches = 0;
+        memoryMoves = 0;
+        memoryBoard.innerHTML = '';
+        
+        memoryCards.forEach((emoji, i) => {
+            const card = document.createElement('div');
+            card.className = 'memory-card';
+            card.dataset.index = i;
+            card.onclick = () => memoryFlip(card, i);
+            memoryBoard.appendChild(card);
+        });
+    }
+    
+    function memoryFlip(card, i) {
+        if (memoryLock || card.classList.contains('matched') || card.classList.contains('flipped')) return;
+        
+        card.textContent = memoryCards[i];
+        card.classList.add('flipped');
+        memoryFlipped.push(card);
+        
+        if (memoryFlipped.length === 2) {
+            memoryMoves++;
+            memoryLock = true;
+            
+            setTimeout(() => {
+                if (memoryFlipped[0].textContent === memoryFlipped[1].textContent) {
+                    memoryFlipped[0].classList.add('matched');
+                    memoryFlipped[1].classList.add('matched');
+                    memoryMatches++;
+                    
+                    if (memoryMatches === 8) {
+                        setTimeout(() => {
+                            alert(`🎉 Amazing! You found all the sea creatures in ${memoryMoves} moves! 🌊🐠`);
+                        }, 500);
+                    }
+                } else {
+                    memoryFlipped[0].textContent = '';
+                    memoryFlipped[1].textContent = '';
+                    memoryFlipped[0].classList.remove('flipped');
+                    memoryFlipped[1].classList.remove('flipped');
+                }
+                memoryFlipped = [];
+                memoryLock = false;
+            }, 1000);
+        }
+    }
+    
+    memoryReset.onclick = memoryInit;
+    memoryInit();
+
+    // --- Enhanced Snake Game ---
+    const snakeCanvas = document.getElementById('snake-canvas');
+    const snakeScore = document.getElementById('snake-score');
+    const snakeReset = document.getElementById('snake-reset');
+    let snake, snakeDir, snakeFood, snakeInterval, snakeScoreVal, snakeGameOver;
+    const GRID_SIZE = 16;
+    const CELL_SIZE = 20;
+    
+    function snakeInit() {
+        snake = [{x:8,y:8}];
+        snakeDir = {x:1,y:0};
+        snakeFood = snakeGenerateFood();
+        snakeScoreVal = 0;
+        snakeGameOver = false;
+        snakeScore.textContent = 'Shrimp Eaten: 0';
+        snakeScore.style.color = '';
+        clearInterval(snakeInterval);
+        snakeInterval = setInterval(snakeStep, 150);
+        snakeDraw();
+    }
+    
+    function snakeGenerateFood() {
+        let food;
+        do {
+            food = {
+                x: Math.floor(Math.random() * GRID_SIZE),
+                y: Math.floor(Math.random() * GRID_SIZE)
+            };
+        } while (snake.some(segment => segment.x === food.x && segment.y === food.y));
+        return food;
+    }
+    
+    function snakeStep() {
+        if (snakeGameOver) return;
+        
+        const head = {x: snake[0].x + snakeDir.x, y: snake[0].y + snakeDir.y};
+        
+        // Check collisions
+        if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE || 
+            snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+            snakeGameOver = true;
+            snakeScore.textContent = `🎉 Great swim! You ate ${snakeScoreVal} shrimp!`;
+            snakeScore.style.color = '#17a2b8';
+            clearInterval(snakeInterval);
+            return;
+        }
+        
+        snake.unshift(head);
+        
+        // Check food collision
+        if (head.x === snakeFood.x && head.y === snakeFood.y) {
+            snakeScoreVal++;
+            snakeScore.textContent = `🦐 Shrimp Eaten: ${snakeScoreVal}`;
+            snakeFood = snakeGenerateFood();
+        } else {
+            snake.pop();
+        }
+        
+        snakeDraw();
+    }
+    
+    function snakeDraw() {
+        const ctx = snakeCanvas.getContext('2d');
+        
+        // Clear canvas with ocean gradient
+        const gradient = ctx.createLinearGradient(0, 0, snakeCanvas.width, snakeCanvas.height);
+        gradient.addColorStop(0, '#87CEEB');
+        gradient.addColorStop(0.5, '#4682B4');
+        gradient.addColorStop(1, '#1e3a8a');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+        
+        // Draw sea serpent
+        snake.forEach((segment, index) => {
+            if (index === 0) {
+                // Head - sea serpent head
+                ctx.fillStyle = '#20c997';
+                ctx.shadowColor = '#20c997';
+                ctx.shadowBlur = 15;
+            } else {
+                // Body - ocean colors
+                const colors = ['#17a2b8', '#20c997', '#6f42c1', '#fd7e14'];
+                ctx.fillStyle = colors[index % colors.length];
+                ctx.shadowBlur = 8;
+            }
+            ctx.fillRect(segment.x * CELL_SIZE + 1, segment.y * CELL_SIZE + 1, CELL_SIZE - 2, CELL_SIZE - 2);
+        });
+        
+        // Draw food as shrimp
+        ctx.fillStyle = '#fd7e14';
+        ctx.shadowColor = '#fd7e14';
+        ctx.shadowBlur = 20;
+        ctx.fillRect(snakeFood.x * CELL_SIZE + 2, snakeFood.y * CELL_SIZE + 2, CELL_SIZE - 4, CELL_SIZE - 4);
+        
+        // Reset shadow
+        ctx.shadowBlur = 0;
+    }
+    
+    // Enhanced keyboard controls
+    let lastDirection = null;
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('snake-game').style.display === 'none' || snakeGameOver) return;
+        
+        let newDir = null;
+        switch(e.key) {
+            case 'ArrowUp':
+            case 'w':
+            case 'W':
+                if (snakeDir.y !== 1) newDir = {x:0, y:-1};
+                break;
+            case 'ArrowDown':
+            case 's':
+            case 'S':
+                if (snakeDir.y !== -1) newDir = {x:0, y:1};
+                break;
+            case 'ArrowLeft':
+            case 'a':
+            case 'A':
+                if (snakeDir.x !== 1) newDir = {x:-1, y:0};
+                break;
+            case 'ArrowRight':
+            case 'd':
+            case 'D':
+                if (snakeDir.x !== -1) newDir = {x:1, y:0};
+                break;
+        }
+        
+        if (newDir && JSON.stringify(newDir) !== JSON.stringify(lastDirection)) {
+            snakeDir = newDir;
+            lastDirection = newDir;
+            e.preventDefault();
+        }
+    });
+    
+    snakeReset.onclick = snakeInit;
+    snakeInit();
+
+    // --- Enhanced Tetris Game ---
+    const tetrisCanvas = document.getElementById('tetris-canvas');
+    const tetrisNextCanvas = document.getElementById('tetris-next-canvas');
+    const tetrisScoreEl = document.getElementById('tetris-score-value');
+    const tetrisLevelEl = document.getElementById('tetris-level-value');
+    const tetrisLinesEl = document.getElementById('tetris-lines-value');
+    const tetrisReset = document.getElementById('tetris-reset');
+    
+    let tetrisCtx, tetrisNextCtx;
+    let tetrisBoard, tetrisCurrentPiece, tetrisNextPiece;
+    let tetrisScore, tetrisLevel, tetrisLines, tetrisGameOver, tetrisPaused;
+    let tetrisDropTime, tetrisLastTime, tetrisInterval;
+    
+    const TETRIS_ROWS = 20;
+    const TETRIS_COLS = 10;
+    const TETRIS_BLOCK_SIZE = 30;
+    
+    const tetrisPieces = [
+        { // I-piece
+            shape: [
+                [0,0,0,0],
+                [1,1,1,1],
+                [0,0,0,0],
+                [0,0,0,0]
+            ],
+            color: '#20c997'
+        },
+        { // O-piece
+            shape: [
+                [1,1],
+                [1,1]
+            ],
+            color: '#ffc107'
+        },
+        { // T-piece
+            shape: [
+                [0,1,0],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#e83e8c'
+        },
+        { // S-piece
+            shape: [
+                [0,1,1],
+                [1,1,0],
+                [0,0,0]
+            ],
+            color: '#17a2b8'
+        },
+        { // Z-piece
+            shape: [
+                [1,1,0],
+                [0,1,1],
+                [0,0,0]
+            ],
+            color: '#fd7e14'
+        },
+        { // J-piece
+            shape: [
+                [1,0,0],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#007bff'
+        },
+        { // L-piece
+            shape: [
+                [0,0,1],
+                [1,1,1],
+                [0,0,0]
+            ],
+            color: '#6f42c1'
+        }
+    ];
+    
+    function tetrisInit() {
+        tetrisCtx = tetrisCanvas.getContext('2d');
+        tetrisNextCtx = tetrisNextCanvas.getContext('2d');
+        
+        tetrisBoard = Array(TETRIS_ROWS).fill().map(() => Array(TETRIS_COLS).fill(0));
+        tetrisScore = 0;
+        tetrisLevel = 1;
+        tetrisLines = 0;
+        tetrisGameOver = false;
+        tetrisPaused = false;
+        tetrisDropTime = 0;
+        tetrisLastTime = 0;
+        
+        tetrisCurrentPiece = tetrisCreatePiece();
+        tetrisNextPiece = tetrisCreatePiece();
+        
+        tetrisUpdateDisplay();
+        tetrisDrawNext();
+        
+        clearInterval(tetrisInterval);
+        tetrisInterval = setInterval(tetrisGameLoop, 16);
+    }
+    
+    function tetrisCreatePiece() {
+        const piece = tetrisPieces[Math.floor(Math.random() * tetrisPieces.length)];
+        return {
+            shape: piece.shape.map(row => [...row]),
+            color: piece.color,
+            x: Math.floor(TETRIS_COLS / 2) - Math.floor(piece.shape[0].length / 2),
+            y: 0
+        };
+    }
+    
+    function tetrisGameLoop() {
+        if (tetrisGameOver || tetrisPaused) return;
+        
+        const now = Date.now();
+        const deltaTime = now - tetrisLastTime;
+        tetrisLastTime = now;
+        
+        tetrisDropTime += deltaTime;
+        if (tetrisDropTime > (1000 - (tetrisLevel - 1) * 100)) {
+            tetrisMovePiece(0, 1);
+            tetrisDropTime = 0;
+        }
+        
+        tetrisDraw();
+    }
+    
+    function tetrisMovePiece(dx, dy, newShape = null) {
+        const piece = {
+            shape: newShape || tetrisCurrentPiece.shape,
+            x: tetrisCurrentPiece.x + dx,
+            y: tetrisCurrentPiece.y + dy,
+            color: tetrisCurrentPiece.color
+        };
+        
+        if (tetrisIsValidMove(piece)) {
+            tetrisCurrentPiece = piece;
+            return true;
+        } else if (dy > 0) {
+            // Piece has landed
+            tetrisPlacePiece();
+            tetrisClearLines();
+            tetrisCurrentPiece = tetrisNextPiece;
+            tetrisNextPiece = tetrisCreatePiece();
+            tetrisDrawNext();
+            
+            if (!tetrisIsValidMove(tetrisCurrentPiece)) {
+                tetrisGameOver = true;
+                tetrisScoreEl.textContent = `Castle Complete! Score: ${tetrisScore}`;
+                tetrisScoreEl.style.color = '#17a2b8';
+            }
+        }
+        return false;
+    }
+    
+    function tetrisIsValidMove(piece) {
+        for (let y = 0; y < piece.shape.length; y++) {
+            for (let x = 0; x < piece.shape[y].length; x++) {
+                if (piece.shape[y][x]) {
+                    const boardX = piece.x + x;
+                    const boardY = piece.y + y;
+                    
+                    if (boardX < 0 || boardX >= TETRIS_COLS || 
+                        boardY >= TETRIS_ROWS || 
+                        (boardY >= 0 && tetrisBoard[boardY][boardX])) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    
+    function tetrisPlacePiece() {
+        for (let y = 0; y < tetrisCurrentPiece.shape.length; y++) {
+            for (let x = 0; x < tetrisCurrentPiece.shape[y].length; x++) {
+                if (tetrisCurrentPiece.shape[y][x]) {
+                    const boardX = tetrisCurrentPiece.x + x;
+                    const boardY = tetrisCurrentPiece.y + y;
+                    if (boardY >= 0) {
+                        tetrisBoard[boardY][boardX] = tetrisCurrentPiece.color;
+                    }
+                }
+            }
+        }
+    }
+    
+    function tetrisClearLines() {
+        let linesCleared = 0;
+        for (let y = TETRIS_ROWS - 1; y >= 0; y--) {
+            if (tetrisBoard[y].every(cell => cell !== 0)) {
+                tetrisBoard.splice(y, 1);
+                tetrisBoard.unshift(Array(TETRIS_COLS).fill(0));
+                linesCleared++;
+                y++; // Check the same row again
+            }
+        }
+        
+        if (linesCleared > 0) {
+            tetrisLines += linesCleared;
+            tetrisScore += linesCleared * 100 * tetrisLevel;
+            tetrisLevel = Math.floor(tetrisLines / 10) + 1;
+            tetrisUpdateDisplay();
+        }
+    }
+    
+    function tetrisRotatePiece() {
+        const rotated = tetrisCurrentPiece.shape[0].map((_, i) =>
+            tetrisCurrentPiece.shape.map(row => row[i]).reverse()
+        );
+        tetrisMovePiece(0, 0, rotated);
+    }
+    
+    function tetrisDraw() {
+        // Clear canvas with ocean gradient
+        const gradient = tetrisCtx.createLinearGradient(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+        gradient.addColorStop(0, '#87CEEB');
+        gradient.addColorStop(0.5, '#4682B4');
+        gradient.addColorStop(1, '#1e3a8a');
+        tetrisCtx.fillStyle = gradient;
+        tetrisCtx.fillRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+        
+        // Draw board
+        for (let y = 0; y < TETRIS_ROWS; y++) {
+            for (let x = 0; x < TETRIS_COLS; x++) {
+                if (tetrisBoard[y][x]) {
+                    tetrisCtx.fillStyle = tetrisBoard[y][x];
+                    tetrisCtx.fillRect(x * TETRIS_BLOCK_SIZE, y * TETRIS_BLOCK_SIZE, 
+                                     TETRIS_BLOCK_SIZE - 1, TETRIS_BLOCK_SIZE - 1);
+                }
+            }
+        }
+        
+        // Draw current piece
+        if (tetrisCurrentPiece) {
+            tetrisCtx.fillStyle = tetrisCurrentPiece.color;
+            for (let y = 0; y < tetrisCurrentPiece.shape.length; y++) {
+                for (let x = 0; x < tetrisCurrentPiece.shape[y].length; x++) {
+                    if (tetrisCurrentPiece.shape[y][x]) {
+                        const drawX = (tetrisCurrentPiece.x + x) * TETRIS_BLOCK_SIZE;
+                        const drawY = (tetrisCurrentPiece.y + y) * TETRIS_BLOCK_SIZE;
+                        tetrisCtx.fillRect(drawX, drawY, TETRIS_BLOCK_SIZE - 1, TETRIS_BLOCK_SIZE - 1);
+                    }
+                }
+            }
+        }
+        
+        // Draw grid lines
+        tetrisCtx.strokeStyle = 'rgba(255,255,255,0.2)';
+        tetrisCtx.lineWidth = 1;
+        for (let x = 0; x <= TETRIS_COLS; x++) {
+            tetrisCtx.beginPath();
+            tetrisCtx.moveTo(x * TETRIS_BLOCK_SIZE, 0);
+            tetrisCtx.lineTo(x * TETRIS_BLOCK_SIZE, tetrisCanvas.height);
+            tetrisCtx.stroke();
+        }
+        for (let y = 0; y <= TETRIS_ROWS; y++) {
+            tetrisCtx.beginPath();
+            tetrisCtx.moveTo(0, y * TETRIS_BLOCK_SIZE);
+            tetrisCtx.lineTo(tetrisCanvas.width, y * TETRIS_BLOCK_SIZE);
+            tetrisCtx.stroke();
+        }
+    }
+    
+    function tetrisDrawNext() {
+        const gradient = tetrisNextCtx.createLinearGradient(0, 0, tetrisNextCanvas.width, tetrisNextCanvas.height);
+        gradient.addColorStop(0, '#87CEEB');
+        gradient.addColorStop(1, '#4682B4');
+        tetrisNextCtx.fillStyle = gradient;
+        tetrisNextCtx.fillRect(0, 0, tetrisNextCanvas.width, tetrisNextCanvas.height);
+        
+        if (tetrisNextPiece) {
+            tetrisNextCtx.fillStyle = tetrisNextPiece.color;
+            const blockSize = 16;
+            const offsetX = (tetrisNextCanvas.width - tetrisNextPiece.shape[0].length * blockSize) / 2;
+            const offsetY = (tetrisNextCanvas.height - tetrisNextPiece.shape.length * blockSize) / 2;
+            
+            for (let y = 0; y < tetrisNextPiece.shape.length; y++) {
+                for (let x = 0; x < tetrisNextPiece.shape[y].length; x++) {
+                    if (tetrisNextPiece.shape[y][x]) {
+                        tetrisNextCtx.fillRect(
+                            offsetX + x * blockSize, 
+                            offsetY + y * blockSize, 
+                            blockSize - 1, 
+                            blockSize - 1
+                        );
+                    }
+                }
+            }
+        }
+    }
+    
+    function tetrisUpdateDisplay() {
+        tetrisScoreEl.textContent = tetrisScore;
+        tetrisScoreEl.style.color = '';
+        tetrisLevelEl.textContent = tetrisLevel;
+        tetrisLinesEl.textContent = tetrisLines;
+    }
+    
+    // Tetris controls
+    document.addEventListener('keydown', e => {
+        if (document.getElementById('tetris-game').style.display === 'none' || tetrisGameOver) return;
+        
+        switch(e.key) {
+            case 'ArrowLeft':
+                tetrisMovePiece(-1, 0);
+                e.preventDefault();
+                break;
+            case 'ArrowRight':
+                tetrisMovePiece(1, 0);
+                e.preventDefault();
+                break;
+            case 'ArrowDown':
+                tetrisMovePiece(0, 1);
+                e.preventDefault();
+                break;
+            case 'ArrowUp':
+                tetrisRotatePiece();
+                e.preventDefault();
+                break;
+            case ' ':
+                // Hard drop
+                while (tetrisMovePiece(0, 1)) {}
+                e.preventDefault();
+                break;
+            case 'p':
+            case 'P':
+                tetrisPaused = !tetrisPaused;
+                break;
+        }
+    });
+    
+    tetrisReset.onclick = tetrisInit;
+    tetrisInit();
+    </script>
+</body>
+</html>
