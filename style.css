@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -17,6 +24,7 @@ body {
     color: #2c3e50;
     position: relative;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 @keyframes gradientShift {
@@ -3779,4 +3787,422 @@ h1 {
     100% {
         filter: drop-shadow(2px 2px 8px rgba(52, 152, 219, 0.4));
     }
+}
+
+/* ================================== */
+/*           MOBILE RESPONSIVE        */
+/* ================================== */
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none;
+    margin: 15px auto;
+    max-width: 150px;
+    text-align: center;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.mobile-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mobile-btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b5b95 100%);
+}
+
+.tetris-mobile-controls {
+    max-width: 180px;
+}
+
+.tetris-mobile-controls .mobile-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+/* Mobile Styles - Small screens (phones) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 5px;
+        min-height: 100vh;
+    }
+
+    .dashboard-container {
+        padding: 15px;
+        margin: 0;
+        width: 100%;
+        min-height: calc(100vh - 10px);
+        border-radius: 15px;
+    }
+
+    /* Header adjustments */
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    header .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    /* Games grid - single column on mobile */
+    .games-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        max-width: 100% !important;
+    }
+
+    /* Game cards - smaller and touch-friendly */
+    .game-card {
+        padding: 15px !important;
+        min-height: auto !important;
+        border-radius: 15px !important;
+        touch-action: manipulation;
+    }
+
+    .game-card .game-icon {
+        font-size: 2rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .game-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .game-card .game-description {
+        font-size: 0.85rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .game-features {
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+    }
+
+    .feature {
+        font-size: 0.75rem !important;
+        padding: 3px 8px !important;
+    }
+
+    /* Game containers - full width on mobile */
+    .game-container {
+        padding: 15px !important;
+        margin: 10px 0 !important;
+        border-radius: 15px !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .game-container h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 15px !important;
+        text-align: center;
+    }
+
+    /* Buttons - larger and more touch-friendly */
+    .btn, .quiz-option-btn, button {
+        min-height: 44px !important;
+        font-size: 0.9rem !important;
+        padding: 10px 15px !important;
+        margin: 5px !important;
+        border-radius: 10px !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+    }
+
+    /* Game-specific mobile adjustments */
+    
+    /* Minesweeper */
+    .cell {
+        width: calc((100vw - 80px) / 9) !important;
+        height: calc((100vw - 80px) / 9) !important;
+        max-width: 35px !important;
+        max-height: 35px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .game-grid {
+        gap: 1px !important;
+        margin: 10px auto !important;
+    }
+
+    /* Tic-Tac-Toe */
+    #ttt-board {
+        max-width: calc(100vw - 60px) !important;
+        max-height: calc(100vw - 60px) !important;
+        grid-gap: 3px !important;
+    }
+
+    .ttt-cell {
+        font-size: 2rem !important;
+        border-radius: 8px !important;
+    }
+
+    /* Memory Game */
+    .memory-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 5px !important;
+        max-width: calc(100vw - 40px) !important;
+        margin: 0 auto !important;
+    }
+
+    .memory-card {
+        aspect-ratio: 1 !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* Snake Game */
+    #snake-canvas {
+        width: calc(100vw - 40px) !important;
+        height: calc(100vw - 40px) !important;
+        max-width: 300px !important;
+        max-height: 300px !important;
+    }
+
+    /* Tetris */
+    #tetris-canvas {
+        width: 200px !important;
+        height: 400px !important;
+    }
+
+    .tetris-info {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .tetris-controls {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 5px !important;
+        width: 100% !important;
+        max-width: 200px !important;
+    }
+
+    /* Pac-Man */
+    #pacman-canvas {
+        width: calc(100vw - 40px) !important;
+        height: calc((100vw - 40px) * 0.86) !important;
+        max-width: 350px !important;
+        max-height: 300px !important;
+    }
+
+    .pacman-stats {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+    }
+
+    .stat-item {
+        margin: 5px 0 !important;
+    }
+
+    /* Sudoku */
+    .sudoku-grid {
+        width: calc(100vw - 40px) !important;
+        height: calc(100vw - 40px) !important;
+        max-width: 300px !important;
+        max-height: 300px !important;
+    }
+
+    .sudoku-cell {
+        font-size: 1rem !important;
+    }
+
+    /* Quiz Master */
+    .quiz-options {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .quiz-option-btn {
+        width: 100% !important;
+        text-align: left !important;
+        padding: 15px !important;
+    }
+
+    /* Math Tables Canvas */
+    #mathtables-canvas {
+        width: calc(100vw - 40px) !important;
+        height: 200px !important;
+    }
+
+    /* Pinball */
+    #pinball-canvas {
+        width: calc(100vw - 40px) !important;
+        height: calc((100vw - 40px) * 1.44) !important;
+        max-width: 300px !important;
+        max-height: 432px !important;
+    }
+
+    /* Challenge Zone */
+    .zone-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .challenge-games {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .challenge-card {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+
+    /* Game stats and info */
+    .game-stats, .game-info {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+
+    .stat-item, .info-item {
+        margin: 5px 0 !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Instructions */
+    .game-instructions, .pacman-instructions {
+        font-size: 0.8rem !important;
+        text-align: center !important;
+        padding: 10px !important;
+        margin: 10px 0 !important;
+    }
+
+    /* Show mobile controls on mobile devices */
+    .mobile-controls {
+        display: block !important;
+    }
+}
+
+/* Extra small screens (very small phones) */
+@media screen and (max-width: 480px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .game-card {
+        padding: 12px !important;
+    }
+
+    .btn, .quiz-option-btn, button {
+        min-height: 40px !important;
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+    }
+
+    /* Smaller game elements for very small screens */
+    .cell {
+        width: calc((100vw - 60px) / 9) !important;
+        height: calc((100vw - 60px) / 9) !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+        font-size: 0.7rem !important;
+    }
+
+    #snake-canvas {
+        max-width: 250px !important;
+        max-height: 250px !important;
+    }
+
+    #tetris-canvas {
+        width: 150px !important;
+        height: 300px !important;
+    }
+
+    #pacman-canvas {
+        max-width: 280px !important;
+        max-height: 240px !important;
+    }
+}
+
+/* Tablet landscape adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .dashboard-container {
+        padding: 25px;
+    }
+}
+
+/* Touch-specific improvements */
+@media (pointer: coarse) {
+    .btn:hover, .quiz-option-btn:hover, button:hover {
+        transform: none !important;
+    }
+
+    .btn:active, .quiz-option-btn:active, button:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s ease !important;
+    }
+
+    .game-card:active {
+        transform: scale(0.98) !important;
+    }
+
+    .cell:active, .ttt-cell:active, .memory-card:active {
+        transform: scale(0.9) !important;
+        transition: transform 0.1s ease !important;
+    }
+}
+
+/* Prevent zoom on input focus (iOS) */
+input[type="text"], 
+input[type="number"],
+select,
+textarea {
+    font-size: 16px !important;
+}
+
+/* Better scrolling for mobile */
+.game-container {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars on mobile while keeping functionality */
+.game-container::-webkit-scrollbar {
+    display: none;
+}
+
+.game-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
