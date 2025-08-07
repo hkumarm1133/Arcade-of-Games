@@ -908,6 +908,24 @@
     }
 
     function generateMathProblem() {
+        const problemTypes = ['arithmetic', 'algebra', 'geometry', 'word_problem'];
+        const type = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+        
+        switch(type) {
+            case 'arithmetic':
+                return generateArithmeticProblem();
+            case 'algebra':
+                return generateAlgebraProblem();
+            case 'geometry':
+                return generateGeometryProblem();
+            case 'word_problem':
+                return generateWordProblem();
+            default:
+                return generateArithmeticProblem();
+        }
+    }
+
+    function generateArithmeticProblem() {
         const operations = ['+', '-', '×', '÷'];
         const operation = operations[Math.floor(Math.random() * operations.length)];
         let num1, num2, correct;
@@ -942,6 +960,65 @@
         };
     }
 
+    function generateAlgebraProblem() {
+        const problems = [
+            { q: "If x + 5 = 12, what is x?", a: "7", options: ["7", "5", "12", "17"] },
+            { q: "If 2x = 16, what is x?", a: "8", options: ["8", "4", "16", "32"] },
+            { q: "If x - 3 = 9, what is x?", a: "12", options: ["12", "6", "9", "3"] },
+            { q: "If 3x + 2 = 14, what is x?", a: "4", options: ["4", "6", "3", "5"] },
+            { q: "If x/4 = 5, what is x?", a: "20", options: ["20", "5", "4", "1"] },
+            { q: "What is the square of 9?", a: "81", options: ["81", "18", "72", "90"] },
+            { q: "What is the square root of 64?", a: "8", options: ["8", "6", "4", "16"] }
+        ];
+        
+        const selected = problems[Math.floor(Math.random() * problems.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
+    function generateGeometryProblem() {
+        const problems = [
+            { q: "How many sides does a triangle have?", a: "3", options: ["3", "4", "5", "6"] },
+            { q: "How many degrees are in a circle?", a: "360", options: ["360", "180", "90", "270"] },
+            { q: "What is the area of a square with side length 5?", a: "25", options: ["25", "20", "10", "30"] },
+            { q: "How many sides does a hexagon have?", a: "6", options: ["6", "5", "7", "8"] },
+            { q: "What is the perimeter of a rectangle with length 8 and width 3?", a: "22", options: ["22", "11", "24", "16"] },
+            { q: "How many degrees are in a right angle?", a: "90", options: ["90", "45", "180", "60"] },
+            { q: "What is the area of a rectangle with length 6 and width 4?", a: "24", options: ["24", "20", "10", "14"] },
+            { q: "How many sides does an octagon have?", a: "8", options: ["8", "6", "10", "7"] }
+        ];
+        
+        const selected = problems[Math.floor(Math.random() * problems.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
+    function generateWordProblem() {
+        const problems = [
+            { q: "Sarah has 15 apples. She gives away 6. How many does she have left?", a: "9", options: ["9", "21", "6", "15"] },
+            { q: "A pizza is cut into 8 slices. If Tom eats 3 slices, how many are left?", a: "5", options: ["5", "3", "8", "11"] },
+            { q: "There are 24 students in a class. If they form groups of 4, how many groups are there?", a: "6", options: ["6", "4", "20", "96"] },
+            { q: "A book costs $12. How much do 3 books cost?", a: "36", options: ["36", "15", "4", "24"] },
+            { q: "If a car travels 60 miles per hour for 2 hours, how far does it go?", a: "120", options: ["120", "60", "30", "240"] },
+            { q: "A bag contains 20 marbles. If 1/4 are red, how many red marbles are there?", a: "5", options: ["5", "4", "15", "80"] },
+            { q: "John saves $5 every week. How much will he have after 8 weeks?", a: "40", options: ["40", "13", "5", "45"] },
+            { q: "A rectangle garden is 12 feet long and 8 feet wide. What is its area?", a: "96", options: ["96", "20", "40", "4"] }
+        ];
+        
+        const selected = problems[Math.floor(Math.random() * problems.length)];
+        return {
+            question: selected.q,
+            correct: selected.a,
+            options: selected.options
+        };
+    }
+
     function generateMathOptions(correct) {
         const options = [correct];
         while (options.length < 4) {
@@ -955,12 +1032,51 @@
 
     function generateScienceProblem() {
         const questions = [
+            // Physics & Space
             { q: "What is the largest planet in our solar system?", a: "Jupiter", options: ["Jupiter", "Saturn", "Neptune", "Earth"] },
-            { q: "How many bones are in an adult human body?", a: "206", options: ["206", "195", "220", "183"] },
-            { q: "What gas do plants absorb from the atmosphere?", a: "Carbon Dioxide", options: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"] },
             { q: "What is the speed of light?", a: "300,000 km/s", options: ["300,000 km/s", "150,000 km/s", "500,000 km/s", "200,000 km/s"] },
+            { q: "Which planet is known as the Red Planet?", a: "Mars", options: ["Mars", "Venus", "Mercury", "Jupiter"] },
+            { q: "What force keeps planets in orbit around the Sun?", a: "Gravity", options: ["Gravity", "Magnetism", "Friction", "Centrifugal force"] },
+            { q: "How long does light from the Sun take to reach Earth?", a: "8 minutes", options: ["8 minutes", "4 minutes", "1 hour", "1 day"] },
+            { q: "What is the closest star to Earth?", a: "The Sun", options: ["The Sun", "Proxima Centauri", "Alpha Centauri", "Sirius"] },
+            { q: "Which planet has the most moons?", a: "Jupiter", options: ["Jupiter", "Saturn", "Uranus", "Neptune"] },
+            { q: "What is absolute zero temperature?", a: "-273°C", options: ["-273°C", "-100°C", "0°C", "-200°C"] },
+            
+            // Biology & Human Body
+            { q: "How many bones are in an adult human body?", a: "206", options: ["206", "195", "220", "183"] },
             { q: "Which organ pumps blood in the human body?", a: "Heart", options: ["Heart", "Liver", "Kidney", "Brain"] },
-            { q: "What is water's chemical formula?", a: "H2O", options: ["H2O", "CO2", "O2", "H2SO4"] }
+            { q: "What is the largest organ in the human body?", a: "Skin", options: ["Skin", "Liver", "Brain", "Lungs"] },
+            { q: "How many chambers does a human heart have?", a: "4", options: ["4", "3", "2", "6"] },
+            { q: "Which blood cells fight infection?", a: "White blood cells", options: ["White blood cells", "Red blood cells", "Platelets", "Plasma"] },
+            { q: "What is the strongest muscle in the human body?", a: "Jaw muscle", options: ["Jaw muscle", "Heart", "Bicep", "Calf muscle"] },
+            { q: "How many teeth do adults typically have?", a: "32", options: ["32", "28", "24", "36"] },
+            { q: "What is DNA?", a: "Genetic material", options: ["Genetic material", "A protein", "A vitamin", "An enzyme"] },
+            
+            // Chemistry
+            { q: "What gas do plants absorb from the atmosphere?", a: "Carbon Dioxide", options: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"] },
+            { q: "What is water's chemical formula?", a: "H2O", options: ["H2O", "CO2", "O2", "H2SO4"] },
+            { q: "What gas do plants release during photosynthesis?", a: "Oxygen", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"] },
+            { q: "What is the most abundant gas in Earth's atmosphere?", a: "Nitrogen", options: ["Nitrogen", "Oxygen", "Carbon Dioxide", "Argon"] },
+            { q: "What is the chemical symbol for gold?", a: "Au", options: ["Au", "Go", "Gd", "Ag"] },
+            { q: "What is the pH of pure water?", a: "7", options: ["7", "0", "14", "1"] },
+            { q: "Which element has the atomic number 1?", a: "Hydrogen", options: ["Hydrogen", "Helium", "Lithium", "Carbon"] },
+            { q: "What is the hardest natural substance?", a: "Diamond", options: ["Diamond", "Quartz", "Steel", "Titanium"] },
+            
+            // Earth Science & Environment
+            { q: "What causes tides on Earth?", a: "Moon's gravity", options: ["Moon's gravity", "Sun's heat", "Earth's rotation", "Wind patterns"] },
+            { q: "What is the Earth's core made of?", a: "Iron and Nickel", options: ["Iron and Nickel", "Rock", "Magma", "Gas"] },
+            { q: "Which layer of atmosphere contains the ozone layer?", a: "Stratosphere", options: ["Stratosphere", "Troposphere", "Mesosphere", "Thermosphere"] },
+            { q: "What type of rock is formed by volcanic activity?", a: "Igneous", options: ["Igneous", "Sedimentary", "Metamorphic", "Crystalline"] },
+            { q: "What is the process by which plants make food?", a: "Photosynthesis", options: ["Photosynthesis", "Respiration", "Digestion", "Absorption"] },
+            { q: "What is the study of earthquakes called?", a: "Seismology", options: ["Seismology", "Geology", "Meteorology", "Volcanology"] },
+            
+            // Animals & Nature
+            { q: "Which animal is known as the King of the Jungle?", a: "Lion", options: ["Lion", "Tiger", "Elephant", "Leopard"] },
+            { q: "How many legs does a spider have?", a: "8", options: ["8", "6", "10", "4"] },
+            { q: "Which bird cannot fly?", a: "Penguin", options: ["Penguin", "Eagle", "Sparrow", "Robin"] },
+            { q: "What is the largest mammal?", a: "Blue whale", options: ["Blue whale", "Elephant", "Giraffe", "Hippopotamus"] },
+            { q: "Which animal can change its color?", a: "Chameleon", options: ["Chameleon", "Tiger", "Zebra", "Panda"] },
+            { q: "What do pandas mainly eat?", a: "Bamboo", options: ["Bamboo", "Fish", "Meat", "Fruits"] }
         ];
         
         const selected = questions[Math.floor(Math.random() * questions.length)];
@@ -973,12 +1089,52 @@
 
     function generateGeographyProblem() {
         const questions = [
+            // World Capitals
             { q: "What is the capital of France?", a: "Paris", options: ["Paris", "London", "Rome", "Madrid"] },
+            { q: "What is the capital of Australia?", a: "Canberra", options: ["Canberra", "Sydney", "Melbourne", "Brisbane"] },
+            { q: "What is the capital of Canada?", a: "Ottawa", options: ["Ottawa", "Toronto", "Montreal", "Vancouver"] },
+            { q: "What is the capital of Brazil?", a: "Brasília", options: ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"] },
+            { q: "What is the capital of Japan?", a: "Tokyo", options: ["Tokyo", "Osaka", "Kyoto", "Hiroshima"] },
+            { q: "What is the capital of Egypt?", a: "Cairo", options: ["Cairo", "Alexandria", "Giza", "Luxor"] },
+            { q: "What is the capital of Russia?", a: "Moscow", options: ["Moscow", "St. Petersburg", "Novosibirsk", "Yekaterinburg"] },
+            { q: "What is the capital of South Africa?", a: "Cape Town", options: ["Cape Town", "Johannesburg", "Pretoria", "Durban"] },
+            
+            // Rivers & Water Bodies
             { q: "Which is the longest river in the world?", a: "Nile", options: ["Nile", "Amazon", "Mississippi", "Yangtze"] },
+            { q: "What is the largest ocean?", a: "Pacific", options: ["Pacific", "Atlantic", "Indian", "Arctic"] },
+            { q: "Which river flows through Egypt?", a: "Nile", options: ["Nile", "Congo", "Niger", "Zambezi"] },
+            { q: "What is the deepest ocean trench?", a: "Mariana Trench", options: ["Mariana Trench", "Puerto Rico Trench", "Java Trench", "Peru-Chile Trench"] },
+            { q: "Which sea is the saltiest?", a: "Dead Sea", options: ["Dead Sea", "Red Sea", "Black Sea", "Caspian Sea"] },
+            { q: "What is the largest lake in the world?", a: "Caspian Sea", options: ["Caspian Sea", "Lake Superior", "Lake Victoria", "Lake Huron"] },
+            
+            // Countries & Continents
             { q: "How many continents are there?", a: "7", options: ["7", "6", "8", "5"] },
             { q: "What is the smallest country in the world?", a: "Vatican City", options: ["Vatican City", "Monaco", "Malta", "Luxembourg"] },
+            { q: "Which is the largest country by area?", a: "Russia", options: ["Russia", "Canada", "China", "United States"] },
+            { q: "Which continent has the most countries?", a: "Africa", options: ["Africa", "Asia", "Europe", "South America"] },
+            { q: "What is the most populated country?", a: "China", options: ["China", "India", "United States", "Indonesia"] },
+            { q: "Which country has the most time zones?", a: "France", options: ["France", "Russia", "United States", "China"] },
+            { q: "What is the driest continent?", a: "Antarctica", options: ["Antarctica", "Africa", "Australia", "Asia"] },
+            
+            // Mountains & Geography
             { q: "Which mountain range contains Mount Everest?", a: "Himalayas", options: ["Himalayas", "Alps", "Rockies", "Andes"] },
-            { q: "What is the largest ocean?", a: "Pacific", options: ["Pacific", "Atlantic", "Indian", "Arctic"] }
+            { q: "What is the highest mountain in North America?", a: "Denali", options: ["Denali", "Mount Whitney", "Mount Rainier", "Mount Washington"] },
+            { q: "Which desert is the largest in the world?", a: "Antarctica", options: ["Antarctica", "Sahara", "Arabian", "Gobi"] },
+            { q: "What is the longest mountain range?", a: "Andes", options: ["Andes", "Himalayas", "Rocky Mountains", "Alps"] },
+            { q: "Which volcano destroyed Pompeii?", a: "Mount Vesuvius", options: ["Mount Vesuvius", "Mount Etna", "Stromboli", "Mount Olympus"] },
+            
+            // Islands & Special Places
+            { q: "What is the largest island in the world?", a: "Greenland", options: ["Greenland", "Australia", "Madagascar", "Borneo"] },
+            { q: "Which strait separates Europe and Africa?", a: "Strait of Gibraltar", options: ["Strait of Gibraltar", "Bosphorus", "Dardanelles", "Suez Canal"] },
+            { q: "What line divides the Earth into Northern and Southern hemispheres?", a: "Equator", options: ["Equator", "Prime Meridian", "Tropic of Cancer", "Arctic Circle"] },
+            { q: "Which city is in two continents?", a: "Istanbul", options: ["Istanbul", "Moscow", "Cairo", "Casablanca"] },
+            { q: "What is the southernmost continent?", a: "Antarctica", options: ["Antarctica", "Australia", "South America", "Africa"] },
+            
+            // Climate & Natural Features
+            { q: "Which place receives the most rainfall?", a: "Mount Waialeale, Hawaii", options: ["Mount Waialeale, Hawaii", "Amazon Rainforest", "Cherrapunji, India", "Scottish Highlands"] },
+            { q: "What is the hottest desert?", a: "Sahara", options: ["Sahara", "Atacama", "Mojave", "Kalahari"] },
+            { q: "Which country has the most volcanoes?", a: "Indonesia", options: ["Indonesia", "Japan", "United States", "Chile"] },
+            { q: "What is the Great Barrier Reef?", a: "Coral reef system", options: ["Coral reef system", "Mountain range", "Desert", "River delta"] }
         ];
         
         const selected = questions[Math.floor(Math.random() * questions.length)];
@@ -991,12 +1147,60 @@
 
     function generateHistoryProblem() {
         const questions = [
-            { q: "Who painted the Mona Lisa?", a: "Leonardo da Vinci", options: ["Leonardo da Vinci", "Michelangelo", "Picasso", "Van Gogh"] },
-            { q: "In which year did World War II end?", a: "1945", options: ["1945", "1944", "1946", "1943"] },
-            { q: "Who was the first person on the moon?", a: "Neil Armstrong", options: ["Neil Armstrong", "Buzz Aldrin", "John Glenn", "Yuri Gagarin"] },
+            // Ancient History
             { q: "Which empire was ruled by Julius Caesar?", a: "Roman Empire", options: ["Roman Empire", "Greek Empire", "Egyptian Empire", "Persian Empire"] },
+            { q: "Who built the Great Wall of China?", a: "Emperor Qin Shi Huang", options: ["Emperor Qin Shi Huang", "Confucius", "Sun Tzu", "Lao Tzu"] },
+            { q: "What were the pyramids of Egypt built for?", a: "Tombs for pharaohs", options: ["Tombs for pharaohs", "Temples", "Granaries", "Observatories"] },
+            { q: "Which ancient wonder was located in Alexandria?", a: "Lighthouse", options: ["Lighthouse", "Hanging Gardens", "Colossus", "Mausoleum"] },
+            { q: "Who was the famous queen of ancient Egypt?", a: "Cleopatra", options: ["Cleopatra", "Nefertiti", "Hatshepsut", "Ankhesenamun"] },
+            
+            // Medieval Period
+            { q: "When did the Medieval period roughly begin?", a: "5th century", options: ["5th century", "10th century", "1st century", "15th century"] },
+            { q: "What was the Black Death?", a: "A plague", options: ["A plague", "A war", "A famine", "An earthquake"] },
+            { q: "Who led the Norman conquest of England?", a: "William the Conqueror", options: ["William the Conqueror", "Harold Godwinson", "Edward the Confessor", "Alfred the Great"] },
+            { q: "What were the Crusades?", a: "Religious wars", options: ["Religious wars", "Trade expeditions", "Scientific missions", "Cultural exchanges"] },
+            
+            // Renaissance & Exploration
+            { q: "Who painted the Mona Lisa?", a: "Leonardo da Vinci", options: ["Leonardo da Vinci", "Michelangelo", "Picasso", "Van Gogh"] },
+            { q: "Who was the first European to reach the Americas?", a: "Christopher Columbus", options: ["Christopher Columbus", "Vasco da Gama", "Marco Polo", "Ferdinand Magellan"] },
+            { q: "In what year did Columbus reach the Americas?", a: "1492", options: ["1492", "1485", "1501", "1476"] },
+            { q: "Who painted the ceiling of the Sistine Chapel?", a: "Michelangelo", options: ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"] },
+            { q: "Which explorer circumnavigated the globe first?", a: "Ferdinand Magellan", options: ["Ferdinand Magellan", "Vasco da Gama", "James Cook", "Francis Drake"] },
+            
+            // World Wars
+            { q: "In which year did World War I begin?", a: "1914", options: ["1914", "1915", "1913", "1916"] },
+            { q: "In which year did World War II end?", a: "1945", options: ["1945", "1944", "1946", "1943"] },
+            { q: "Which event started World War I?", a: "Assassination of Archduke Franz Ferdinand", options: ["Assassination of Archduke Franz Ferdinand", "Invasion of Poland", "Sinking of Lusitania", "Russian Revolution"] },
+            { q: "What was D-Day?", a: "Allied invasion of Normandy", options: ["Allied invasion of Normandy", "Pearl Harbor attack", "Battle of Britain", "Liberation of Paris"] },
+            { q: "Who was the leader of Nazi Germany?", a: "Adolf Hitler", options: ["Adolf Hitler", "Heinrich Himmler", "Joseph Goebbels", "Hermann Göring"] },
+            { q: "Which cities were hit by atomic bombs?", a: "Hiroshima and Nagasaki", options: ["Hiroshima and Nagasaki", "Tokyo and Osaka", "Kyoto and Kobe", "Yokohama and Nagoya"] },
+            
+            // American History
+            { q: "When did the American Civil War begin?", a: "1861", options: ["1861", "1865", "1859", "1863"] },
+            { q: "Who was the first President of the United States?", a: "George Washington", options: ["George Washington", "Thomas Jefferson", "John Adams", "Benjamin Franklin"] },
+            { q: "What document declared American independence?", a: "Declaration of Independence", options: ["Declaration of Independence", "Constitution", "Bill of Rights", "Articles of Confederation"] },
+            { q: "Who wrote the Declaration of Independence?", a: "Thomas Jefferson", options: ["Thomas Jefferson", "Benjamin Franklin", "John Adams", "George Washington"] },
+            { q: "When did the Boston Tea Party occur?", a: "1773", options: ["1773", "1775", "1770", "1776"] },
+            
+            // Space Age & Modern History
+            { q: "Who was the first person on the moon?", a: "Neil Armstrong", options: ["Neil Armstrong", "Buzz Aldrin", "John Glenn", "Yuri Gagarin"] },
+            { q: "When did humans first land on the moon?", a: "1969", options: ["1969", "1968", "1970", "1967"] },
+            { q: "Who was the first person in space?", a: "Yuri Gagarin", options: ["Yuri Gagarin", "John Glenn", "Alan Shepard", "Valentina Tereshkova"] },
             { q: "When did the Berlin Wall fall?", a: "1989", options: ["1989", "1987", "1991", "1985"] },
-            { q: "Who invented the telephone?", a: "Alexander Graham Bell", options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Benjamin Franklin"] }
+            { q: "What was the Cold War?", a: "Political tension between US and USSR", options: ["Political tension between US and USSR", "Nuclear war", "Trade war", "Space race"] },
+            
+            // Inventions & Discoveries
+            { q: "Who invented the telephone?", a: "Alexander Graham Bell", options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Benjamin Franklin"] },
+            { q: "Who invented the light bulb?", a: "Thomas Edison", options: ["Thomas Edison", "Nikola Tesla", "Benjamin Franklin", "Alexander Graham Bell"] },
+            { q: "Who developed the theory of evolution?", a: "Charles Darwin", options: ["Charles Darwin", "Gregor Mendel", "Louis Pasteur", "Marie Curie"] },
+            { q: "Who discovered penicillin?", a: "Alexander Fleming", options: ["Alexander Fleming", "Louis Pasteur", "Marie Curie", "Jonas Salk"] },
+            { q: "Who invented the printing press?", a: "Johannes Gutenberg", options: ["Johannes Gutenberg", "Leonardo da Vinci", "Benjamin Franklin", "Thomas Edison"] },
+            
+            // World Leaders
+            { q: "Who was known as the Iron Lady?", a: "Margaret Thatcher", options: ["Margaret Thatcher", "Queen Elizabeth II", "Golda Meir", "Indira Gandhi"] },
+            { q: "Who led India's independence movement?", a: "Mahatma Gandhi", options: ["Mahatma Gandhi", "Jawaharlal Nehru", "Subhas Chandra Bose", "Sardar Patel"] },
+            { q: "Who was the longest-serving US President?", a: "Franklin D. Roosevelt", options: ["Franklin D. Roosevelt", "George Washington", "Thomas Jefferson", "Abraham Lincoln"] },
+            { q: "Who was the first female Prime Minister of the UK?", a: "Margaret Thatcher", options: ["Margaret Thatcher", "Theresa May", "Elizabeth I", "Victoria"] }
         ];
         
         const selected = questions[Math.floor(Math.random() * questions.length)];
